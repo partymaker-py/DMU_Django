@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+    <title>{% block title %}Проекты{% endblock title %}</title>
+</head>
+{% endblock head %}
+<body>
+    
+    <!-- Header -->
+{% block content %}
+    <main>
+        <div class="top">
+            <div class="background-img"></div>
+            <h1 class="main-title">Проекты</h1>
+        </div>
+        <div class="list-of-projects">
+            <div class="some-projects">
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">ЦРБ Балашиха</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">    
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">Носовихинское шоссе</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">Морозовская Больница</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">ВДНХ</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">Академия Народного Хозяйства</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">Дмитровсое шоссе</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">Путепровод нахабино</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">Каширское шоссе</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">Ревонструкция автомобильной дороги А-101</h3>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="#" class="link-to-project">
+                        <img src="" alt="" class="project-image" width="370px" height="246px">
+                        <h3 class="project-title">Симуляционный центр ГКБ Им. С.М. Боткина</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+{% endblock content %}
+    <!-- Footer -->

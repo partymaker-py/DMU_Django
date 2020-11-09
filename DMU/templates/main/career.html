@@ -1,0 +1,106 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/career.css' %}">
+    <script src="{% static 'js/career.js' %}" defer></script>
+    <title>{% block title %}Карьера{% endblock title %}</title>
+</head>
+<body>
+{% endblock head %}
+<!--1) Подобрать првильные теги для инпутов 
+    2) Доделать стили 
+    3) Написать js:
+        б) Отпрваку на сервер 
+     -->
+
+    <!-- Header -->
+{% block content %}
+    <main>
+        <button class="scroll-button"></button>
+        <section class="main-title">
+            <h1 class="main-title-title">Карьера</h1>
+            <p class="main-title-text">Актуальные вакансии компании</p>
+        </section>
+        <section class="info-of-info">
+            <aside class="aside">
+                <section class="news">
+                    <form action="">
+                        <input type="text" placeholder="Поиск" class="search">
+                        <button type="submit"><img src="" alt="search-logo" class="search-logo"></button>
+                    </form>
+                    <div class="news-block">
+                        <h3 class="newstitle">Новости<hr></h3>
+                        <ul>
+                            <li class="news-link">Кемерово. Музейный и таеатрально-<br>образовательный комплекс</li>
+                            <li class="news-link">Вакансии ГК "ГОРКА"</li>
+                            <li class="news-link">Победа: м12 Москва - Казань</li>
+                            <li class="news-link">Собственная лаборотория</li>
+                        </ul>
+                    </div>
+                    <div class="contacts">
+                        <h3 class="contact-block">Контактная информация<hr></h3>
+                        <ul>
+                            <li class="contact-link">123007, г.Москва, 4-я Магистральная ул., д.7, стр.1</li>
+                            <li class="contact-link">+7(495)662-94-93</li>
+                            <li class="contact-link">INFO@GK-GORKA.RU</li>
+                            <li class="contact-link">Пн. - Пт.: 9:00 - 18:00</li>
+                            <li class="contact-link">196191, г. Санкт-Петербург, пл. Конституции, д.3, корп. 2, этажи 9 и 10</li>
+                            <li class="contact-link">+7(812)449-47-81</li>
+                            <li class="contact-link">Пн. - Пт.: 9:00 - 18:00</li>
+                        </ul>
+                    </div>
+                </section>
+            </aside>
+                <section class="main-and-form">
+                    <section class="main-info">
+                    <div class="interview">
+                        <h2 class="main-info-title">Интервью с директором по персоналу группы компаний "ГОРКА"<br> Новиковой Анастасией Сергеевной<hr></h2>
+                        <p class="paragraph">CAREER_TEXT1</p>
+                        <p class="paragraph">CAREER_TEXT2</p>
+                        <p class="paragraph">CAREER_TEXT3</p>
+                        <p class="paragraph">CAREER_TEXT4</p>
+                    </div>
+                    <img src="" alt="portret" width="270px" height="270px">
+                    </section>
+                    <div class="form">
+                        <form action="">
+                            <div class="fio">
+                                <div class="name">
+                                    <input type="text" placeholder="Имя" class="name-input">
+                                    <p class="wraning-name-text">Поле обязательно для заполенния</p>
+                                </div>
+                                <div class="father">
+                                    <input type="text" placeholder="Отчество" class="father-input">
+                                    <p class="warning-father-text">Поле обязательно для заполенния</p>
+                                </div>
+                                <div class="sername">
+                                    <input type="text" placeholder="Фамилия" class="sername-input">
+                                    <p class="warning-sername-text">Поле обязательно для заполенния</p>
+                                </div>
+                            </div>
+                            <div class="phone-and-long">
+                                <div class="phone">
+                                    <input type="text" placeholder="Контактный номер телефона" class="phone-input">
+                                    <p class="warning-phone-text">Поле обязательно для заполенния</p>
+                                </div>
+                                <div class="long">
+                                    <input type="text" placeholder="Желаемая должность" class="long-text-input">
+                                    <p class="warning-long-text">Поле обязательно для заполенния</p>
+                                </div>
+                            </div>
+                            <div class="file">
+                                <input type="file" style="color: transparent;" class="file-input">
+                                <p class="warning-file-text">Поле обязательно для заполенния</p>
+                            </div>
+                            <button type="submit" class="btn-submit">Отправить</button>
+                        </form>
+                        <div class="main-warning"><span>Одно или несколько полей содержит ошибочные данные. Пожалуйста, проверте их и попробуйте ещё раз.</span></div>
+                    </div>
+                </section>
+        </section>
+    </main>
+{% endblock content %}
+    <!-- Footer -->

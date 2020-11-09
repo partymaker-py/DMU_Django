@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
+    <title>{% block title %}Контакты{% endblock title %}</title>
+</head>
+{% endblock head %}
+{% block content %}
+<body>
+
+    <!-- Header -->
+    
+    
+    <main>
+        <div class="top-of-page">
+            <div class="bg-image"></div>
+            <div class="main-title">
+                <h1 class="maintittle">Контакты</h1>
+                <p class="main-sub-title">Наши контакты</p>
+            </div>
+        </div>
+        <div class="contacts-wrapper">
+            <div class="city">
+                <div class="first-city">
+                    <h3 class="first-city-title">Москва</h3>
+                    <p class="company-name-and-info">Полное наименование. Общество с ограниченной ответственностью "ГОРКА"</p>
+                </div>
+            </div>
+            <div class="form-and-contacts">
+                <form action="" method="post" class="form-to-sand">
+                    <div class="firts-line-input">
+                        <div class="name">
+                            <input type="text" name="form_input" placeholder="Имя" class="input-name">
+                            <p class="error-name-text"></p>
+                        </div>
+                        <div class="phone"> 
+                            <input type="text" name="form_input" placeholder="Телефон" class="input-phone">
+                            <p class="error-phone-text"></p>
+                        </div>
+                    </div>
+                    <div class="email-input">
+                        <p class="error-email-text"></p>
+                        <input type="text" name="from_input" placeholder="E-mail" class="input-email">
+                    </div>
+                    <div class="message-input">
+                        <p class="error-message-text"></p>
+                        <input type="text" name="form_input" placeholder="Сообщение" class="input-message">
+                    </div>
+                    
+                    <button type="submit" class="sand-btn">Отправить</button>
+                </form>
+            </div>
+        </div>
+        
+    </main>
+
+    
+    <!-- Footer -->
+    <script src="{% static 'js/contacts.js' %}"></script>
+{% endblock content %}
