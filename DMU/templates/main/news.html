@@ -1,0 +1,84 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/news.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <title>Новости</title>
+</head>
+{% endblock head %}
+<body>
+    
+    <!-- Header -->
+{% block content %}
+    <main>
+        <button class="scroll-button">Прокрутка наверх</button>
+        <section class="page-top">
+            <img src="" alt="backgroung-img">
+            <h1 class="main-title">Новости</h1>
+        </section>
+        <section class="article-and-aside">
+            <section class="main-info">
+                <!--Всего 10 блоков размещено на странице-->
+
+{% for a in latest_news_list %}
+                <article class="hews-block">
+                    <img src="" alt="news-img" width="870" height="599" class="news-block__img">
+                    <h3 class="news-block__title">{{ a.title }}</h3>
+                    <h5 class="news-block__subtitle">Новости</h5>
+                    <p class="news-block__text">{{ a.text }}</p>
+{% endfor %}
+
+                </article>
+            </section>
+            <aside class="aside-block">
+                <h3 class="aside-block-title">Новости<hr></h3>
+                
+                <article class="aside-link-block">
+                    <img src="" alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
+                    <a href="" class="aside-link"><p class="aside-link-block__title">Кемерово. Музейный и театрально-образовательный комплекс</p></a>
+                </article>
+                <article class="aside-link-block">
+                    <img src=""  alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
+                    <a href="" class="aside-link"><p class="aside-link-block__title">Вакансии ГК "ГОРКА"</p></a>
+                    
+                </article>
+                <article class="aside-link-block">
+                    <img src=""  alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
+                    <a href="" class="aside-link"><p class="aside-link-block__title">Победа: М12 Москва-Казань</p></a>
+                    
+                </article>
+                <article class="aside-link-block">
+                    <img src=""  alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
+                    <a href="" class="aside-link"><p class="aside-link-block__title">Собственная лаборатория</p></a>
+                    
+                </article>
+                <article class="aside-link-block">
+                    <img src=""  alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
+                    <a href="" class="aside-link"><p class="aside-link-block__title">Профессианальное призвание!</p></a>
+                    
+                </article>
+            </aside>
+        </section>
+    </main>
+{% endblock content %}
+    <!-- Footer -->
+    <script>
+        const scrollBtn = document.querySelector('.scroll-button');
+        window.addEventListener('scroll', () => {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                scrollBtn.style.display = 'block';
+                scrollBtn.addEventListener('click', () => {
+                    document.body.scrollTop = 0;
+                    document.documentElement.scrollTop = 0;
+                });
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        
+    </script>
+</body>
+</html>

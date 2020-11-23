@@ -1,11 +1,13 @@
-{% extends 'base.html' %}
+  
+{% extends 'index.html' %}
 {% load static %}
 {% block head %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/projects.css' %}">
-    <title>{% block title %}Проекты{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'styles/projects.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <title>Проекты</title>
 </head>
 {% endblock head %}
 <body>
@@ -14,7 +16,8 @@
 {% block content %}
     <main>
         <div class="top">
-            <div class="background-img"></div>
+            
+            <img src="" alt="background-img-projects" class="background-img-projects">
             <h1 class="main-title">Проекты</h1>
         </div>
         <div class="list-of-projects">

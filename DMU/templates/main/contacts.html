@@ -1,63 +1,68 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% load static %}
 {% block head %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/contacts.css' %}">
-    <title>{% block title %}Контакты{% endblock title %}</title>
+    <link rel="stylesheet" href="{% static 'styles/contacts.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <script src="{% static 'js/contacts.js' %}" defer></script>
+    <title>Контакты</title>
 </head>
 {% endblock head %}
-{% block content %}
 <body>
-
+    <!-- TODO доделать страницу -->
     <!-- Header -->
-    
-    
+{% block content %}
     <main>
-        <div class="top-of-page">
-            <div class="bg-image"></div>
-            <div class="main-title">
-                <h1 class="maintittle">Контакты</h1>
-                <p class="main-sub-title">Наши контакты</p>
-            </div>
-        </div>
-        <div class="contacts-wrapper">
-            <div class="city">
-                <div class="first-city">
-                    <h3 class="first-city-title">Москва</h3>
-                    <p class="company-name-and-info">Полное наименование. Общество с ограниченной ответственностью "ГОРКА"</p>
-                </div>
-            </div>
-            <div class="form-and-contacts">
-                <form action="" method="post" class="form-to-sand">
-                    <div class="firts-line-input">
-                        <div class="name">
-                            <input type="text" name="form_input" placeholder="Имя" class="input-name">
-                            <p class="error-name-text"></p>
-                        </div>
-                        <div class="phone"> 
-                            <input type="text" name="form_input" placeholder="Телефон" class="input-phone">
-                            <p class="error-phone-text"></p>
-                        </div>
-                    </div>
-                    <div class="email-input">
-                        <p class="error-email-text"></p>
-                        <input type="text" name="from_input" placeholder="E-mail" class="input-email">
-                    </div>
-                    <div class="message-input">
-                        <p class="error-message-text"></p>
-                        <input type="text" name="form_input" placeholder="Сообщение" class="input-message">
-                    </div>
-                    
-                    <button type="submit" class="sand-btn">Отправить</button>
-                </form>
-            </div>
-        </div>
+        <button class="scroll-button">Прокрутка наверх</button>
         
+        <section class="page-title">
+            <h1 class="page-title__main-title">Контакты</h1>
+            <p class="page-title__main-subtitle">Наши контакты</p>
+        </section>
+        <section class="form-and-adress">
+            <article class="form-wrapper-article">
+                <form class="form">
+                    <div class="form__name-and-phone-wrapper">
+                        <div class="form__name-wrapper">
+                            <input type="text" class="from__input-name" placeholder="Имя">
+                            <p class="form__warning">Поле обязательно для заполнеия.</p>
+                        </div>
+                        <div class="form__phone-wrapper">
+                            <input type="number" class="form__input-phone" placeholder="Телефон">
+                            <p class="form__warning">Поле обязательно для заполнеия.</p>
+                        </div>
+                    </div>
+                    <div class="form__email-wrapper">
+                        <input type="email" class="form__input-email" placeholder="E-mail">
+                        <p class="form__warning">Поле обязательно для заполнеия.</p>
+                    </div>
+                    <div class="form__message-wrapper">
+                        <textarea type="text" class="from__input-message" placeholder="Сообщение"></textarea>
+                        <p class="form__warning">Поле обязательно для заполнеия.</p>
+                    </div>
+                    <button class="form__btn-submit" type="submit">Отправить сообщение</button>
+                </form>
+                <div class="main-warn-wrapper">
+                    <p class="main-warning-text">Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверти их и попробойте
+                        ещё раз.</p>
+                </div>
+            </article>
+            <aside class="vidjet-and-contacts">
+                <article class="vidjet">
+                    <!-- Место для виджета -->
+                </article>
+                <article class="constacts">
+                    <p class="contacts__title">Контактная информация</p>
+                    <ul class="contacts__list">
+                        <li class="contacts__item">123007, г.Москва, 4-я Магистральная ул., д.7, стр.1</li>
+                        <li class="contacts__item">+7(495)662-94-93</li>
+                        <li class="contacts__item"><a href="#" class="contacts__item__email-link">info@gk-gorka.ru</a></li>
+                        <li class="contacts__item">Пн. - Пт.: 9:00 - 18:00</li>
+                    </ul>
+                </article>
+            </aside>
+        </section>
     </main>
-
-    
-    <!-- Footer -->
-    <script src="{% static 'js/contacts.js' %}"></script>
 {% endblock content %}

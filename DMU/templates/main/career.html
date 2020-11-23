@@ -1,25 +1,19 @@
-{% extends 'base.html' %}
+{% extends 'index.html' %}
 {% load static %}
 {% block head %}
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/career.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/career.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <script src="{% static 'js/career.js' %}" defer></script>
-    <title>{% block title %}Карьера{% endblock title %}</title>
+    <title>Карьера</title>
 </head>
-<body>
 {% endblock head %}
-<!--1) Подобрать првильные теги для инпутов 
-    2) Доделать стили 
-    3) Написать js:
-        б) Отпрваку на сервер 
-     -->
-
-    <!-- Header -->
+<body>
 {% block content %}
     <main>
-        <button class="scroll-button"></button>
+        <button class="scroll-button">прокрутка наверх</button>
         <section class="main-title">
             <h1 class="main-title-title">Карьера</h1>
             <p class="main-title-text">Актуальные вакансии компании</p>
@@ -27,22 +21,23 @@
         <section class="info-of-info">
             <aside class="aside">
                 <section class="news">
-                    <form action="">
-                        <input type="text" placeholder="Поиск" class="search">
-                        <button type="submit"><img src="" alt="search-logo" class="search-logo"></button>
+                    <form action="" class="search-form">
+                        <input type="text" placeholder="Поиск" class="search-in-career">
+                        <button type="submit" class="btn-search"><img src="../images/loupeblack.svg" alt="search-logo" class="search-logo"></button>
                     </form>
                     <div class="news-block">
                         <h3 class="newstitle">Новости<hr></h3>
-                        <ul>
-                            <li class="news-link">Кемерово. Музейный и таеатрально-<br>образовательный комплекс</li>
-                            <li class="news-link">Вакансии ГК "ГОРКА"</li>
-                            <li class="news-link">Победа: м12 Москва - Казань</li>
-                            <li class="news-link">Собственная лаборотория</li>
+                        <ul class="news-list">
+
+                            {% for a in latest_news_list %}
+                            <li class="news-link">{{ a.title }}</li>
+                            {% endfor %}
+
                         </ul>
                     </div>
                     <div class="contacts">
                         <h3 class="contact-block">Контактная информация<hr></h3>
-                        <ul>
+                        <ul class="contacts-list">
                             <li class="contact-link">123007, г.Москва, 4-я Магистральная ул., д.7, стр.1</li>
                             <li class="contact-link">+7(495)662-94-93</li>
                             <li class="contact-link">INFO@GK-GORKA.RU</li>
@@ -58,43 +53,43 @@
                     <section class="main-info">
                     <div class="interview">
                         <h2 class="main-info-title">Интервью с директором по персоналу группы компаний "ГОРКА"<br> Новиковой Анастасией Сергеевной<hr></h2>
-                        <p class="paragraph">CAREER_TEXT1</p>
-                        <p class="paragraph">CAREER_TEXT2</p>
-                        <p class="paragraph">CAREER_TEXT3</p>
-                        <p class="paragraph">CAREER_TEXT4</p>
+                        <p class="paragraph">{{ DATA.CAREER_ABOUT1 }}</p>
+                        <p class="paragraph">{{ DATA.CAREER_ABOUT2 }}</p>
+                        <p class="paragraph">{{ DATA.CAREER_ABOUT3 }}</p>
+                        <p class="paragraph">{{ DATA.CAREER_ABOUT4 }}</p>
                     </div>
                     <img src="" alt="portret" width="270px" height="270px">
                     </section>
-                    <div class="form">
-                        <form action="">
+                    <div class="form-wrapper">
+                        <form action="" class="form">
                             <div class="fio">
                                 <div class="name">
-                                    <input type="text" placeholder="Имя" class="name-input">
+                                    <input type="text" name="input-name" placeholder="Имя" class="name-input" >
                                     <p class="wraning-name-text">Поле обязательно для заполенния</p>
                                 </div>
                                 <div class="father">
-                                    <input type="text" placeholder="Отчество" class="father-input">
+                                    <input type="text" name="input-father-name" placeholder="Отчество" class="father-input">
                                     <p class="warning-father-text">Поле обязательно для заполенния</p>
                                 </div>
                                 <div class="sername">
-                                    <input type="text" placeholder="Фамилия" class="sername-input">
+                                    <input type="text" name="sername-input" placeholder="Фамилия" class="sername-input" >
                                     <p class="warning-sername-text">Поле обязательно для заполенния</p>
                                 </div>
                             </div>
                             <div class="phone-and-long">
                                 <div class="phone">
-                                    <input type="text" placeholder="Контактный номер телефона" class="phone-input">
+                                    <input type="text" name="phone-input" placeholder="Контактный номер телефона" class="phone-input" >
                                     <p class="warning-phone-text">Поле обязательно для заполенния</p>
                                 </div>
                                 <div class="long">
-                                    <input type="text" placeholder="Желаемая должность" class="long-text-input">
+                                    <input type="text" name="message-input" placeholder="Желаемая должность" class="message-input" >
                                     <p class="warning-long-text">Поле обязательно для заполенния</p>
                                 </div>
                             </div>
-                            <div class="file">
-                                <input type="file" style="color: transparent;" class="file-input">
+                            <!-- <div class="file">
+                                <input type="file" name="file-input" style="color: transparent;" class="file-input" required>
                                 <p class="warning-file-text">Поле обязательно для заполенния</p>
-                            </div>
+                            </div> -->
                             <button type="submit" class="btn-submit">Отправить</button>
                         </form>
                         <div class="main-warning"><span>Одно или несколько полей содержит ошибочные данные. Пожалуйста, проверте их и попробуйте ещё раз.</span></div>

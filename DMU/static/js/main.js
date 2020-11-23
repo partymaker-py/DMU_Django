@@ -6,6 +6,58 @@ const customersCounter = document.querySelector('.customers-counter');
 const scrollBtn = document.querySelector('.scroll-button');
 const header = document.querySelector('.header');
 
+const selectorLinks = document.querySelector('.selector-links');
+const linkAll = document.querySelector('#link_all');
+const linkRoads = document.querySelector('#link_roads');
+const linkBuildings = document.querySelector('#link_buildings');
+const movingCards = document.querySelector('.moving-cards');
+const array = [linkAll, linkRoads, linkBuildings];
+
+//  создать анимацию исчезновения и перемещения для элементов movingCards добавлять эту анимацию путём добавления css классов
+let cardsArray = [];
+for (let i = 1; i < 9; i++) {
+    let j = document.querySelector(`.card${i}`);
+    cardsArray.push(j);
+};
+
+const moveCards = (clickedLink) => {
+    if (!clickedLink.classList.contains('holden__underline')) {
+        array.forEach(item => {
+            item.classList.remove('holden__underline');
+        });
+        clickedLink.classList.remove('child');
+        clickedLink.classList.add('holden__underline');
+    }
+    if (clickedLink === linkAll) {
+        cardsArray.forEach(item => {
+            item.style.display = 'block';
+        });
+    }
+    if (clickedLink === linkRoads) {
+        cardsArray.forEach(item => {
+            if (item.dataset.name === 'road') {
+                item.style.display = 'block';
+
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+    if (clickedLink === linkBuildings) {
+        cardsArray.forEach(item => {
+            if (item.dataset.name === 'building') {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+    }
+    
+};
+
+selectorLinks.addEventListener('click', e => {
+    moveCards(e.target);
+});
 
 //  ФУНКЦИЯ СЧЁТЧИКИ
 const getCounters = (begin1, end1, begin2, end2, begin3, end3) => {
@@ -39,29 +91,9 @@ const getCounters = (begin1, end1, begin2, end2, begin3, end3) => {
 };
 
 // ОТСЛЕЖИВАНИЕ ПРОКРУТКИ СТРАНИЦИ, ДОБАВЛЕНИЕ КНОПКИ ПРОКРУТКИ, АКТИВИРОВАНИЕ СЧЁТЧИКА И АНИМИРОВАНИЕ ШАПКИ САЙТА 
+// вызов счётчиков
 let counterOfCounters;
-window.onscroll = function () {
-    
-    // 1) Анимация шапки сайта !(изменить позиционирование кнопки "Узнать больше", сделать анимацию прилипание плавной и сделать так, чтобы шапка отлипалсь при поднятии страници) 
-
-    if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
-        header.classList.add('header-animation');
-    } else {
-        header.classList.remove('header-animation');
-    }
-
-    // 2) Появление кнопки прокрутки страници !(добавить стилей)!
-    if (document.body.scrollTop > 500 || document.documentElement.scrollTop > 500) {
-
-        scrollBtn.style.display = 'block';
-        scrollBtn.addEventListener('click', () => {
-            document.body.scrollTop = 0;
-            document.documentElement.scrollTop = 0;
-        });        
-    } else {
-        scrollBtn.style.display = 'none';
-    }
-    // 3) Вызов счётчиков !(добавить стилей)!
+window.window.addEventListener('scroll', () => {
     if (document.body.scrollTop > 600 || document.documentElement.scrollTop > 600) {
         
         if (counterOfCounters === undefined) {
@@ -70,5 +102,4 @@ window.onscroll = function () {
             console.log(counterOfCounters);
         }
     }
- 
-}; 
+});

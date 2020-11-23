@@ -1,6 +1,104 @@
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Italic.ttf');
+    font-weight: normal;
+    font-style: italic;
+}
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-Bold.ttf');
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face{
+    font-family: 'Roboto';
+    src: url('../fonts/Roboto-BoldItalic.ttf');
+    font-weight: bold;
+    font-style: italic;
+}
+body {
+    margin: 0;
+    font-family: "Roboto";
+    position: relative; /* перенести во все файлы */     
+}
 html {
     scroll-behavior: smooth;
-}.scroll-button {
+}
+/* стили для поисковой строки */
+/* TODO убрать ненжные стили  */
+.search-field-wrapper{
+    display: none;
+    position: fixed;
+    top: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #000000;
+    opacity: 0.7;
+    z-index: 100000;
+}
+.form-wrapper {
+    position: relative;
+    margin: auto;
+    margin-top: 250px;
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid #ffffff;
+    max-width: 1170px;   
+}
+.form-search-head {
+    width: 100%;
+}
+.input-text-search {
+    border: none;
+    font-size: 17px;
+    width: 95%;
+    color: #ffffff;
+    background-color: inherit;
+}
+.input-text-search:focus{
+    outline: red;     
+}
+.btn-submit-form {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;   
+}
+.btn-submit-form:focus {
+    outline: none;   
+}
+.close-serach-form {
+    width: 44px;
+    height: 44px;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+   
+}
+.close-serach-form:focus {
+    outline: none;
+}
+/* класс отлючения скрола */
+.disableScroll{
+    position: relative;
+    overflow: hidden;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+}
+/* поиск end */
+
+/* Кнопка прокрутки страници */
+.scroll-button {
     display: none;
     position: fixed;
     top: 85%;
@@ -8,9 +106,72 @@ html {
 }
 /* Header */
 .header {
+    position: static;
+    content: '';
     background-color: #000000;
-    opacity: 0.75;
+    opacity: 0.85;
     height: 60px;
+    font-weight: bold;
+    text-transform: uppercase;
+    z-index: 1000;
+} 
+.search {
+    background-color: #ff0000;
+    stroke: #ffffff;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    margin-right: 14px;
+    padding: 3px 4px;
+}
+.header-navigation {
+    margin-right: 20%;
+    margin-left: 20%;
+    display: flex;
+    justify-content: space-between;
+}
+.nav-bar {
+    display: flex;
+    color: #ffffff;
+    text-decoration: none;
+}
+.navigation-link {
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+.navigation-link a{
+    font-size: 13px;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 20px;
+    padding-bottom: 25px;
+    transition: .2s linear;
+}
+.navigation-link a:hover {
+    color: #ff0000;
+}
+.dropodwn-child {
+    display: none;
+    position: absolute;
+    top: 60px;
+    background-color: #000000;
+    max-width: 200px;
+    z-index: 1000;
+}
+.dropodwn-child a {
+    cursor: pointer;
+    color: #ffffff;
+    padding: 20px;
+    text-decoration: none;
+    display: block;
+}
+.dropodwn-child a:hover{
+    opacity: 1;
+    color: #ffffff;
+    background-color: #ff0000;
+}
+.navigation-link:hover .dropodwn-child {
+    display: block;
 }
 .header-animation {
     animation: header-animation 1s ease-in-out forwards;
@@ -31,58 +192,37 @@ html {
         z-index: 1000;
     }
 }
-.header-navigation {
-    margin-right: 20%;
-    margin-left: 20%;
-    display: flex;
-    justify-content: space-between;
-}
-.nav-bar {
-    display: flex;
+.search-field {
     color: #ffffff;
     text-decoration: none;
 }
-.navigation-link {
-    display: flex;
-    align-items: center;
-    text-align: center;
-}
-.navigation-link a{
-    color: #ffffff;
-    text-decoration: none;
-    padding: 20px;
-}
-.dropodwn-child {
-    display: none;
-    position: absolute;
-    top: 50px;
-    background-color: #000000;
-    opacity: 0.75;
-    max-width: 200px;
-}
-.dropodwn-child a {
-    color: #ffffff;
-    padding: 20px;
-    text-decoration: none;
-    display: block;
-}
-.dropodown:hover .dropodwn-child {
-    display: block;
-}
+/* Not header */
 .main-title {
+    text-transform: uppercase;
     margin-top: 150px;
+    margin-bottom: 150px;
     margin-left: 20%;
 }
 .main-main {
-    display: flex;
-    justify-content: space-around;
+   margin-left: 20%;
+   margin-right: 20%;
 }
-.main {
-    height: 500px;
+.first-row,
+.second-row{
     display: grid;
-    grid-template-columns: repeat(2, 615px);
-    grid-template-rows: repeat(2, 550px);
-    grid-gap: 50px;
+    grid-template-columns: repeat(2, 555px);
+    grid-gap: 20px;
+    margin-bottom: 100px;
+}
+.first-row__first-block,
+.second-row__first-block {
+    max-width: 615px;
+    max-height: 555px;
+}
+.first-row__second-block,
+.second-row__second-block{
+    max-width: 615px;
+    max-height: 555px;
 }
 .block-title {
     text-transform: uppercase;
@@ -125,8 +265,8 @@ html {
 footer{
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-top: 100px;
-    margin-bottom: 0 !important;
+    margin-top: 120px;
+    margin-bottom: 0;
     background-color: #111111;
     margin: 0;
     color: #fff;

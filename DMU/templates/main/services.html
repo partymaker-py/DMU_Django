@@ -1,0 +1,87 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/services.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <script src="{% static 'js/services.js' %}" defer></script>
+    <title>Услуги</title>
+</head>
+{% endblock head %}
+<body>
+    
+    <!-- Header -->
+{% block content %}
+    <main>
+        <button class="scroll-button">Прокуртку наверх</button>
+        <section class="top-of-page">
+            <img src="" alt="background-page">
+            <h1 class="main-title">Услуги</h1>
+        </section>
+        <section class="main-main">
+            <section class="main">
+                <div class="first-row">
+                    <div class="first-row__first-block">
+                        <h3 class="block-title">Проектирование и строительство дорог
+                            <hr>
+                        </h3>
+                        <a href="#" class="link-img">
+                            <div class="img-colored">
+                                <img src="" alt="photo-l" class="photo-l">
+                            </div>
+                        </a>
+                        <p class="block-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum maiores facere quas aut
+                            quia obcaecati officiis illum assumenda doloremque exercitationem unde, excepturi autem, consequuntur ducimus
+                            ipsa natus fugiat ullam ab.</p>
+                        <a href="#" class="see-more-link">Подробнее</a>
+                    </div>
+                    <div class="first-row__second-block">
+                        <h3 class="block-title">Проектирование и строительство зданий
+                            <hr>
+                        </h3>
+                        <a href="#" class="link-img">
+                            <div class="img-colored">
+                                <img src="" alt="photo-l" class="photo-l">
+                            </div>
+                        </a>
+                        <p class="block-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas pariatur, eius soluta mollitia
+                            sunt veniam eaque quasi natus. Incidunt soluta beatae nulla possimus iure vitae esse atque quasi eos ad!</p>
+                        <a href="#" class="see-more-link">Подробнее</a>
+                    </div>
+                </div>
+                <div class="second-row">
+                    <div class="second-row__first-block">
+                        <h3 class="block-title">Функции тетхзаказчика
+                            <hr>
+                        </h3>
+                        <a href="#" class="link-img">
+                            <div class="img-colored">
+                                <img src="" alt="photo-l" class="photo-l">
+                            </div>
+                        </a>
+                        <p class="block-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, doloribus! In, ut delectus?
+                            Vel iusto nihil ab accusantium cum, quisquam perferendis laboriosam aliquid numquam alias! Mollitia, tenetur
+                            explicabo! Quasi, impedit.</p>
+                        <a href="#" class="see-more-link">Подробнее</a>
+                    </div>
+                    <div class="second-row__second-block">
+                        <h3 class="block-title">Обследование зданий
+                            <hr>
+                        </h3>
+                        <a href="#" class="link-img">
+                            <div class="img-colored">
+                                <img src="" alt="photo-l" class="photo-l">
+                            </div>
+                        </a>
+                        <p class="block-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Explicabo est tempore quaerat
+                            necessitatibus veniam eaque architecto quod, quos quo eos nisi numquam tempora ex veritatis cupiditate at a sunt
+                            distinctio?</p>
+                        <a href="#" class="see-more-link">Подробнее</a>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+{% endblock content %}

@@ -1,0 +1,268 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/indexStyle.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <script src=".{% static 'js/main.js' %}" defer></script>
+    <title>{% block title %}Главная{% endblock title %}</title>
+</head>
+{% endblock head %}
+<body>
+    <button class="scroll-button">Прокрутка наверх</button>
+    <!-- header start -->
+{% block header %}
+    <header id="header" class="header">
+        <div class="header-header">
+            <div class="header-navigation">
+                <img src="" alt="company logo" class="company-logo">
+                <div class="nav-bar">
+                    <div class="navigation-link">
+                        <a href="{% url 'index' %}">Главная</a>
+                    </div>
+                    <div class="navigation-link">
+                        <a href="{% url 'about' %}">О компании</a>
+                    </div>
+                    <div class="navigation-link">
+                        <a href="{% url 'projects' %}">Проекты</a>
+                    </div>
+                    <div class="navigation-link">
+                        <a href="{% url 'services' %}">Услуги</a>
+                        <div class="dropodwn-child">
+                            <a href="{% url 'roads' %}">Преоктирование и строительство дорог</a>
+                            <a href="{% url 'buildings' %}">Проектирование и строительство зданий</a>
+                            <a href="{% url 'funcTD' %}">Функции техзаказчика</a>
+                            <a href="{% url 'buildingSurvey' %}">Обследование зданий</a>
+                        </div>
+                    </div>
+                    <div class="navigation-link">
+                        <a href="{% url 'news' %}">Новости</a>
+                    </div>
+                    <div class="navigation-link">
+                        <a href="{% url 'career' %}">Карьера</a>
+                    </div>
+                    <div class="navigation-link">
+                        <a href="{% url 'contacts' %}">Контакты</a>
+                    </div>
+                    <div class="search">
+                        <a href="#" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- активация поиска -->
+        <div class="search-field-wrapper">
+            <div class="form-wrapper">
+                <form class="form-search-head" action="{% url 'index' %}">
+                    <button type="submit" class="btn-submit-form"><img class="img-start-search" src="{% static 'images/loupewhite.svg' %}"
+                            alt="search-icon"></button>
+                    <input class="input-text-search" type="text" placeholder="Поиск..." name="search">
+                </form>
+                <button class="close-serach-form"><img src="{% static 'images/cancel.svg' %}" class="img-close-search-form" alt="cross-icon"></button>
+            </div>
+        </div>
+        <!-- активация поиска -->
+    </header>
+{% endblock header %}
+{% block content %}
+    <!-- header end -->
+    <main class="main-page">
+        <div class="video-container">
+            <video src="{% static 'video/videoplayback2.mp4' %}" class="video_content" autoplay height="500"></video>
+            <!-- <a href="#" class="learn-more">Узнать больше</a> -->
+        </div>
+        <div class="container-info-contacts">
+            <div class="contacts-info">
+                <h4 class="contact-info">Контактная информация</h4>
+                <ul class="contacts-list">
+                    <li class="contacts-list__element"> 123007, г.Москва, 4-я Магистральная ул., д.7, стр.1</li>
+                    <li class="contacts-list__element"> +7(495)662-94-93</li>
+                    <li class="contacts-list__element"> info@gk-gorka.ru</li>
+                    <li class="contacts-list__element">Пн. - Пт.: 9:00 - 18:00</li>
+                    <li class="contacts-list__element">	199178, г. Санкт-Петербург, 17-я линия Васильевского острова, 22. Бизнес-центр "Сенатор"</li>
+                    <li class="contacts-list__element">	+7(812)449-47-81</li>
+                    <li class="contacts-list__element">Пн. - Пт.: 9:00 - 18:00</li>
+                </ul>
+            </div>
+            <div class="about-us-text">
+                <h3 class="about-us">О нас
+                    <hr class="about-us-line">
+                </h3>
+                <p class="text">{{ DATA.MAIN_ABOUT1 }}</p>
+                <p>{{ DATA.MAIN_ABOUT2 }}</p>
+                <p>{{ DATA.MAIN_ABOUT3 }}</p>
+                <p>{{ DATA.MAIN_ABOUT4 }}</p>
+            </div>
+        </div>
+        <div class="statistic">
+            <div class="statistic-rating">
+                <div class="statistic-rating-counters">
+                    <div class="projects">
+                        <span class="projects-counter"></span>
+                        <hr>
+                    </div>
+                    <div class="years">
+                        <span class="years-counter"></span>
+                        <hr>
+                    </div>
+                    <div class="customers">
+                        <span class="customers-counter"></span>
+                        <hr>
+                    </div>
+                </div>
+                <div class="statistic-rating-info">
+                <p>{{ DATA.UNDER_COUNTERS }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="niches">
+            <div class="occupied-niches">
+                <div class="infrastructure-design">
+                    <h3 class="niches-subheader">Инфраструктурное проектирование</h3>
+                    <img src="" alt="infrastructure-design" class="infrastructure-photo" width="370px" height="277px">
+                    <p>{{ DATA.MAIN_INFRASTRUCTURE_TEXT1 }}</p>
+                </div>
+                <div class="development-of-construction-documentation">
+                    <h3 class="niches-subheader">Разработка строительной документации</h3>
+                    <img src="" alt="development-of-construction-documentation" class="development-photo" width="370px" height="277px">
+                    <p>{{ DATA.MAIN_INFRASTRUCTURE_TEXT2 }}</p>
+                </div>
+                <div class="implementation-of-investment-projects">
+                    <h3 class="niches-subheader">Реализация инвестиционных проектов</h3>
+                    <img src="" alt="implementation-of-investment-projects" class="implementation-photo" width="370px" height="277px">
+                    <p>{{ DATA.MAIN_INFRASTRUCTURE_TEXT3 }}</p>
+                </div>
+            </div>
+        </div>
+        <div class="our-customers-and-partners">
+            <div class="customers-and-partners">
+                <h2>Наши заказчики<hr></h2>
+                <div class="partners-images">
+                    <img src="" alt="Департамент строительства города Москвы">
+                    <img src="" alt="Министерство сторительного комплекса московской области">
+                    <img src="" alt="Управление дорожно-мостового строительства">
+                    <img src="" alt="Дирекция дорожного строительства">
+                    <img src="" alt="Департамент развития новых территорий города Москвы">
+                    <img src="" alt="АВТОДОР">
+                </div>
+            </div>
+        </div>
+        <div class="services">
+            <div class="photo-and-services-list">
+                <div class="services-list1">
+                    <div class="service">
+                        <h3 class="service-header">Проектирование и строительство дорог</h3>
+                        <p class="service-description">{{ DATA.MAIN_SERVICE1 }}</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="service-header">Обследование зданий</h3>
+                        <p class="service-description">{{ DATA.MAIN_SERVICE2 }}</p>
+                    </div>
+                </div>
+                <div class="services-list2">
+                    <div class="service">
+                        <h3 class="service-header">Проектирование и строительство</h3>
+                        <p class="service-description">{{ DATA.MAIN_SERVICE3 }}</p>
+                    </div>
+                    <div class="service">
+                        <h3 class="service-header">Функции техзаказчика</h3>
+                        <p class="service-description">{{ DATA.MAIN_SERVICE4 }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="project-project">
+            <div class="projects-section">
+                <div class="title-and-selectors">
+                    <div class="title-and-line">
+                        <h2 class="title">Проекты</h2>
+                        <hr>
+                    </div>
+                    <div class="selector-links">
+                        <div class="all-photos">
+                            <a class="links-toshow-imges holden__underline" id="link_all">Все</a>
+                        </div>
+                        <div class="roads">
+                            <a class="links-toshow-imges child" id="link_roads">Дороги</a>
+                        </div>
+                        <div class="buildings">
+                            <a class="links-toshow-imges child" id="link_buildings">Здания</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ползующие картинки -->
+                <div class="moving-cards">
+                    <div class="card1" data-id="for-all__cards" data-name="building" style="background-color: blanchedalmond;"><!--<img src="" alt="card-img">--></div>
+                    <div class="card2" data-id="for-all__cards" data-name="building" style="background-color: pink;"><!--<img src="" alt="card-img">--></div>
+                    <div class="card3" data-id="for-all__cards" data-name="building" style="background-color: green;"><!--<img src="" alt="card-img">--></div>
+                    <div class="card4" data-id="for-all__cards" data-name="building" style="background-color: yellow;"><!--<img src="" alt="card-img">--></div>
+                    <div class="card5" data-id="for-all__cards" data-name="building" style="background-color: blue;"><!--<img src="" alt="card-img">--></div>
+                    <div class="card6" data-id="for-all__cards" data-name="road" style="background-color: violet;"><!--<img src="" alt="card-img">--></div>
+                    <div class="card7" data-id="for-all__cards" data-name="road" style="background-color: black;"><!--<img src="" alt="card-img">--></div>
+                    <div class="card8" data-id="for-all__cards" data-name="building" style="background-color: red;"><!--<img src="" alt="card-img">--></div>
+                </div>
+                <div class="portofoli-and-youTube">
+                    <div class="portfol__wrapper">
+                        <h2 class="portfol"><a href="/" class="portfol-a">Портфолио</a></h2>
+                        <hr>
+                    </div>
+                    <a href="/"><img src="" alt="youTube-logo"></a>
+                </div>
+            </div>
+        </div>
+        <div class="some-news">
+            <h2 class="main-title">Новости<hr></h2>
+            <div class="news-articles">
+
+
+{% for a in latest_news_list %}
+                <div class="news-article">
+                    <img src="" alt="news-photo" class="news-photo">
+                    <h4 class="news-title">{{ a.title }}</h4>
+                    <p class="article-text">{{ a.text }}</p>
+                    <hr>
+                </div>
+{% endfor %}
+
+
+
+            </div>
+        </div>
+    </main>
+{% endblock content %}
+    <footer>
+        <div class="contact-information">
+            <div class="logo-and-description">
+                <img src="" alt="big-logo" class="footer-logo">
+                <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde deleniti voluptates,
+                    sint eligendi deserunt porro? Sit, dolorem, ad perspiciatis placeat aut quam eaque aliquid reprehenderit
+                    fugiat iure aperiam cum dolorum.</p>
+            </div>
+            <div class="requisites">
+                <h4 class="footer-title">Реквезиты
+                    <hr class="requisites-title-line">
+                </h4>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam voluptatum, maiores mollitia
+                    perspiciatis quia modi excepturi eligendi, ipsum suscipit soluta recusandae dolor quae ex assumenda
+                    praesentium, vitae est neque distinctio <hr class="requisites-text-line"></p>
+            </div>
+            <div class="short-information">
+                <h4 class="footer-title">Наши Контакты
+                    <hr class="short-information-title-line">
+                </h4>
+                <ul>
+                    <li>123007, г.Москва, 4-я Магистральная ул., д.7, стр.1</li>
+                    <li>+7(495)662-94-93</li>
+                    <li>info@gk-gorka.ru</li>
+                    <li>Пн. - Пт.: 9:00 - 18:00</li>
+                    <hr class="short-information-list-line">
+                    <li>196191, г. Санкт-Петербург, пл. Конституции, д.3, корп. 2, этажи 9 и 10</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
