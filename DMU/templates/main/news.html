@@ -26,8 +26,10 @@
 {% for a in latest_news_list %}
                 <article class="hews-block">
                     <img src="" alt="news-img" width="870" height="599" class="news-block__img">
-                    <h3 class="news-block__title">{{ a.title }}</h3>
-                    <h5 class="news-block__subtitle">Новости</h5>
+                    <a href="{% url 'detail' a.id %}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
+                    {% if a.was_published_recently %}
+                        <h5 class="news-block__subtitle">Новости</h5>
+                    {% endif %}
                     <p class="news-block__text">{{ a.text }}</p>
 {% endfor %}
 

@@ -11,11 +11,19 @@
 {% endblock head %}
 {% block content %}
 <body>
-	{% for a in posts %}
-	{{ a.title }}
-    <br>
-	{{ a.text }}
+	{% for a in posts_news %}
+    	{{ a.title }}
+        <br>
+    	{{ a.text }}
 	{% endfor %}
+    <br>
+
+    {% for a in posts_context %}
+        <a href="{{ a.get_absolute_url }}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
+        <br>
+        {{ a.text }}
+    {% endfor %}
+
     <button class="scroll-button">Прокрутка наверх</button>
 </body>
 {% endblock content %}
