@@ -16,9 +16,12 @@ class New(models.Model):
 	def __str__(self):
 		return self.title
 
-		# Если статья опубликована раньше чем неделю назад, возвращает True
-		def was_published_recently(self):
-			return self.pub_date >= (timezone.now() - datetime.timedelta(days=7))
+	# Если статья опубликована раньше чем неделю назад, возвращает True
+	def was_published_recently(self):
+		return self.pub_date >= (timezone.now() - datetime.timedelta(days=7))
+
+	def get_absolute_url(self):
+		return '/news/' + str(self.id)
 
 # Модель для наполнения сайта
 class Context(models.Model):
@@ -30,5 +33,15 @@ class Context(models.Model):
 		return self.title + ': ' + self.text[:150] + '...'
 
 	def get_absolute_url(self):
-		if self.title == 'index':
+		if self.title == 'Главная':
 			return '/'
+		elif self.title == '':
+			return ''
+		elif self.title == '':
+			return ''
+		elif self.title == '':
+			return ''
+		elif self.title == '':
+			return ''
+		elif self.title == '':
+			return ''

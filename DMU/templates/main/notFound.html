@@ -1,0 +1,15 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/searchResult.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <title>Результаты поиска</title>
+</head>
+{% endblock head %}
+{% block content %}
+<body>
+	<h2>По вашему запросу "{{ search_query|safe}}" ничего не найдено</h2>
+{% endblock content %}

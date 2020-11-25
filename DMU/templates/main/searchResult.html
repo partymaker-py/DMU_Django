@@ -11,16 +11,15 @@
 {% endblock head %}
 {% block content %}
 <body>
+<h2>Результат поиска по запросу "{{ search_query|safe}}"</h2>
 	{% for a in posts_news %}
-    	{{ a.title }}
-        <br>
+    	<a href="{{ a.get_absolute_url }}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
     	{{ a.text }}
 	{% endfor %}
     <br>
 
     {% for a in posts_context %}
         <a href="{{ a.get_absolute_url }}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
-        <br>
         {{ a.text }}
     {% endfor %}
 

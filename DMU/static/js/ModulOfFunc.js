@@ -38,18 +38,21 @@ function headerSearch() {
 
     formSearcHeader.addEventListener('submit', (e) => {
         const inputSearchForHeader = document.querySelector('.input-text-search');// инпут поиска хедера
-        const regExpValid = /[^<>]/;
-        if (!inputSearchForHeader.value || regExpValid.test(inputSearchForHeader.value) === false) {
-            console.log(inputSearchForHeader.value);
+        const regExpValid = /[<>{}]/;
+        if (!inputSearchForHeader.value || inputSearchForHeader.value.match(regExpValid)) {
             e.preventDefault();
             inputSearchForHeader.value = '';
         } else {
             // TODO дописать, когда будет известен url сервера
             // TODO ограничить количество запросов (1 запрос в сек)
-            fetch('url сервера', {
-                method: 'POST',
-                body: JSON.stringify(inputSearchForHeader.value)
-            }).then().catch()
+            fetch(`http://127.0.0.1:8000/?search=${inputSearchForHeader.value}`)
+                .then(res => {
+                    console.log(res);
+                    alert(res)
+                })
+                .catch(err => {
+                    console.log(err)
+                })
             inputSearchForHeader.value = '';
         }
     });

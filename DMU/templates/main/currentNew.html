@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/searchResult.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <title>{{ new.title }}</title>
+</head>
+{% endblock head %}
+{% block content %}
+<body>
+	<h3>{{ new.title }}</h3>
+	{% if new.was_published_recently %}
+        <h5 class="news-block__subtitle">Свежая новость!</h5>
+    {% endif %}
+	{{ new.text }}
+</body>
+{% endblock content %}
