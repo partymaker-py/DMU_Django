@@ -39,21 +39,22 @@ function headerSearch() {
     formSearcHeader.addEventListener('submit', (e) => {
         const inputSearchForHeader = document.querySelector('.input-text-search');// инпут поиска хедера
         const regExpValid = /[<>{}]/;
-        if (!inputSearchForHeader.value || inputSearchForHeader.value.match(regExpValid)) {
+        let word = inputSearchForHeader.value;
+        if (!word || word.match(regExpValid)) {
             e.preventDefault();
-            inputSearchForHeader.value = '';
+            word = '';
         } else {
             // TODO дописать, когда будет известен url сервера
             // TODO ограничить количество запросов (1 запрос в сек)
-            fetch(`http://127.0.0.1:8000/?search=${inputSearchForHeader.value}`)
+            
+            fetch(`http://127.0.0.1:8000/?search=${word}`)
                 .then(res => {
                     console.log(res);
-                    alert(res)
                 })
                 .catch(err => {
                     console.log(err)
                 })
-            inputSearchForHeader.value = '';
+            word = '';
         }
     });
 };

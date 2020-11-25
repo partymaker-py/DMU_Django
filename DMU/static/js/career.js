@@ -43,6 +43,8 @@ form.addEventListener('submit', (e) => {
             item.value = '';
             item.nextElementSibling.style.visibility = 'visible';
         });
+    } else {
+        
     }
 });
 

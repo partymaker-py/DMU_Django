@@ -263,12 +263,11 @@ body {
 }
 
 .slider__item {
+    z-index: -10;
     flex: 0 0 100%;
     max-width: 100%;
 }
-.slider-item>div{
-    position: inherit;
-}
+
  .slider__control {
     position: absolute;
     top: 50%;

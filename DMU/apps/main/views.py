@@ -2,11 +2,11 @@ from django.shortcuts import render
 from .models import New, Context
 from django.db.models import Q
 from django.http import Http404
-
+from urllib.parse import unquote
 
 # Поиск + отображение главной страницы
 def index(request):
-	search_query = request.GET.get('search', '')
+	search_query = unquote(request.GET.get('search', ''))
 	# Условие чтобы понимать человек на главную зайти хочет или использует поиск
 	if search_query:
 		posts_news = New.objects.filter(Q(title__icontains=search_query) | Q(text__icontains=search_query))
