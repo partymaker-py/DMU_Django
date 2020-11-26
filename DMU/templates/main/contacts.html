@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="{% static 'styles/contacts.css' %}">
     <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <script src="{% static 'js/contacts.js' %}" defer></script>
-    <title>Контакты</title>
+    <title>ООО "ДМУ" | {% block title %}Контакты{% endblock title %}</title>
 </head>
 {% endblock head %}
 <body>
@@ -44,8 +44,7 @@
                     <button class="form__btn-submit" name="contact-form__btn-submit" type="submit">Отправить сообщение</button>
                 </form>
                 <div class="main-warn-wrapper">
-                    <p class="main-warning-text">Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверти их и попробойте
-                        ещё раз.</p>
+                    <p class="main-warning-text">Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте ещё раз.</p>
                 </div>
             </article>
             <aside class="vidjet-and-contacts">
