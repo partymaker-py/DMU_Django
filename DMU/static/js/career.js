@@ -2,7 +2,6 @@ const scrollBtn = document.querySelector('.scroll-button');
 const form = document.querySelector('.form');
 
 const validation = () => {
-    // TODO чтобы отмеслись сразу все места, где есть ошибки
     const nameInput = document.querySelector('.name-input');
     const fatherInput = document.querySelector('.father-input');
     const sernameInput = document.querySelector('.sername-input');
@@ -27,24 +26,46 @@ const validation = () => {
         errorsArray.push(messageInput);
     }
 
-    return errorsArray;
+    if (errorsArray.length > 0) {
+        errorsArray.forEach(item => {
+            item.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+            item.nextElementSibling.style.visibility = 'visible';
+            item.value = '';
+        });
+        document.querySelector('.main-warning').style.visibility = 'visible';
+        return;
+    } else {
+        let name = nameInput.value;
+        let patronymic = fatherInput.value; // отчество 
+        let surname = sernameInput.value;
+        let phone = phoneInput.value;
+        let message = messageInput.value;
+        return { name, patronymic, surname, phone, message };
+    }
+    
 };
 
 
 //TODO отпраку данных на сервер когда сервер будет готов 
 form.addEventListener('submit', (e) => {
-    let validationResult = validation();
-    if (validationResult.length > 0) {
-        const mainWarnMessage = document.querySelector('.main-warning');
-        mainWarnMessage.style.visibility = 'visible';
-        e.preventDefault();
-        validationResult.forEach(item => {
-            item.style.backgroundColor = 'rgba(255, 0, 0, 0.2)'
-            item.value = '';
-            item.nextElementSibling.style.visibility = 'visible';
-        });
-    } else {
-        
+    e.preventDefault();
+    let validResult = validation();
+    if (validResult !== undefined) {
+        fetch('url', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: validResult.name,
+                patronymic: validResult.patronymic,
+                surname: validResult.surname,
+                phone: validResult.phone,
+                message: validResult.message
+            })
+        }).then(res => {
+                console.log('Данные успешно отправленны', res);
+            }).catch(rej => {
+                console.log(rej);
+            });
     }
+    
 });
 

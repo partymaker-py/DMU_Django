@@ -56,10 +56,10 @@
         <!-- активация поиска -->
         <div class="search-field-wrapper">
             <div class="form-wrapper">
-                <form class="form-search-head" action="{% url 'index' %}">
+                <form class="form-search-head">
                     <button type="submit" class="btn-submit-form"><img class="img-start-search" src="{% static 'images/loupewhite.svg' %}"
                             alt="search-icon"></button>
-                    <input class="input-text-search" type="text" placeholder="Поиск..." name="search">
+                    <input class="input-text-search" type="text" placeholder="Поиск..." name="search" autocomplete="off">
                 </form>
                 <button class="close-serach-form"><img src="{% static 'images/cancel.svg' %}" class="img-close-search-form" alt="cross-icon"></button>
             </div>

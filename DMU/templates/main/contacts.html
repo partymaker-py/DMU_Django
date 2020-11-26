@@ -11,7 +11,6 @@
 </head>
 {% endblock head %}
 <body>
-    <!-- TODO доделать страницу -->
     <!-- Header -->
 {% block content %}
     <main>
@@ -23,26 +22,26 @@
         </section>
         <section class="form-and-adress">
             <article class="form-wrapper-article">
-                <form class="form">
+                <form class="form" name="contact-form">
                     <div class="form__name-and-phone-wrapper">
                         <div class="form__name-wrapper">
-                            <input type="text" class="from__input-name" placeholder="Имя">
+                            <input type="text" name="contact-form__name" class="from__input-name" placeholder="Имя">
                             <p class="form__warning">Поле обязательно для заполнеия.</p>
                         </div>
                         <div class="form__phone-wrapper">
-                            <input type="number" class="form__input-phone" placeholder="Телефон">
+                            <input type="number" name="contact-form__phone" class="form__input-phone" placeholder="Телефон">
                             <p class="form__warning">Поле обязательно для заполнеия.</p>
                         </div>
                     </div>
                     <div class="form__email-wrapper">
-                        <input type="email" class="form__input-email" placeholder="E-mail">
+                        <input type="email" name="contact-form__email" class="form__input-email" placeholder="E-mail">
                         <p class="form__warning">Поле обязательно для заполнеия.</p>
                     </div>
                     <div class="form__message-wrapper">
-                        <textarea type="text" class="from__input-message" placeholder="Сообщение"></textarea>
+                        <textarea type="text" name="contact-form__message" class="from__input-message" placeholder="Сообщение"></textarea>
                         <p class="form__warning">Поле обязательно для заполнеия.</p>
                     </div>
-                    <button class="form__btn-submit" type="submit">Отправить сообщение</button>
+                    <button class="form__btn-submit" name="contact-form__btn-submit" type="submit">Отправить сообщение</button>
                 </form>
                 <div class="main-warn-wrapper">
                     <p class="main-warning-text">Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверти их и попробойте

@@ -34,23 +34,42 @@ const validation = () => {
         inputMessage.nextElementSibling.style.visibility = 'hidden';
     } 
     
-    return errorsArray;
+    if (errorsArray.length > 0) {
+        errorsArray.forEach(item => {
+            item.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
+            item.nextElementSibling.style.visibility = 'visible';
+            item.value = '';
+        });
+        document.querySelector('.main-warning-text').style.visibility = 'visible';
+        return;
+    } else {
+        let name = inputName.value;
+        let phone = inputPhone.value;
+        let email = inputEmail.value;
+        let message = inputMessage.value;
+        return { name, phone, email, message };
+    }
 };
 
 
 letterForm.addEventListener('submit', e => {   
-    
-    let validResult = validation();
-    const mainWarnMessage = document.querySelector('.main-warning-text');
-    console.log(validResult);
-    if (validResult.length > 0) {
-        e.preventDefault(); 
-        validResult.forEach(item => {
-            item.style.backgroundColor = 'rgba(255, 0, 0, 0.2)';
-            item.nextElementSibling.style.visibility = 'visible';
-            mainWarnMessage.style.visibility = 'visible';
-            item.value = '';
-        });
-        return;
-    } // TODO когла будет готов сервер сделать так, чтобы данные из формы отправлялись на сайт
+    e.preventDefault()
+    const validResult = validation();
+    console.log('validResult: ', validResult);
+    // TODO когла будет готов сервер сделать так, чтобы данные из формы отправлялись на сайт
+    if (validResult !== undefined){
+        fetch('url', {
+            method: 'POST',
+            body: JSON.stringify({
+                name: validResult.name,
+                phone: validResult.phone,
+                email: validResult.email,
+                message: validResult.message
+            })
+        }).then(res => {
+                console.log('данные отпраленны', res);
+            }).catch(rej => {
+                console.log('ОШИЮКА', rej);
+            })
+    }            
 });
