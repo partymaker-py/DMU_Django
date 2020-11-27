@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/aboutCompanyStyle.css' %}">
+    <link rel="stylesheet" href="../../static/styles/aboutCompanyStyle.css"><!--{% static 'styles/aboutCompanyStyle.css' %}-->
+    <link rel="stylesheet" href="../../static/styles/HeaderAndFooterModul.css">
     <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <script src="{% static 'js/aboutCompany.js' %}" defer></script>
     <title>{% block title %}О компнаии{% endblock title %}</title>
@@ -18,9 +19,10 @@
 {% block content %}
     <main>
         <div class="intro">
-            <img src="{% static 'images/dmusubg.jpg' %}" alt="background-image" class="background-image">
-            <h1 class="title-of-page">О компании</h1>
-            <p class="subtitle">Полный штат специалистов по всем разделам</p>
+            <div class="main-main-title-of-page">
+                <h1 class="title-of-page">О компании</h1>
+                <p class="subtitle">Полный штат специалистов по всем разделам</p>
+            </div>
         </div>
         <div class="main-information">
             <div class="sidebar">

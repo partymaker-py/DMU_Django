@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'styles/news.css' %}">
+    <link rel="stylesheet" href="../../static/styles/news.css"><!--{% static 'styles/news.css' %}-->
+    <link rel="stylesheet" href="../../static/styles/HeaderAndFooterModul.css">
     <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Новости{% endblock title %}</title>
 </head>
@@ -13,12 +14,15 @@
     
     <!-- Header -->
 {% block content %}
+    <section class="intro">
+        <div class="main-main-title-of-page">
+            <h1 class="title-of-page">Новости</h1>
+            <p class="subtitle"></p>
+        </div>
+    </section>
     <main>
         <button class="scroll-button">Прокрутка наверх</button>
-        <section class="page-top">
-            <img src="" alt="backgroung-img">
-            <h1 class="main-title">Новости</h1>
-        </section>
+        
         <section class="article-and-aside">
             <section class="main-info">
                 <!--Всего 10 блоков размещено на странице-->

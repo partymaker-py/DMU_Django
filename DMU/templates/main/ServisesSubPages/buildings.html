@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/SubPagesCss/buildings.css' %}">
+    <link rel="stylesheet" href="../../../static/styles/HeaderAndFooterModul.css">
     <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <script src="{% static 'js/SubPagesJs/buildings.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Проектирование и строительство зданий{% endblock title %}</title>
@@ -14,10 +15,13 @@
     
     <!-- Header -->
 {% block content %}
+    <section class="intro">
+        <div class="main-main-title-of-page">
+            <h1 class="title-of-page">Проектирование и строительство зданий</h1>
+            <p class="subtitle"></p>
+        </div>
+    </section>
     <main>
-        <button class="scroll-button">Прокрутка наверх</button>
-        <img src="" alt="background-img" class="top-backgriund-img">
-        <h1 class="main-title">Проектирование и строительство зданий</h1>
         <section class="main-section">
             <aside class="list-of-services">
                 <a href="{% url 'roads' %}" class="link">Проетировние и сторительство дорог</a>

@@ -14,6 +14,7 @@ const multiItemSlider = (function () {
     let items = []; // массив элементов
     // наполнение массива items
     sliderItems.forEach((item, index) => {
+      item.style.zIndex = -10;
       items.push({ item: item, position: index, transform: 0 });
     });
 

@@ -5,13 +5,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/searchResult.css' %}">
+    <link rel="stylesheet" href="../../static/styles/HeaderAndFooterModul.css">
     <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Результаты поиска{% endblock title %}</title>
 </head>
 {% endblock head %}
 {% block content %}
 <body>
-<h2>Результат поиска по запросу "{{ search_query|safe}}"</h2>
+    <button class="scroll-button">Прокрутка наверх</button>
+    <section class="intro">
+        <div class="main-main-title-of-page">
+            <h1 class="title-of-page">Результат поиска по запросу "{{ search_query|safe}}"</h1>
+        </div>
+    </section>
 	{% for a in posts_news %}
     	<a href="{{ a.get_absolute_url }}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
     	{{ a.text }}
@@ -22,7 +28,5 @@
         <a href="{{ a.get_absolute_url }}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
         {{ a.text }}
     {% endfor %}
-
-    <button class="scroll-button">Прокрутка наверх</button>
 </body>
 {% endblock content %}

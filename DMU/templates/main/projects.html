@@ -6,6 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/projects.css' %}">
+    <link rel="stylesheet" href="../../static/styles/HeaderAndFooterModul.css">
     <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Проекты{% endblock title %}</title>
 </head>
@@ -14,12 +15,13 @@
     
     <!-- Header -->
 {% block content %}
-    <main>
-        <div class="top">
-            
-            <img src="" alt="background-img-projects" class="background-img-projects">
-            <h1 class="main-title">Проекты</h1>
+    <section class="intro">
+        <div class="main-main-title-of-page">
+            <h1 class="title-of-page">Проекты</h1>
+            <p class="subtitle"></p>
         </div>
+    </section>
+    <main>
         <div class="list-of-projects">
             <div class="some-projects">
                 <div class="project">

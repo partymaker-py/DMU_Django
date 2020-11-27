@@ -67,7 +67,7 @@ form.addEventListener('submit', (e) => {
 
         const csrfToken = getCookie('CSRF-TOKEN');
 
-        fetch('url', {
+        fetch('/career', {
             method: 'POST',
             headers: {
                 'Content-Type': 'x-www-form-urlencoded',

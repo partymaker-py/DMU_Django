@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/contacts.css' %}">
+    <link rel="stylesheet" href="../../static/styles/HeaderAndFooterModul.css">
     <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <script src="{% static 'js/contacts.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Контакты{% endblock title %}</title>
@@ -15,10 +16,11 @@
 {% block content %}
     <main>
         <button class="scroll-button">Прокрутка наверх</button>
-        
-        <section class="page-title">
-            <h1 class="page-title__main-title">Контакты</h1>
-            <p class="page-title__main-subtitle">Наши контакты</p>
+        <section class="intro">
+            <div class="main-main-title-of-page">
+                <h1 class="title-of-page">Контакты</h1>
+                <p class="subtitle">Наши контакты</p>
+            </div>
         </section>
         <section class="form-and-adress">
             <article class="form-wrapper-article">

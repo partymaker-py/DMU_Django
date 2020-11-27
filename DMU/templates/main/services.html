@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'styles/services.css' %}">
+    <link rel="stylesheet" href="../../static/styles/HeaderAndFooterModul.css">
     <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
     <script src="{% static 'js/services.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Услуги{% endblock title %}</title>
@@ -16,9 +17,11 @@
 {% block content %}
     <main>
         <button class="scroll-button">Прокуртку наверх</button>
-        <section class="top-of-page">
-            <img src="" alt="background-page">
-            <h1 class="main-title">Услуги</h1>
+        <section class="intro">
+            <div class="main-main-title-of-page">
+                <h1 class="title-of-page">Услуги</h1>
+                <p class="subtitle"></p>
+            </div>
         </section>
         <section class="main-main">
             <section class="main">
