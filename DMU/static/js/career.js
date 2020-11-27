@@ -24,7 +24,7 @@ const validation = () => {
     }
     if (!messageInput.value || messageInput.value.length < 10 || !isNaN(messageInput.value) || messageInput.value.match(regExpValid)) {
         errorsArray.push(messageInput);
-    }
+    } 
 
     if (errorsArray.length > 0) {
         errorsArray.forEach(item => {
@@ -65,7 +65,6 @@ form.addEventListener('submit', (e) => {
             }).catch(rej => {
                 console.log(rej);
             });
-    }
-    
+    } 
 });
 
