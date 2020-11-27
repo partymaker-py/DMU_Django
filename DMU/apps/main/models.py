@@ -9,7 +9,7 @@ from django.utils import timezone
 class New(models.Model):
 	title = models.CharField('Title of New', max_length = 150)
 	text = models.TextField('New text')
-	pub_date = models.DateTimeField('Date of publish')
+	pub_date = models.DateTimeField('Date of publish', default=timezone.now())
 	image = models.ImageField('Image of new')
 
 	# Не обращай внимания)
@@ -46,8 +46,24 @@ class Context(models.Model):
 		elif self.title == '':
 			return ''
 
-class Postcontacts(models.Model):
+class PostContact(models.Model):
 	name = models.CharField('Name', max_length = 30)
 	phone = models.CharField('Phone', max_length = 15)
 	email = models.CharField('Email', max_length = 30)
 	message = models.TextField('Message')
+	pub_date = models.DateTimeField('Date of publish', default=timezone.now())
+
+	def __str__(self):
+		return self.name
+
+
+class PostCareer(models.Model):
+	name = models.CharField('Name', max_length = 30)
+	patronymic = models.CharField('Name', max_length = 30)
+	surname = models.CharField('Name', max_length = 30)
+	phone = models.CharField('Phone', max_length = 15)
+	message = models.TextField('Message')
+	pub_date = models.DateTimeField('Date of publish', default=timezone.now())
+
+	def __str__(self):
+		return self.pub_date + self.name + self.patronymic + self.surname

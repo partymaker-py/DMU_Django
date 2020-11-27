@@ -25,6 +25,7 @@
         <section class="form-and-adress">
             <article class="form-wrapper-article">
                 <form class="form" name="contact-form">
+                    {% csrf_token %}
                     <div class="form__name-and-phone-wrapper">
                         <div class="form__name-wrapper">
                             <input type="text" name="contact-form__name" class="from__input-name" placeholder="Имя">

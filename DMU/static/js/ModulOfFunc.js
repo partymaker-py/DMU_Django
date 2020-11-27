@@ -45,7 +45,7 @@ function headerSearch() {
             word = '';
         } else {
             // TODO ограничить количество запросов (1 запрос в сек)
-            fetch(`http://127.0.0.1:8000/?search=${word}`)
+            fetch(`http://localhost:8000/?search=${word}`)
                 .then(res => {
                     console.log(res);
                 })
