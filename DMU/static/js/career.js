@@ -1,5 +1,7 @@
 const scrollBtn = document.querySelector('.scroll-button');
 const form = document.querySelector('.form');
+const searchForm = document.querySelector('.search-form');
+const regExpValid = /[<>{}]/;
 
 const validation = () => {
     const nameInput = document.querySelector('.name-input');
@@ -8,8 +10,7 @@ const validation = () => {
     const phoneInput = document.querySelector('.phone-input');
     const messageInput = document.querySelector('.message-input');
     let errorsArray = [];
-    const regExpValid = /[<>{}]/;
-
+    
     if (!nameInput.value || nameInput.value.length < 3 || !isNaN(nameInput.value) || nameInput.value.match(regExpValid)) {
         errorsArray.push(nameInput);
     }
@@ -45,8 +46,23 @@ const validation = () => {
     
 };
 
+searchForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const serachInput = document.querySelector('.search-in-career');
+    let searchVal = serachInput.value;
+    if (!searchVal || searchVal.match(regExpValid)){
+        searchForm.style.border = '1px solid rgba(255, 0, 0, 1)';
+        searchVal = '';
+        setTimeout(() => {
+            searchForm.style.border = '1px solid rgba(0, 0, 0. .2)';
+        }, 500);
+        return;
+    } 
+    fetch(`http://127.0.0.1:8000/?search=${searchVal}`).then(res => console.log(res)).catch(err => console.log(err))
+    searchVal = '';
+});
 
-//TODO отпраку данных на сервер когда сервер будет готов 
+//TODO повесить ограничене колличестов запросов в промежуток времени
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     let validResult = validation();

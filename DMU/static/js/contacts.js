@@ -58,8 +58,26 @@ letterForm.addEventListener('submit', e => {
     console.log('validResult: ', validResult);
     // TODO когла будет готов сервер сделать так, чтобы данные из формы отправлялись на сайт
     if (validResult !== undefined){
-        fetch('url', {
+
+        function getCookie(name) {
+            if (!document.cookie) {
+                return null;
+            }
+            const xsrfCookies = document.cookie.split(',').map(item => item.trim()).filter(item => item.startsWith(name + '='));
+            if (xsrfCookies.length === 0){
+                return null;
+            }
+            return decodeURIComponent(xsrfCookies[0].split('=')[1]);
+        }
+
+        const csrfToken = getCookie('CSRF-TOKEN');
+
+        fetch('/contacts', {
             method: 'POST',
+            headers: {
+                'Conent-type': 'x-www-form-urlencoded',
+                'X-CSRF-TOKEN': csrfToken
+            },
             body: JSON.stringify({
                 name: validResult.name,
                 phone: validResult.phone,

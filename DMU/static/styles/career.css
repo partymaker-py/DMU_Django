@@ -47,9 +47,13 @@ aside {
     outline: none;
 }
 .btn-search {
+    cursor: pointer;
     width: 15%;
     background-color: inherit;
     border: none;
+}
+.btn-search:focus{
+    outline: none;
 }
 .newstitle>hr, .contact-block>hr, .main-info-title>hr {
     width: 40px;
