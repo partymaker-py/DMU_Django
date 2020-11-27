@@ -36,15 +36,14 @@ function headerSearch() {
         enableScroll();
     });
 
-    formSearcHeader.addEventListener('submit', (e) => {
-        const inputSearchForHeader = document.querySelector('.input-text-search');// инпут поиска хедера
+    formSearcHeader.addEventListener('submit', e => {
+        e.preventDefault();
+        const inputSearchForHeader = document.querySelector('.input-text-search');
         const regExpValid = /[<>{}]/;
         let word = inputSearchForHeader.value;
         if (!word || word.match(regExpValid)) {
-            e.preventDefault();
             word = '';
         } else {
-            // TODO ограничить количество запросов (1 запрос в сек)
             fetch(location.replace(`http://127.0.0.1:8000/?search=${word}`)).then(res => console.log(res)).catch(err => console.log(err));
             word = '';
         }
@@ -74,4 +73,5 @@ function animationHeaderAndScrollBTN() {
 }
 
 animationHeaderAndScrollBTN();
+//TODO повесить ограничения с помощью setTimeout()???
 headerSearch();

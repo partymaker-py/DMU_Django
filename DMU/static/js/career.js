@@ -54,7 +54,7 @@ searchForm.addEventListener('submit', e => {
         searchForm.style.border = '1px solid rgba(255, 0, 0, 1)';
         searchVal = '';
         setTimeout(() => {
-            searchForm.style.border = ''
+            searchForm.style.border = '';
         }, 500);        
         return;
     } 
