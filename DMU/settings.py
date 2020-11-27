@@ -112,7 +112,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Moscow'
 
 USE_I18N = True
 
@@ -127,6 +127,6 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Изменить на путь к /static/
 STATICFILES_DIRS = [
-    "/Users/boris/DMU/DMU/static",
+    "/media/sf_SHARE/DMU/DMU/static",
 ]
 STATIC_URL = '/static/'

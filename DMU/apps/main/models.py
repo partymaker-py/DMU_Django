@@ -45,3 +45,9 @@ class Context(models.Model):
 			return ''
 		elif self.title == '':
 			return ''
+
+class Postcontacts(models.Model):
+	name = models.CharField('Name', max_length = 30)
+	phone = models.CharField('Phone', max_length = 15)
+	email = models.CharField('Email', max_length = 30)
+	message = models.TextField('Message')
