@@ -54,11 +54,11 @@ searchForm.addEventListener('submit', e => {
         searchForm.style.border = '1px solid rgba(255, 0, 0, 1)';
         searchVal = '';
         setTimeout(() => {
-            searchForm.style.border = '1px solid rgba(0, 0, 0. .2)';
-        }, 500);
+            searchForm.style.border = ''
+        }, 500);        
         return;
     } 
-    fetch(`http://127.0.0.1:8000/?search=${searchVal}`).then(res => console.log(res)).catch(err => console.log(err))
+    fetch(location.replace(`http://127.0.0.1:8000/?search=${searchVal}`)).then(res => console.log(res)).catch(err => console.log(err));
     searchVal = '';
 });
 
