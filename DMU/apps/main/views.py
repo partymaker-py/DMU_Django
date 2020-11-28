@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import New, Context
+from .models import New, Context, PostContact, PostCareer
 from django.db.models import Q
 from django.http import Http404
 from urllib.parse import unquote
@@ -34,12 +34,41 @@ def index(request):
 
 
 def contacts(request):
-    return render(request, 'main/contacts.html')
+	if request.method == 'POST':
+		a = PostContact.objects.all()
+
+		a.postcontact_set.create(
+				name = request.POST['name'],
+				phone = request.POST['phone'],
+				email = request.POST['email'],
+				message = request.POST['message']
+			)
+
+		return render(request, 'main/contacts.html')
+
+	elif request.method == 'GET':
+		return render(request, 'main/contacts.html')
 
 
 def career(request):
-	latest_news_list = New.objects.order_by('-pub_date')[:5]
-	return render(request, 'main/career.html', {'latest_news_list': latest_news_list})
+	search_query = unquote(request.GET.get('search', ''))
+	if search_query:
+		index(request)
+	if request.method == 'POST':
+		a = PostCareer(
+			name = request.POST['name'],
+			patronymic = request.POST['patronymic'],
+			surname  = request.POST['surname'],
+			phone = request.POST['phone'],
+			message = request.POST['message']
+		)
+		#a.save()
+
+		return render(request, 'main/contacts.html')
+
+	elif request.method == 'GET':
+		latest_news_list = New.objects.order_by('-pub_date')[:5]
+		return render(request, 'main/career.html', {'latest_news_list': latest_news_list})
 
 
 def projects(request):
