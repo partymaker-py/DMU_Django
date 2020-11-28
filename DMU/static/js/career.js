@@ -55,7 +55,7 @@ searchForm.addEventListener('submit', e => {
         searchVal = '';
         setTimeout(() => {
             searchForm.style.border = '';
-        }, 500);        
+        }, 500);
         return;
     } 
     fetch(location.replace(`http://127.0.0.1:8000/?search=${searchVal}`)).then(res => console.log(res)).catch(err => console.log(err));
@@ -67,34 +67,17 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     let validResult = validation();
     if (validResult !== undefined) {
-
-        const getCookie = (name) => {
-            if (!document.cookie) {
-                return null;
-            }
-            const xsrfCookies = document.cookie.split(';').map(item => item.trim()).filter(item => item.startsWith(name + '='));
-            
-            if (xsrfCookies.length === 0) {
-                return null;
-            }
-
-            return decodeURIComponent(xsrfCookies[0].split('=')[1]);
-        };
-
-        const csrfToken = getCookie('CSRF-TOKEN');
+        csrftoken = document.mainform.csrftoken.value;
 
         fetch('/career', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'x-www-form-urlencoded',
-                'X-CSRF-TOKEN': csrfToken
-            },
             body: JSON.stringify({
                 name: validResult.name,
                 patronymic: validResult.patronymic,
                 surname: validResult.surname,
                 phone: validResult.phone,
-                message: validResult.message
+                message: validResult.message,
+                middlewaretoken: csrftoken
             })
         }).then(res => {
                 console.log('Данные успешно отправленны', res);
