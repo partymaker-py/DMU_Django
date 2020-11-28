@@ -2,6 +2,7 @@ import datetime
 
 from django.db import models
 from django.utils import timezone
+from datetime import timedelta
 # Create your models here.
 
 
@@ -54,16 +55,16 @@ class PostContact(models.Model):
 	pub_date = models.DateTimeField(default=datetime.datetime.now())
 
 	def __str__(self):
-		return str(self.pub_date.strftime("%A, %d. %B %Y %I:%M%p")) + ' ' + self.name
+		return str(self.pub_date + timedelta(hours=3)) + ' ' + self.name
 
 
 class PostCareer(models.Model):
 	name = models.CharField('Name', max_length = 30)
-	patronymic = models.CharField('Name', max_length = 30)
-	surname = models.CharField('Name', max_length = 30)
+	patronymic = models.CharField('Patronymic', max_length = 30)
+	surname = models.CharField('Surname', max_length = 30)
 	phone = models.CharField('Phone', max_length = 15)
 	message = models.TextField('Message')
 	pub_date = models.DateTimeField(default=datetime.datetime.now())
 
 	def __str__(self):
-		return str(self.pub_date.strftime("%A, %d. %B %Y %I:%M%p")) + ' ' + self.name + ' ' + self.patronymic + ' ' + self.surname
+		return str(self.pub_date + timedelta(hours=3)) + ' ' + self.name + ' ' + self.patronymic + ' ' + self.surname
