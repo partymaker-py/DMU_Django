@@ -69,22 +69,26 @@ form.addEventListener('submit', (e) => {
     let validResult = validation();
     if (validResult !== undefined) {
 
-        let csrftoken = document.formCareer.csrftoken.value;
-
+        let csrftoken = document.formCareer.csrfmiddlewaretoken.value;
+        
         fetch('/career', {
             method: 'POST',
+            credentials: 'include',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRFToken': csrftoken
+            },
             body: JSON.stringify({
                 name: validResult.name,
                 patronymic: validResult.patronymic,
                 surname: validResult.surname,
                 phone: validResult.phone,
                 message: validResult.message,
-                middlewaretoken: csrftoken
             })
-        }).then(res => {
-                console.log('Данные отправленны', res.ok);
-            }).catch(rej => {
-                console.log(rej.status);
+        }).then(res => res)
+            .then(data => {
+                console.log('Succes: ', data);
+                alert('complite');
             });
     } 
 });
