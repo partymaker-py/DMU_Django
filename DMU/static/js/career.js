@@ -62,7 +62,6 @@ searchForm.addEventListener('submit', e => {
     searchVal = '';
 });
 
-//TODO повесить ограничене колличестов запросов в промежуток времени
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -88,7 +87,6 @@ form.addEventListener('submit', (e) => {
         }).then(res => res)
             .then(data => {
                 console.log('Succes: ', data);
-                alert('complite');
             });
     } 
 });
