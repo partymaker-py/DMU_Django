@@ -3,6 +3,7 @@ from .models import New, Context, PostContact, PostCareer
 from django.db.models import Q
 from django.http import Http404
 from urllib.parse import unquote
+import json
 
 # Поиск + отображение главной страницы
 def index(request):
@@ -32,37 +33,30 @@ def index(request):
 			new.text = new.text[:150] + '...'
 		return render(request, 'index.html', {'latest_news_list': latest_news_list})
 
-
 def contacts(request):
 	if request.method == 'POST':
-		a = PostContact.objects.all()
-
-		a.postcontact_set.create(
-				name = request.POST['name'],
-				phone = request.POST['phone'],
-				email = request.POST['email'],
-				message = request.POST['message']
+		data = json.loads(request.body)
+		PostContact.objects.create(
+				name = data.get('name', None),
+				phone = data.get('phone', None),
+				email = data.get('email', None),
+				message = data.get('message', None)
 			)
-
 		return render(request, 'main/contacts.html')
 
 	elif request.method == 'GET':
 		return render(request, 'main/contacts.html')
 
-
 def career(request):
-	search_query = unquote(request.GET.get('search', ''))
-	if search_query:
-		index(request)
 	if request.method == 'POST':
-		a = PostCareer(
-			name = request.POST['name'],
-			patronymic = request.POST['patronymic'],
-			surname  = request.POST['surname'],
-			phone = request.POST['phone'],
-			message = request.POST['message']
+		data = json.loads(request.body)
+		PostCareer.objects.create(
+			name = data.get('name', None),
+			patronymic = data.get('patronymic', None),
+			surname = data.get('surname', None),
+			phone = data.get('phone', None),
+			message = data.get('message', None)
 		)
-		#a.save()
 
 		return render(request, 'main/contacts.html')
 
