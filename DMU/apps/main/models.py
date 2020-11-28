@@ -51,10 +51,10 @@ class PostContact(models.Model):
 	phone = models.CharField('Phone', max_length = 15)
 	email = models.CharField('Email', max_length = 30)
 	message = models.TextField('Message')
-	pub_date = models.DateTimeField('Date of publish', default=timezone.now())
+	pub_date = models.DateTimeField(default=datetime.datetime.now())
 
 	def __str__(self):
-		return self.name
+		return str(self.pub_date.strftime("%A, %d. %B %Y %I:%M%p")) + ' ' + self.name
 
 
 class PostCareer(models.Model):
@@ -63,7 +63,7 @@ class PostCareer(models.Model):
 	surname = models.CharField('Name', max_length = 30)
 	phone = models.CharField('Phone', max_length = 15)
 	message = models.TextField('Message')
-	pub_date = models.DateTimeField('Date of publish', default=timezone.now())
+	pub_date = models.DateTimeField(default=datetime.datetime.now())
 
 	def __str__(self):
-		return self.pub_date + self.name + self.patronymic + self.surname
+		return str(self.pub_date.strftime("%A, %d. %B %Y %I:%M%p")) + ' ' + self.name + ' ' + self.patronymic + ' ' + self.surname
