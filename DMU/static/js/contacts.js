@@ -51,14 +51,14 @@ const validation = () => {
     }
 };
 
-
+// TODO добавить очищение полей после отправки данных и добавить оповещение в случае неупешной отправки 
 letterForm.addEventListener('submit', e => {   
     e.preventDefault()
     const validResult = validation();
     console.log('validResult: ', validResult);
     if (validResult !== undefined){
 
-        const csrftoken = document.contactForm.csrfmiddlewaretoken.value;
+        let csrftoken = document.contactForm.csrfmiddlewaretoken.value;
 
         fetch('/contacts', {
             method: 'POST',

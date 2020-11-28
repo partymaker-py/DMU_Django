@@ -116,12 +116,17 @@ h1, h2 {
     grid-gap: 100px;
 }
 .photo-and-services-list {
+    display: grid;
+    grid-template-columns: repeat(2, 500px);
+    grid-template-rows: repeat(2, 200px);
+    grid-gap: 15px;
     margin-left: 20%;
     margin-right: 20%;
     margin-bottom: 30px;
     margin-top: 30px;
 }
 .services-list1 {
+    max-width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

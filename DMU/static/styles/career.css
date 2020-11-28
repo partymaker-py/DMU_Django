@@ -125,6 +125,19 @@ aside {
     height: 46px;
     width: 942px;
 }
+.btn-submit{
+    outline: #ff0000;
+    margin-top: 40px;
+    color: #ffffff;
+    background-color: #ff0000;
+    border: none;
+    padding: 20px 40px;
+    transition: .2s linear;
+    cursor: pointer;
+}
+.btn-submit:hover{
+    background-color: #000000;
+}
 .wraning-name-text, 
 .warning-father-text,
 .warning-sername-text, 
