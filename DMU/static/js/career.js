@@ -83,10 +83,14 @@ form.addEventListener('submit', (e) => {
                 phone: validResult.phone,
                 message: validResult.message,
             })
-        }).then(res => res)
-            .then(data => {
-                console.log('Succes: ', data);
-            });
+        }).then(res => {
+            if (res.ok) {
+                for (let i = 0; i < formCareer.elements.length; i++) {
+                    formCareer.elements[i].value = '';
+                }
+            }
+        });
+            
     } 
 });
 

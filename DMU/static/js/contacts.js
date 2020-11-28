@@ -8,7 +8,6 @@ const validation = () => {
     const inputMessage = document.querySelector('.from__input-message');
     const regExpValid = /[<>{}]/;
     let errorsArray = [];
-    console.log(regExpValid.test(inputName.value));
     if (!inputName.value || inputName.value.length < 2 || !isNaN(inputName.value) || inputName.value.match(regExpValid)) {
         errorsArray.push(inputName);
     } else {
@@ -73,9 +72,11 @@ letterForm.addEventListener('submit', e => {
                 message: validResult.message
             })
         }).then(res => {
-                console.log('данные отпраленны', res);
-            }).catch(rej => {
-                console.log('ОШИЮКА', rej);
-            })
+            if (res.ok) {
+                for (let i = 0; i < contactForm.elements.length; i++) {
+                    contactForm.elements[i].value = '';
+                }
+            }
+        });
     }            
 });
