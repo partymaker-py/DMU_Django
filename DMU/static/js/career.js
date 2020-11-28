@@ -67,7 +67,7 @@ form.addEventListener('submit', (e) => {
     e.preventDefault();
     let validResult = validation();
     if (validResult !== undefined) {
-        csrftoken = document.mainform.csrftoken.value;
+        csrftoken = document.formCareer.csrftoken.value;
 
         fetch('/career', {
             method: 'POST',
