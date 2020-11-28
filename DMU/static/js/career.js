@@ -55,7 +55,7 @@ searchForm.addEventListener('submit', e => {
         searchVal = '';
         setTimeout(() => {
             searchForm.style.border = '';
-        }, 500);
+        }, 1000);
         return;
     } 
     fetch(location.replace(`http://127.0.0.1:8000/?search=${searchVal}`)).then(res => console.log(res)).catch(err => console.log(err));
@@ -65,9 +65,11 @@ searchForm.addEventListener('submit', e => {
 //TODO повесить ограничене колличестов запросов в промежуток времени
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    
     let validResult = validation();
     if (validResult !== undefined) {
-        csrftoken = document.formCareer.csrftoken.value;
+
+        let csrftoken = document.formCareer.csrftoken.value;
 
         fetch('/career', {
             method: 'POST',
@@ -80,9 +82,9 @@ form.addEventListener('submit', (e) => {
                 middlewaretoken: csrftoken
             })
         }).then(res => {
-                console.log('Данные успешно отправленны', res);
+                console.log('Данные отправленны', res.ok);
             }).catch(rej => {
-                console.log(rej);
+                console.log(rej.status);
             });
     } 
 });
