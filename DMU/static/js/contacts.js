@@ -58,7 +58,7 @@ letterForm.addEventListener('submit', e => {
     console.log('validResult: ', validResult);
     if (validResult !== undefined){
 
-        const csrftoken = document.contactForm.csrfmiddlewaretoken.value;
+        let csrftoken = document.contactForm.csrfmiddlewaretoken.value;
 
         fetch('/contacts', {
             method: 'POST',
