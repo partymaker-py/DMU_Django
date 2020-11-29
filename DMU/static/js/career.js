@@ -37,12 +37,7 @@ const validation = () => {
         document.querySelector('.main-warning').style.visibility = 'visible';
         return;
     } else {
-        let name = nameInput.value;
-        let patronymic = fatherInput.value; // отчество 
-        let surname = sernameInput.value;
-        let phone = phoneInput.value;
-        let message = messageInput.value;
-        return { name, patronymic, surname, phone, message };
+        return { nameInput, fatherInput, sernameInput, phoneInput, messageInput };
     }
     
 };
@@ -58,12 +53,11 @@ searchForm.addEventListener('submit', e => {
         }, 1000);
         return;
     } 
-    fetch(location.replace(`http://127.0.0.1:8000/?search=${searchVal}`)).then(res => console.log(res)).catch(err => console.log(err));
-    searchVal = '';
+    fetch(location.replace(`http://127.0.0.1:8000/?search=${serachInput.value}`)).then(res => console.log(res)).catch(err => console.log(err));
+    serachInput.value = '';
 });
 
-// TODO добавить очищение полей после отправки данных и добавить оповещение в случае неупешной отправки 
-function showThacks(dataSended) {
+function showThanks(dataSended) {
     if (dataSended) {
         
         const thanksLetter = `
@@ -71,11 +65,7 @@ function showThacks(dataSended) {
             <div class="wrapper" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; overflow: auto;">
                 <div class="letter" style="display: flex; align-items: center; justify-content: space-between; width: 400px; height: 100px; padding: 20px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; background: #f0f0f0;">
                     <p class="text">Спасибо, мы с вами свяжемся</p>
-<<<<<<< HEAD
                     <img src="static/images/unnamed.png" alt="" class="class" style="width: 50px; height: 50px;">
-=======
-                    <img src="/static/images/unnamed.png" alt="" class="class">
->>>>>>> af787f202582ec1e805216a85bd6f7dc44a116e6
                 </div>
             </div>
         `;
@@ -104,18 +94,21 @@ form.addEventListener('submit', (e) => {
                 'X-CSRFToken': csrftoken
             },
             body: JSON.stringify({
-                name: validResult.name,
-                patronymic: validResult.patronymic,
-                surname: validResult.surname,
-                phone: validResult.phone,
-                message: validResult.message,
+                name: validResult.nameInput.value,
+                patronymic: validResult.fatherInput.value,
+                surname: validResult.sernameInput.value,
+                phone: validResult.phoneInput.value,
+                message: validResult.messageInput.value,
             })
         }).then(res => {
             if (res.ok) {
                 for (let i = 0; i < formCareer.elements.length; i++) {
                     formCareer.elements[i].value = '';
                 }
-                showThacks(true);
+                showThanks(true);
+                for (let value in validResult) {
+                    value.value = '';
+                }
             }
         });
             
