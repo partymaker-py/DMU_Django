@@ -49,19 +49,18 @@ const validation = () => {
 searchForm.addEventListener('submit', e => {
     e.preventDefault();
     const serachInput = document.querySelector('.search-in-career');
-    let searchVal = serachInput.value;
-    if (!searchVal || searchVal.match(regExpValid)){
+    if (!serachInput.value || serachInput.value.match(regExpValid)){
         searchForm.style.border = '1px solid rgba(255, 0, 0, 1)';
-        searchVal = '';
         setTimeout(() => {
             searchForm.style.border = '';
+            serachInput.value = '';
         }, 1000);
         return;
     } 
     fetch(location.replace(`http://127.0.0.1:8000/?search=${searchVal}`)).then(res => console.log(res)).catch(err => console.log(err));
     searchVal = '';
 });
-
+// TODO добавить очищение полей после отправки данных и добавить оповещение в случае неупешной отправки 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -84,10 +83,14 @@ form.addEventListener('submit', (e) => {
                 phone: validResult.phone,
                 message: validResult.message,
             })
-        }).then(res => res)
-            .then(data => {
-                console.log('Succes: ', data);
-            });
+        }).then(res => {
+            if (res.ok) {
+                for (let i = 0; i < formCareer.elements.length; i++) {
+                    formCareer.elements[i].value = '';
+                }
+            }
+        });
+            
     } 
 });
 

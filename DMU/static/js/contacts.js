@@ -8,7 +8,6 @@ const validation = () => {
     const inputMessage = document.querySelector('.from__input-message');
     const regExpValid = /[<>{}]/;
     let errorsArray = [];
-    console.log(regExpValid.test(inputName.value));
     if (!inputName.value || inputName.value.length < 2 || !isNaN(inputName.value) || inputName.value.match(regExpValid)) {
         errorsArray.push(inputName);
     } else {
@@ -51,7 +50,7 @@ const validation = () => {
     }
 };
 
-
+// TODO добавить очищение полей после отправки данных и добавить оповещение в случае неупешной отправки 
 letterForm.addEventListener('submit', e => {   
     e.preventDefault()
     const validResult = validation();
@@ -73,9 +72,12 @@ letterForm.addEventListener('submit', e => {
                 message: validResult.message
             })
         }).then(res => {
-                console.log('данные отпраленны', res);
-            }).catch(rej => {
-                console.log('ОШИЮКА', rej);
-            })
+            if (res.ok) {
+                for (let i = 0; i < contactForm.elements.length; i++) {
+                    contactForm.elements[i].value = '';
+                }
+                // TODO заменить большое окно ошибки на текст "Спасибо, мы с вами свяжемся"
+            }
+        });
     }            
 });
