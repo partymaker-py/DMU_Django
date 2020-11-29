@@ -76,6 +76,7 @@ letterForm.addEventListener('submit', e => {
                 for (let i = 0; i < contactForm.elements.length; i++) {
                     contactForm.elements[i].value = '';
                 }
+                // TODO заменить большое окно ошибки на текст "Спасибо, мы с вами свяжемся"
             }
         });
     }            
