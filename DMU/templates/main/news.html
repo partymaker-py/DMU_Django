@@ -72,20 +72,5 @@
     </main>
 {% endblock content %}
     <!-- Footer -->
-    <script>
-        const scrollBtn = document.querySelector('.scroll-button');
-        window.addEventListener('scroll', () => {
-            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
-                scrollBtn.style.display = 'block';
-                scrollBtn.addEventListener('click', () => {
-                    document.body.scrollTop = 0;
-                    document.documentElement.scrollTop = 0;
-                });
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        
-    </script>
 </body>
 </html>
