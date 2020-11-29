@@ -4,6 +4,15 @@ from django.db.models import Q
 from django.http import Http404
 from urllib.parse import unquote
 import json
+import requests
+
+
+API_TOKEN = '1415059752:AAGzQtLrO-l7qLDPoCbbubVTX8gyXmTWau4'
+CHAT_ID = '-444340839'
+
+
+	
+
 
 # Поиск + отображение главной страницы
 def index(request):
@@ -50,13 +59,35 @@ def contacts(request):
 def career(request):
 	if request.method == 'POST':
 		data = json.loads(request.body)
+
+		dic = {
+			'Имя': data.get('name', None),
+			'Отчество': data.get('patronymic', None),
+			'Фамилия': data.get('surname', None),
+			'Телефон': data.get('phone', None),
+			'Сообщение': data.get('message', None)
+		}
+
 		PostCareer.objects.create(
-			name = data.get('name', None),
-			patronymic = data.get('patronymic', None),
-			surname = data.get('surname', None),
-			phone = data.get('phone', None),
-			message = data.get('message', None)
+			name = dic['Имя'],
+			patronymic = dic['Отчество'],
+			surname = dic['Фамилия'],
+			phone = dic['Телефон'],
+			message = dic['Сообщение']
 		)
+
+		DATA = 'Форма: Карьера\n \n'
+		for key in dic:
+			DATA += key + ": " + dic[key] + '\n'
+
+		url = 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&parse_mode=html&text={}'.format(API_TOKEN, CHAT_ID, DATA)
+
+		r = requests.get(url)
+
+		if r:
+			print('TELEGRAM SUCCESS')
+		else:
+			print('TELEGRAM ERROR')
 
 		return render(request, 'main/contacts.html')
 
