@@ -60,7 +60,29 @@ searchForm.addEventListener('submit', e => {
     fetch(location.replace(`http://127.0.0.1:8000/?search=${searchVal}`)).then(res => console.log(res)).catch(err => console.log(err));
     searchVal = '';
 });
+
 // TODO добавить очищение полей после отправки данных и добавить оповещение в случае неупешной отправки 
+function showThacks(dataSended) {
+    if (dataSended === true) {
+        
+        const thanksLetter = `
+            <div class="background" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: #000000; opacity: 0.5;"></div>
+            <div class="wrapper" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; overflow: auto;">
+                <div class="letter" style="display: flex; align-items: center; justify-content: space-between; width: 400px; height: 100px; padding: 20px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; background: #f0f0f0;">
+                    <p class="text">Спасибо, мы с вами свяжемся</p>
+                    <img src="{% static 'images/unnamed.png' %}" alt="" class="class">
+                </div>
+            </div>
+        `;
+        console.log(thanksLetter);
+        document.body.insertAdjacentHTML('beforeend', thanksLetter);
+        
+        setTimeout(() => {
+            document.querySelector('.background').remove();
+            document.querySelector('.wrapper').remove();
+        }, 2000);    
+    }
+}
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     
@@ -88,6 +110,7 @@ form.addEventListener('submit', (e) => {
                 for (let i = 0; i < formCareer.elements.length; i++) {
                     formCareer.elements[i].value = '';
                 }
+                showThacks(true);
             }
         });
             
