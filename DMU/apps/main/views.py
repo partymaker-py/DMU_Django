@@ -10,10 +10,6 @@ import requests
 API_TOKEN = '1415059752:AAGzQtLrO-l7qLDPoCbbubVTX8gyXmTWau4'
 CHAT_ID = '-444340839'
 
-
-	
-
-
 # Поиск + отображение главной страницы
 def index(request):
 	search_query = unquote(request.GET.get('search', ''))
@@ -45,13 +41,45 @@ def index(request):
 def contacts(request):
 	if request.method == 'POST':
 		data = json.loads(request.body)
-		PostContact.objects.create(
-				name = data.get('name', None),
-				phone = data.get('phone', None),
-				email = data.get('email', None),
-				message = data.get('message', None)
-			)
-		return render(request, 'main/contacts.html')
+
+		dic = {
+			'Имя': data.get('name', None),
+			'Телефон': data.get('phone', None),
+			'Email': data.get('email', None),
+			'Сообщение': data.get('message', None)
+		}
+
+		NOT_DANGER = True
+
+		for key in dic:
+			if ">" in key or "<" in key or "WHERE" in key or "UNION" in key:
+				NOT_DANGER = False
+
+		if NOT_DANGER:
+			PostContact.objects.create(
+					name = dic['Имя'],
+					phone = dic['Телефон'],
+					email = dic['Email'],
+					message = dic['Сообщение']
+				)
+
+			DATA = 'Форма: Контакты\n \n'
+			for key in dic:
+				DATA += key + ": " + dic[key] + '\n'
+
+			url = 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&parse_mode=html&text={}'.format(API_TOKEN, CHAT_ID, DATA)
+
+			r = requests.get(url)
+
+			if r:
+				print('TELEGRAM SUCCESS')
+			else:
+				print('TELEGRAM ERROR')
+
+			return render(request, 'main/contacts.html')
+		else:
+			# Исход попытки внедрения зловредного кода в БД
+			pass
 
 	elif request.method == 'GET':
 		return render(request, 'main/contacts.html')
@@ -68,26 +96,38 @@ def career(request):
 			'Сообщение': data.get('message', None)
 		}
 
-		PostCareer.objects.create(
-			name = dic['Имя'],
-			patronymic = dic['Отчество'],
-			surname = dic['Фамилия'],
-			phone = dic['Телефон'],
-			message = dic['Сообщение']
-		)
+		NOT_DANGER = True
 
-		DATA = 'Форма: Карьера\n \n'
 		for key in dic:
-			DATA += key + ": " + dic[key] + '\n'
+			if ">" in key or "<" in key or "WHERE" in key or "UNION" in key:
+				NOT_DANGER = False
 
-		url = 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&parse_mode=html&text={}'.format(API_TOKEN, CHAT_ID, DATA)
+		if NOT_DANGER:
+			
+			PostCareer.objects.create(
+				name = dic['Имя'],
+				patronymic = dic['Отчество'],
+				surname = dic['Фамилия'],
+				phone = dic['Телефон'],
+				message = dic['Сообщение']
+			)
 
-		r = requests.get(url)
+			DATA = 'Форма: Карьера\n \n'
+			for key in dic:
+				DATA += key + ": " + dic[key] + '\n'
 
-		if r:
-			print('TELEGRAM SUCCESS')
+			url = 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&parse_mode=html&text={}'.format(API_TOKEN, CHAT_ID, DATA)
+
+			r = requests.get(url)
+
+			if r:
+				print('TELEGRAM SUCCESS')
+			else:
+				print('TELEGRAM ERROR')
+
 		else:
-			print('TELEGRAM ERROR')
+			# Исход попытки внедрения зловредного кода в БД
+			pass
 
 		return render(request, 'main/contacts.html')
 
