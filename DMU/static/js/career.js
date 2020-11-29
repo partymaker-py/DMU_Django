@@ -1,14 +1,15 @@
 const scrollBtn = document.querySelector('.scroll-button');
 const form = document.querySelector('.form');
 const searchForm = document.querySelector('.search-form');
+const nameInput = document.querySelector('.name-input');
+const fatherInput = document.querySelector('.father-input');
+const sernameInput = document.querySelector('.sername-input');
+const phoneInput = document.querySelector('.phone-input');
+const messageInput = document.querySelector('.message-input');
 const regExpValid = /[<>{}]/;
 
 const validation = () => {
-    const nameInput = document.querySelector('.name-input');
-    const fatherInput = document.querySelector('.father-input');
-    const sernameInput = document.querySelector('.sername-input');
-    const phoneInput = document.querySelector('.phone-input');
-    const messageInput = document.querySelector('.message-input');
+    
     let errorsArray = [];
     
     if (!nameInput.value || nameInput.value.length < 3 || !isNaN(nameInput.value) || nameInput.value.match(regExpValid)) {
@@ -63,14 +64,14 @@ searchForm.addEventListener('submit', e => {
 
 // TODO добавить очищение полей после отправки данных и добавить оповещение в случае неупешной отправки 
 function showThacks(dataSended) {
-    if (dataSended === true) {
+    if (dataSended) {
         
         const thanksLetter = `
             <div class="background" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; background-color: #000000; opacity: 0.5;"></div>
             <div class="wrapper" style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; overflow: auto;">
                 <div class="letter" style="display: flex; align-items: center; justify-content: space-between; width: 400px; height: 100px; padding: 20px; position: absolute; top: 0; right: 0; bottom: 0; left: 0; margin: auto; background: #f0f0f0;">
                     <p class="text">Спасибо, мы с вами свяжемся</p>
-                    <img src="{% static 'images/unnamed.png' %}" alt="" class="class">
+                    <img src="static/images/unnamed.png" alt="" class="class" style="width: 50px; height: 50px;">
                 </div>
             </div>
         `;
@@ -116,4 +117,3 @@ form.addEventListener('submit', (e) => {
             
     } 
 });
-
