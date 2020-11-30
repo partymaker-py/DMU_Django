@@ -17,7 +17,7 @@ const lettersInCenter2 = [wrapperOnCenter5, wrapperOnCenter6, wrapperOnCenter7, 
 let index1;// Индекс для первого слайдера
 let index2;// Индекс для второго слайдера 
 
-// TODO ПРИДУМАТЬ КАК ЕЩЁ СИЛЬНЕЕ МОЖНО СКРАТИТЬ КОД !!!!!11 
+// TODO ПРИДУМАТЬ КАК ЕЩЁ СИЛЬНЕЕ МОЖНО СКРАТИТЬ КОД И СОТАНОВИТЬ ВСПЛЫТИЕ (или погружение)!!!!!11 
 
 function slideShow() {
     const slider1 = (itemIndex) => {
