@@ -73,5 +73,4 @@ function animationHeaderAndScrollBTN() {
 }
 
 animationHeaderAndScrollBTN();
-//TODO повесить ограничения с помощью setTimeout()???
 headerSearch();

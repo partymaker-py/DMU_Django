@@ -128,6 +128,6 @@ STATIC_DIR = os.path.join(BASE_DIR, 'static')
 
 # Изменить на путь к /static/
 STATICFILES_DIRS = [
-    "/media/sf_SHARED/DMU/DMU/static"
+    "/Users/boris/DMU/DMU/static"
 ]
 STATIC_URL = '/static/'

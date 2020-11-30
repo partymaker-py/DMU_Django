@@ -18,15 +18,33 @@
             <h1 class="title-of-page">Результат поиска по запросу "{{ search_query|safe}}"</h1>
         </div>
     </section>
-	{% for a in posts_news %}
-    	<a href="{{ a.get_absolute_url }}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
-    	{{ a.text }}
-	{% endfor %}
-    <br>
 
-    {% for a in posts_context %}
-        <a href="{{ a.get_absolute_url }}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
-        {{ a.text }}
-    {% endfor %}
+    <main class="results">
+
+        {% for a in posts_news %}
+        <article class="result-block">
+
+            <a href="{{ a.get_absolute_url }}" class="result__aside-block">
+                <p class="aside-link-block__title">{{ a.title }}</p>
+            </a>
+            {{ a.text }}
+            
+        </article>
+        {% endfor %}
+        
+
+        {% for a in posts_context %}
+        <article class="result-block">
+
+            <a href="{{ a.get_absolute_url }}" class="result__aside-block">
+                <p class="aside-link-block__title">{{ a.title }}</p>
+            </a>
+            {{ a.text }}
+
+        </article>
+        
+        {% endfor %}
+        
+    </main>
 </body>
 {% endblock content %}

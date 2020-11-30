@@ -12,5 +12,18 @@
 {% endblock head %}
 {% block content %}
 <body>
-	<h2>По вашему запросу "{{ search_query|safe}}" ничего не найдено</h2>
+    <button class="scroll-button">Прокрутка наверх</button>
+    <section class="intro">
+        <div class="main-main-title-of-page">
+            <h1 class="title-of-page">По вашему запросу "{{ search_query|safe}}" ничего не найдено"</h1>
+        </div>
+    </section>
+    <main class="results">
+        <section class="result-from-server">
+            <h2 class="result-title">
+                По вашему запросу ничего не найдено "{{ search_query|safe}}"
+            </h2>
+        </section>
+    </main>
+</body>
 {% endblock content %}
