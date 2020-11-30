@@ -18,7 +18,6 @@ let index1;// Индекс для первого слайдера
 let index2;// Индекс для второго слайдера 
 
 // TODO ПРИДУМАТЬ КАК ЕЩЁ СИЛЬНЕЕ МОЖНО СКРАТИТЬ КОД !!!!!11 
-// removeEventListener - отменяет события 
 
 function slideShow() {
     const slider1 = (itemIndex) => {

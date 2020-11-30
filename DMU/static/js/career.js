@@ -97,8 +97,8 @@ form.addEventListener('submit', (e) => {
                 name: validResult.nameInput.value,
                 patronymic: validResult.fatherInput.value,
                 surname: validResult.sernameInput.value,
-                phone: validResult.phoneInput.value,
-                message: validResult.messageInput.value,
+                phone: validResult.phoneInput.value,                
+                careerObjective: validResult.messageInput.value,
             })
         }).then(res => {
             if (res.ok) {
