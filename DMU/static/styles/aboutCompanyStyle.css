@@ -20,31 +20,35 @@
     margin-right: 20%;
     display: flex;
 }
-.serch-form {
-    border: 1px solid #000000;
-    max-width: 277px;
-    height: 45px;
+.search-form {
     display: flex;
-    align-items: center;
+    flex-direction: row;
+    height: 44px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
 }
-.input-text {
+.search-in-aboutCompany {
+    padding: 0 10px;
+    width: 90%;
     border: none;
-    width: 91%;
 }
-.input-text:focus{
+.search-logo{
+    width: 15px;
+    height: 15px;
+}
+.search-in-aboutCompany:focus {
     outline: none;
 }
-.search-btn-icon {
-    width: 42px;
-    height: 100%;
-    border: none;
-    background-color: inherit;
+.btn-search {
     cursor: pointer;
+    width: 15%;
+    background-color: inherit;
+    border: none;
 }
-.icon-search {
-    width: 20px;
-    height: 20px;
+.btn-search:focus{
+    outline: none;
 }
+
 .subnews,
 .contact-info,
 .what-we-are-doing-subtitle,

@@ -26,10 +26,9 @@
         </div>
         <div class="main-information">
             <div class="sidebar">
-                <form action="" class="serch-form" action="{% url 'index' %}">
-                    <input type="text" class="input-text" placeholder="Поиск..." name="search">
-                    <!-- иконка лупы должна менять цвет при наведении -->
-                    <button type="submit" class="search-btn-icon"><img src="../images/search-icon.svg" class="icon-search" alt="search-icon"></button>
+                <form class="search-form">
+                    <input type="text" name="searchForm" placeholder="Поиск" class="search-in-aboutCompany">
+                    <button type="submit" class="btn-search"><img src="../images/loupeblack.svg" alt="search-logo" class="search-logo"></button>
                 </form>
                 <h3 class="subnews">Новости<hr></h3>
                 <ul>
