@@ -135,14 +135,7 @@
     display: flex;
 }
 
-.display-center-letter-wrapper1,
-.display-center-letter-wrapper2,
-.display-center-letter-wrapper3,
-.display-center-letter-wrapper4,
-.display-center-letter-wrapper5,
-.display-center-letter-wrapper6,
-.display-center-letter-wrapper7,
-.display-center-letter-wrapper8 {
+.display-center-letter-wrapper {
     position: fixed;
     top: 200px;
     left: 600px;
