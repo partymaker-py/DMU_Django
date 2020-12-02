@@ -12,7 +12,9 @@
 {% endblock head %}
 {% block content %}
 <body>
+    {% static "images/no_photo.jpg" as no_photo %}
     <!-- TODO добавить картинку и текст, когда они будут -->
+    <img src="{{ new.photo_url }}" alt="portret" width="270px" height="270px">
 	<h3>{{ new.title }}</h3>
 	{% if new.was_published_recently %}
         <h5 class="news-block__subtitle">Свежая новость!</h5>

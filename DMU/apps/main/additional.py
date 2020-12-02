@@ -9,8 +9,7 @@ def send_mail(dic):
 	smtp_port = "587"
 	smtp_login = "dmu.feedback@gmail.com"
 	smtp_password = "Str0ytr@nsg@z"
-
-	message = dic['Форма'] + '\n'
+	message = ''
 
 	for key in dic:
 		if key != 'Форма':
@@ -20,6 +19,7 @@ def send_mail(dic):
 				message += key + ': ' + dic[key] + '\n'
 
 	msg = MIMEMultipart()
+	msg['Subject'] = 'Обратная связь ООО "ДМУ": ' + dic['Форма']
 	msg.attach(MIMEText(message, 'plain'))
 
 	server = smtplib.SMTP('smtp.gmail.com: 587')
@@ -39,4 +39,4 @@ def telegram(dic):
 			DATA += key + ": " + dic[key] + '\n'
 
 	url = 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&parse_mode=html&text={}'.format(API_TOKEN, CHAT_ID, DATA)
-	r = requests.get(url)
+	#r = requests.get(url)

@@ -11,11 +11,16 @@ class New(models.Model):
 	title = models.CharField('Title of New', max_length = 150)
 	text = models.TextField('New text')
 	pub_date = models.DateTimeField('Date of publish', default=timezone.now())
-	image = models.ImageField('Image of new')
+	image = models.ImageField('Image of field', blank=True, upload_to="images/")
 
 	# Не обращай внимания)
 	def __str__(self):
 		return self.title
+
+	@property
+	def photo_url(self):
+		if self.image and hasattr(self.image, 'url'):
+			return self.image.url
 
 	# Если статья опубликована раньше чем неделю назад, возвращает True
 	def was_published_recently(self):
