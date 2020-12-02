@@ -34,6 +34,7 @@ def index(request):
 		latest_news_list = New.objects.order_by('-pub_date')[:3]
 		for new in latest_news_list:
 			new.text = new.text[:150] + '...'
+
 		return render(request, 'index.html', {'latest_news_list': latest_news_list})
 
 def contacts(request):
