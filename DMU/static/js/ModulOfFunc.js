@@ -1,14 +1,14 @@
 // поиск в header
 function headerSearch() {
     const btnOpenSearch = document.querySelector('.search-icon');
-    const formSearcHeader = document.querySelector('.form-search-head');// форма поиска header
+    const formSearcHeader = document.querySelector('.form-search-head');
     const searchFieldInput = document.querySelector('.search-field-wrapper');
-    const closeSearchForm = document.querySelector('.close-serach-form');// закрыть поисковик хэдера
+    const closeSearchForm = document.querySelector('.close-serach-form');
 
     const disableScroll = () => {
-        let pagePosition = window.scrollY;// в момент нажатия на кнопку сохраняем текущее положение вьюпорта
+        let pagePosition = window.scrollY;
         document.body.classList.add('disableScroll');
-        document.body.dataset.position = pagePosition;// сохраняем в body это значение
+        document.body.dataset.position = pagePosition;
         // TODO сделать так чтобы, если хедер уже появился, то он не есчезал бы
         document.body.style.top = -pagePosition + 'px';
         searchFieldInput.style.display = 'block';

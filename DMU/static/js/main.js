@@ -13,7 +13,6 @@ const linkBuildings = document.querySelector('#link_buildings');
 const movingCards = document.querySelector('.moving-cards');
 const array = [linkAll, linkRoads, linkBuildings];
 
-//  создать анимацию исчезновения и перемещения для элементов movingCards добавлять эту анимацию путём добавления css классов
 let cardsArray = [];
 for (let i = 1; i < 9; i++) {
     let j = document.querySelector(`.card${i}`);
@@ -90,7 +89,6 @@ const getCounters = (begin1, end1, begin2, end2, begin3, end3) => {
     }, 100);
 };
 
-// ОТСЛЕЖИВАНИЕ ПРОКРУТКИ СТРАНИЦИ, ДОБАВЛЕНИЕ КНОПКИ ПРОКРУТКИ, АКТИВИРОВАНИЕ СЧЁТЧИКА И АНИМИРОВАНИЕ ШАПКИ САЙТА 
 // вызов счётчиков
 let counterOfCounters;
 window.window.addEventListener('scroll', () => {

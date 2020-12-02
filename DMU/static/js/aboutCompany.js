@@ -4,8 +4,8 @@ const secondLine = document.querySelector('.second-line');
 const controlPrev = document.querySelectorAll('.btnPrev');
 const controlNext = document.querySelectorAll('.btnNext');
 const wrapperOnCenter = document.querySelectorAll('.display-center-letter-wrapper');
-let lettersInCenter1 = [];// массив элементов первого слайдера ;
-let lettersInCenter2 = [];// массив элементов второго слайдера ;
+let lettersInCenter1 = [];
+let lettersInCenter2 = [];
 for (let i = 0; i < wrapperOnCenter.length; i++) {
     if (i < 4) {
         lettersInCenter1.push(wrapperOnCenter[i]);
@@ -14,8 +14,8 @@ for (let i = 0; i < wrapperOnCenter.length; i++) {
         lettersInCenter2.push(wrapperOnCenter[i]);
     }
 }
-let index1;// Индекс для первого слайдера
-let index2;// Индекс для второго слайдера 
+let index1;
+let index2;
 
 
 function thanksgivingPresentation() {
