@@ -58,6 +58,8 @@ h1, h2 {
     width: 55px;
 }
 .statistic {
+    padding-top: 50px;
+    padding-bottom: 30px;
     margin-top: 200px;
     background-color: #f9f9f9;
 }
@@ -80,9 +82,12 @@ h1, h2 {
     width: 77px;
     height: 117px;
 }
+.niches{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 200px;
+}
 .occupied-niches {
-    margin-left: 20%;
-    margin-right: 20%;
     display: grid;
     grid-template-columns: repeat(3, 370px);
     grid-gap: 30px;
@@ -115,15 +120,17 @@ h1, h2 {
     grid-template-columns: repeat(3, 270px);
     grid-gap: 100px;
 }
+.services{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
 .photo-and-services-list {
     display: grid;
     grid-template-columns: repeat(2, 500px);
     grid-template-rows: repeat(2, 200px);
     grid-gap: 15px;
-    margin-left: 20%;
-    margin-right: 20%;
-    margin-bottom: 30px;
-    margin-top: 30px;
 }
 .services-list1 {
     max-width: 100%;
@@ -368,4 +375,86 @@ h1, h2 {
 }
 .news-article{
     width: 30%;
+}
+@media (max-width: 1540px) { 
+    .container-info-contacts{
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    
+}
+@media (max-width: 1300px){
+    .container-info-contacts{
+        display: grid;
+        grid-template-columns: 300px 550px;
+        grid-gap: 50px;
+        margin-top: 100px;
+        margin-left: 5%;
+    } 
+    .occupied-niches{
+        margin-left: 30px; 
+        margin-right: 30px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .customers-and-partners {
+        margin-left: 5%;
+    }
+    .photo-and-services-list{
+        display: grid;
+        grid-template-columns: repeat(2, 300px);
+        grid-template-rows: repeat(2, 200px);
+        grid-gap: 35px;
+    }
+}
+@media (max-width: 992px) { 
+    .container-info-contacts{
+        display: grid;
+        grid-template-columns: 300px 550px;
+        grid-gap: 50px;
+        margin-top: 100px;  
+    }  
+
+}
+@media (max-width: 768px) { 
+    .partners-images{
+        display: grid;
+        grid-template-columns: repeat(2, 270px);
+        grid-gap: 100px;
+    }
+    .container-info-contacts{
+        display: grid;
+        grid-template-columns: 300px 550px;
+        grid-gap: 50px;
+        margin-top: 100px;  
+    }  
+}
+@media (max-width: 680px) { 
+    .container-info-contacts{
+        display: grid;
+        grid-template-columns: 300px ;
+        grid-template-rows: 400px;
+        grid-gap: 50px;
+        margin-top: 100px;
+    }
+    .partners-images{
+        display: grid;
+        grid-template-columns: 270px;
+        grid-gap: 100px;
+    }
+    .photo-and-services-list{
+        display: grid;
+        grid-template-columns: 300px;
+        grid-template-rows: repeat(2, 200px);
+        grid-gap: 35px;
+    }
+    .occupied-niches{
+        flex-direction: column;
+    }
+    .news-articles{
+        flex-direction: column;
+    }
+    .news-article{
+        width: 300px;
+    }
 }

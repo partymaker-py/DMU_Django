@@ -17,7 +17,6 @@ for (let i = 0; i < wrapperOnCenter.length; i++) {
 let index1;// Индекс для первого слайдера
 let index2;// Индекс для второго слайдера 
 
-// TODO доделать, когда будут картинки (либо добавлять css классы, либо менять display)
 
 function thanksgivingPresentation() {
 
@@ -53,7 +52,6 @@ function thanksgivingPresentation() {
         });
 
     };
-
     document.addEventListener('click', (e) => {
         if (e.target.closest('.first-line')) {
             lettersInCenter1.forEach(item => {
@@ -68,10 +66,6 @@ function thanksgivingPresentation() {
                 item.style.display = 'none';
             });
         }
-        
-    });
-
-    document.addEventListener('click', (e) => {
         if (e.target.closest('.second-line')) {
             lettersInCenter2.forEach(item => {
                 if(item === e.target.parentNode.childNodes[3].lastElementChild) {
@@ -85,6 +79,7 @@ function thanksgivingPresentation() {
                 item.style.display = 'none';
             });
         }
+        
     });
 };
 
