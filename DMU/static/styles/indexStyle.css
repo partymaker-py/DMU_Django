@@ -276,7 +276,22 @@ h1, h2 {
 /* Анимация для перемещения картинок */
 /* Удаление всех картинок "Не дороги" при нажатии на ссылку "Дороги"*/
 .card-remove-not-road{
+    -webkit-animation: removeCard 2s linear forwards;
     animation: removeCard 2s linear forwards;
+}
+@-webkit-keyframes removeCard {
+    0%{
+        opacity: 1;
+        display: block;
+    }
+    50% {
+        opacity: 0.5;
+        display: block;
+    }
+    100%{
+        opacity: 0;
+        display: none;
+    }
 }
 @keyframes removeCard {
     0%{
@@ -294,7 +309,28 @@ h1, h2 {
 }
 /* Движение картинок "Дороги" при нажатие на картинки "Дороги"*/
 .card-move-road {
+    -webkit-animation: addCard 2s linear forwards;
     animation: addCard 2s linear forwards;
+}
+@-webkit-keyframes addCard {
+    0%{
+        top: 0;
+        left: 0;
+        display: none;
+        opacity: 0
+    }
+    50% {
+        top: -145px;
+        left: -145px;
+        display: block;
+        opacity: 0.5;
+    }
+    100%{
+        top: -290px;
+        left: -290px;
+        display: block;
+        opacity: 1;
+    }
 }
 @keyframes addCard {
     0%{
@@ -318,7 +354,19 @@ h1, h2 {
 }
 /* Движение картинок "Здание" при нажатии на ссылку "Здания" */
 .card-add-building{
+    -webkit-animation: addBuilding 1s linear;
     animation: addBuilding 1s linear;
+}
+@-webkit-keyframes addBuilding {
+    0%{
+
+    }
+    50%{
+
+    }
+    100%{
+
+    }
 }
 @keyframes addBuilding {
     0%{
@@ -332,6 +380,7 @@ h1, h2 {
     }
 }
 .cars-remove-building{
+    -webkit-animation: removeBuilding 1s linear;
     animation: removeBuilding 1s linear;
 }
 /*  */

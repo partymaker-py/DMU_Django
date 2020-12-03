@@ -22,6 +22,10 @@
     font-weight: bold;
     font-style: italic;
 }
+::-moz-selection {
+    color: #ffffff;
+    background-color: #ff0000;
+}
 ::selection {
     color: #ffffff;
     background-color: #ff0000;
@@ -191,8 +195,29 @@ html {
     z-index: 1000;
 }
 .header-animation {
+    -webkit-animation: header-animation 1s ease-in-out forwards;
     animation: header-animation 1s ease-in-out forwards;
     z-index: 1000;
+}
+@-webkit-keyframes header-animation {
+    0% {
+        top: -60px;
+        z-index: 1000;
+    }
+    25% {
+        top: -40px;
+        z-index: 1000;
+    }
+    50%{
+        top: -20px;
+        z-index: 1000;
+    }
+    100% {
+        top: 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+    }
 }
 @keyframes header-animation {
     0% {
