@@ -12,13 +12,61 @@
 {% endblock head %}
 {% block content %}
 <body>
-    {% static "images/no_photo.jpg" as no_photo %}
-    <!-- TODO добавить картинку и текст, когда они будут -->
-    <img src="{{ new.photo_url }}" alt="portret" width="270px" height="270px">
+    {% if new.image %}
+        {% static "images/no_photo.jpg" as no_photo %}
+        <!-- TODO добавить картинку и текст, когда они будут -->
+        <img src="{{ new.photo_url }}" alt="portret" width="270px" height="270px">
+    {% endif %}
+
+
 	<h3>{{ new.title }}</h3>
+
+
 	{% if new.was_published_recently %}
         <h5 class="news-block__subtitle">Свежая новость!</h5>
     {% endif %}
-	{{ new.text }}
+
+
+    {% if new.text %}
+	   {{ new.text }}
+    {% endif %}
+
+
+    {% if new.image2 %}
+        {% static "images/no_photo.jpg" as no_photo %}
+        <img src="{{ new.photo2_url }}" alt="portret" width="270px" height="270px">
+    {% endif %}
+
+
+    {% if new.video %}
+        <video src="{{ new.video_url }}" class="video_content" autoplay height="500"></video>
+    {% endif %}
+
+    {% if new.text2 %}
+       {{ new.text2 }}
+    {% endif %}
+
+    {% if new.image3 %}
+        {% static "images/no_photo.jpg" as no_photo %}
+        <img src="{{ new.photo3_url }}" alt="portret" width="270px" height="270px">
+    {% endif %}
+
+    {% if new.video2 %}
+        <video src="{{ new.video2_url }}" class="video_content" autoplay height="500"></video>
+    {% endif %}
+
+    {% if new.text3 %}
+       {{ new.text3 }}
+    {% endif %}
+
+    {% if new.video3 %}
+        <video src="{{ new.video3_url }}" class="video_content" autoplay height="500"></video>
+    {% endif %}
+
+    {% if new.text4 %}
+       {{ new.text4 }}
+    {% endif %}
+
+
 </body>
 {% endblock content %}
