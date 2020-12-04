@@ -312,6 +312,9 @@ footer{
     .search{
         background-color: inherit;
     }
+}
+@media (max-width: 768px) { 
+    
     .contact-information{
         grid-template-columns: repeat(3, 150px);
         grid-gap: 15px;
@@ -319,19 +322,16 @@ footer{
     
 
 }
-@media (max-width: 768px) { 
-    
-}
 /* Small devices (landscape phones, 576px and up) */
-@media (max-width: 576px) { 
+@media (max-width: 680px) {
+    
+    .search{
+        margin-left: 5%;
+    }
     .contact-information{
         grid-template-columns: 150px;
         grid-template-rows: repeat(3, 300px);
         grid-gap: 30px;
-    }
-    .header-navigation {
-        margin-right: 0;
-        margin-left: 0;
     }
 }
 
