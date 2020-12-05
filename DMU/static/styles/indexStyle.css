@@ -166,6 +166,9 @@ h1, h2 {
     border-right: 0.3px solid;
     border-right-color: #ffffff;
 }
+.buildings{
+    border-right: none;
+}
 .child:hover {
     border-bottom-color: #ff0000;
 }
@@ -473,17 +476,25 @@ h1, h2 {
     }
     .container-info-contacts{
         display: grid;
-        grid-template-columns: 300px 550px;
-        grid-gap: 50px;
+        grid-template-columns: none;
+        grid-template-rows: 300px 500px;
+        grid-gap: 100px;
         margin-top: 100px;  
+        margin-left: 100px;
+        margin-right: 100px;
+        justify-items: center;
     }  
 }
 @media (max-width: 680px) { 
+    .video-container{
+        display: none;
+    }
     .container-info-contacts{
         display: grid;
         grid-template-columns: 300px ;
         grid-template-rows: 400px;
         grid-gap: 50px;
+        margin-left: 40px;
         margin-top: 100px;
     }
     .partners-images{
@@ -505,5 +516,17 @@ h1, h2 {
     }
     .news-article{
         width: 300px;
+    }
+    .title-and-selectors{
+        flex-direction: column;
+    }
+    .title-and-line > hr{
+        margin: auto;
+    }
+    .title-and-line {
+        margin-bottom: 20px;
+    }
+    .some-news{
+        margin-left: 15px;
     }
 }

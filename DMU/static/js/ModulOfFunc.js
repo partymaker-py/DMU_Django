@@ -9,7 +9,6 @@ function headerSearch() {
         let pagePosition = window.scrollY;
         document.body.classList.add('disableScroll');
         document.body.dataset.position = pagePosition;
-        // TODO сделать так чтобы, если хедер уже появился, то он не есчезал бы
         document.body.style.top = -pagePosition + 'px';
         searchFieldInput.style.display = 'block';
             
@@ -70,7 +69,20 @@ function animationHeaderAndScrollBTN() {
             scrollBtn.style.display = 'none';
         }
     }); 
-}
+};
+// Попап меню для маленьких экранов
+function showPopup() {
+    const popupMenu = document.querySelector('.popup-menu-for-smallScreen');
+    document.body.addEventListener('click', e => {
+        if (e.target.closest('.popup-menu-for-smallScreen')) {
+            popupMenu.querySelector('.small-screen-popup').style.display = 'flex';
+        } else {
+            popupMenu.querySelector('.small-screen-popup').style.display = 'none';
+        }
 
+    });
+};
+
+showPopup();
 animationHeaderAndScrollBTN();
 headerSearch();
