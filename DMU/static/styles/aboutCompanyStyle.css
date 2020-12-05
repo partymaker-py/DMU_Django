@@ -23,9 +23,9 @@
 .search-form {
     display: flex;
     flex-direction: row;
+    width: 270px;
     height: 44px;
     border: 1px solid rgba(0, 0, 0, 0.2);
-    margin-bottom: 40px;
 }
 .search-in-aboutCompany {
     padding: 0 10px;
@@ -48,7 +48,6 @@
 .btn-search:focus{
     outline: none;
 }
-
 .subnews,
 .contact-info,
 .what-we-are-doing-subtitle,
@@ -65,13 +64,10 @@
     color:  #ff0000;
     border-color: #ff0000;
 }
-.subnews{
-    margin-top: 50px;
-}
 .sidebar {
+    width: 300px;
     margin-right: 30px;
 }
-
 .news-link {
     font-size: 15px;
     text-decoration: none;
@@ -83,12 +79,6 @@
 }
 .news-list-item {
     margin-top: 5px;
-}
-
-/* TODO подобрать нормальный размер */
-.news-list-item:before {
-    /* content: url('../images/arrowRight.svg'); */
-    
 }
 .what-we-are-doing-image-and-description {
     display: flex;
@@ -103,15 +93,8 @@
     margin-top: 50px;
     width: 300px;
 }
-
 .contacts-list__element {
     margin-top: 10px;
-}
-.contacts-list__element:nth-child(1) {
-    font-weight: bold;
-}
-.contacts-list__element:nth-child(5) {
-    font-weight: bold;
 }
 .link-to-email{
     color: #000000;
@@ -123,6 +106,7 @@
 }
 .thanksgiving-letters {
     margin-top: 50px;
+    margin-right: 20%;
 }
 .thanksgiving-letters-title {
     text-transform: uppercase;
@@ -132,17 +116,26 @@
     border-color: #ff0000;
 }
 .list-of-letters {
-    height: 870px;
-    width: 737px;
+    width: 100%;
 }
 .first-line, .second-line {
     display: flex;
 }
-
 .display-center-letter-wrapper {
     position: fixed;
     top: 200px;
     left: 600px;
     z-index: 999;
     display: none;
+}
+@media (max-width: 768px) { 
+    .main-information{
+        margin-left: 15%;
+    }
+}
+@media (max-width: 680px) { 
+    .main-information{
+        margin-left: 10%;
+        flex-direction: column;
+    }
 }

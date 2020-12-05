@@ -308,6 +308,7 @@ footer{
     border-color: #ff0000 !important;
 }
 /* Not footer */
+/* TODO подправить адаптацию футера и кнопки прокрутки */
 @media (max-width: 1540px) { 
     
     .navigation-link {
@@ -330,6 +331,9 @@ footer{
     
 }
 @media (max-width: 992px) { 
+    .scroll-button{
+        right: 20%;
+    }
     .header-navigation{
         margin: 0;
     }
@@ -353,8 +357,18 @@ footer{
         right: 180px;
     }
     /* end Попап меню */
+    @-webkit-keyframes header-animation {
+    100% {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+}
     @keyframes header-animation {
     100% {
+        position: -webkit-sticky;
         position: sticky;
         top: 0;
         width: 100%;
@@ -363,6 +377,9 @@ footer{
 }
 }
 @media (max-width: 768px) { 
+    .scroll-button{
+        right: 20%;
+    }
     .popup-menu-for-smallScreen {
         display: block;
     }
@@ -374,7 +391,10 @@ footer{
         grid-gap: 15px;
     }
 }
-@media (max-width: 680px) {
+@media (max-width: 680px) { 
+    .scroll-button{
+        right: 20%;
+    }
     .search{
         margin-left: 5%;
     }
@@ -387,6 +407,9 @@ footer{
 @media (max-width: 460px){
     .small-screen-popup{
         right: 0;
+    }
+    .scroll-button{
+        right: 25%;
     }
 }
 
