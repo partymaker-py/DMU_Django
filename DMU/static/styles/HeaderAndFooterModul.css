@@ -112,7 +112,7 @@ html {
     display: none;
     position: fixed;
     top: 85%;
-    right: 30px;
+    right: 5%;
     z-index: 1000;
 }
 /* Header */
@@ -330,6 +330,9 @@ footer{
     
 }
 @media (max-width: 992px) { 
+    .header-navigation{
+        margin: 0;
+    }
     .navigation-link:nth-child(1),
     .navigation-link:nth-child(2),
     .navigation-link:nth-child(3),
@@ -350,6 +353,14 @@ footer{
         right: 180px;
     }
     /* end Попап меню */
+    @keyframes header-animation {
+    100% {
+        position: sticky;
+        top: 0;
+        width: 100%;
+        z-index: 1000;
+    }
+}
 }
 @media (max-width: 768px) { 
     .popup-menu-for-smallScreen {
@@ -362,13 +373,8 @@ footer{
         grid-template-columns: repeat(3, 150px);
         grid-gap: 15px;
     }
-    
-    
-
 }
-/* Small devices (landscape phones, 576px and up) */
 @media (max-width: 680px) {
-    
     .search{
         margin-left: 5%;
     }
