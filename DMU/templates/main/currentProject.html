@@ -1,0 +1,67 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'styles/searchResult.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModul.css' %}">
+    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <title>ООО "ДМУ" | {{ preject.title }}</title>
+</head>
+{% endblock head %}
+{% block content %}
+<body>
+    {% if project.image %}
+        {% static "images/no_photo.jpg" as no_photo %}
+        <!-- TODO добавить картинку и текст, когда они будут -->
+        <img src="{{ project.photo_url }}" alt="portret" width="270px" height="270px">
+    {% endif %}
+
+
+	<h3>{{ project.title }}</h3>
+
+
+    {% if project.text %}
+	   {{ project.text }}
+    {% endif %}
+
+
+    {% if project.image2 %}
+        {% static "images/no_photo.jpg" as no_photo %}
+        <img src="{{ project.photo_url2 }}" alt="portret" width="270px" height="270px">
+    {% endif %}
+
+
+    {% if project.video %}
+        <video src="{{ project.video_url }}" class="video_content" autoplay height="500"></video>
+    {% endif %}
+
+    {% if project.text2 %}
+       {{ project.text2 }}
+    {% endif %}
+
+    {% if project.image3 %}
+        {% static "images/no_photo.jpg" as no_photo %}
+        <img src="{{ project.photo_url3 }}" alt="portret" width="270px" height="270px">
+    {% endif %}
+
+    {% if project.video2 %}
+        <video src="{{ project.video_url2 }}" class="video_content" autoplay height="500"></video>
+    {% endif %}
+
+    {% if project.text3 %}
+       {{ project.text3 }}
+    {% endif %}
+
+    {% if project.video3 %}
+        <video src="{{ project.video_url3 }}" class="video_content" autoplay height="500"></video>
+    {% endif %}
+
+    {% if project.text4 %}
+       {{ project.text4 }}
+    {% endif %}
+
+
+</body>
+{% endblock content %}
