@@ -48,9 +48,22 @@
                     <div class="navigation-link">
                         <a href="{% url 'contacts' %}">Контакты</a>
                     </div>
+                    <div class="popup-menu-for-smallScreen">
+                        <img src="../static/images/menu.svg" width="23" height="23" alt="popupHumburger" class="small-screen-popup-icon">
+                        <div class="small-screen-popup">
+                            <a href="{% url 'index' %}" class="small-screen-popup__item">Главная</a>
+                            <a href="{% url 'about' %}" class="small-screen-popup__item">О компании</a>
+                            <a href="{% url 'projects' %}" class="small-screen-popup__item">Проекты</a>
+                            <a href="{% url 'services' %}" class="small-screen-popup__item">Услуги</a>
+                            <a href="{% url 'news' %}" class="small-screen-popup__item">Новости</a>
+                            <a href="{% url 'career' %}" class="small-screen-popup__item">Карьера</a>
+                            <a href="{% url 'contacts' %}" class="small-screen-popup__item">Контакты</a>
+                        </div>
+                    </div>
                     <div class="search">
                         <a href="#" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
                     </div>
+                    
                 </div>
             </div>
         </div>
