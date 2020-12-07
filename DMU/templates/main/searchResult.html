@@ -12,7 +12,6 @@
 </head>
 {% endblock head %}
 {% block content %}
-<body>
     <button class="scroll-button">Прокрутка наверх</button>
     <section class="intro">
         <div class="main-main-title-of-page">
@@ -21,7 +20,7 @@
     </section>
 
     <main class="results">
-
+	{% if posts_news %}
         {% for a in posts_news %}
         <article class="result-block">
 
@@ -29,11 +28,11 @@
                 <p class="aside-link-block__title">{{ a.title }}</p>
             </a>
             {{ a.text }}
-            
         </article>
         {% endfor %}
-        
+    {% endif %}
 
+    {% if posts_context %}
         {% for a in posts_context %}
         <article class="result-block">
 
@@ -41,13 +40,10 @@
                 <p class="aside-link-block__title">{{ a.title }}</p>
             </a>
             {{ a.text }}
-
-        </article>
-        
+        </article>   
         {% endfor %}
-        
+    {% endif %}  
     </main>
-</body>
 {% endblock content %}
 
-{% block footer %}{% endblock footer %}
+{% block footer %} {% endblock %}
