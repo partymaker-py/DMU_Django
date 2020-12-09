@@ -1,0 +1,66 @@
+.intro{
+    margin-top: -60px;
+    height: 400px;
+    background: url('../images/dmusubg.jpg');
+}
+.main-main-title-of-page{
+    margin-left: 20%;
+    padding-top: 200px;
+    color: #ffffff;
+}
+.title-of-page{
+    margin-top: 0;
+}
+.subtitle{
+    font-style: italic;
+}
+.main-info{
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.search-form {
+    display: flex;
+    flex-direction: row;
+    height: 44px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+.search-in-career {
+    padding: 0 10px;
+    width: 90%;
+    border: none;
+}
+.search-logo{
+    width: 15px;
+    height: 15px;
+}
+.search-in-career:focus {
+    outline: none;
+}
+.btn-search {
+    cursor: pointer;
+    width: 15%;
+    background-color: inherit;
+    border: none;
+}
+.btn-search:focus{
+    outline: none;
+}
+.newstitle>hr, .contact-block>hr, .main-info-title>hr {
+    width: 40px;
+    border-color: #ff0000;
+    margin-top: 20px;
+    margin-left: 0;
+}
+.contact-link:nth-child(1), .contact-link:nth-child(5){
+    font-weight: bold;
+}
+.news-link,
+.contact-link {
+    padding-bottom: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+}

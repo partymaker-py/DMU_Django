@@ -19,7 +19,7 @@ main{
     margin-left: 15%;
     margin-right: 15%;
 }
-aside {
+.aside {
     margin-right: 20px;
 }
 .news {
@@ -76,14 +76,18 @@ aside {
 }
 .info-of-info{
     display: flex;
+    justify-content: center;    
 }
 .main-info{
     display: flex;
 }
+.form{
+    max-width: 950px;
+}
 .fio {
     display: flex;
     justify-content: space-between;
-    width: 950px;
+    max-width: 950px;
 }
 .name,
 .father,
@@ -102,6 +106,9 @@ aside {
     width: 270px;
     padding-left: 10px;
     padding-right: 10px;
+}
+.phone-and-long{
+    width: 100%;
 }
 .name-input,
 .father-input,
@@ -123,7 +130,7 @@ aside {
 .phone-input,
 .message-input{
     height: 46px;
-    width: 942px;
+    width: 100%;
 }
 .btn-submit{
     outline: #ff0000;
@@ -164,4 +171,52 @@ input[type='number'] {
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
+}
+/* TODO доделать */
+@media (max-width: 1318px) {
+    .info-of-info{
+        display: flex;
+        flex-direction: column;
+    }
+    .name-input, .father-input {
+        margin-right: 20px;
+    }
+}
+@media (max-width: 998px) {
+    .fio{
+        flex-direction: column;
+    }
+    .name-input,
+    .father-input,
+    .sername-input{
+        width: 100%;
+    }
+
+}
+@media (max-width: 680px) {
+    .news__text-blocks{
+        display: flex;
+        flex-direction: row;
+    }
+    .news-block,.contacts{
+        width: 300px;
+    }
+    main{
+        margin-left: 15%;
+    }
+    .info-of-info{
+        flex-direction: column;
+    }
+    .main-info{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .fio{
+        flex-direction: column;
+    }
+}
+@media (max-width: 460px) {
+    main{
+        margin-left: 5%;
+    }
 }
