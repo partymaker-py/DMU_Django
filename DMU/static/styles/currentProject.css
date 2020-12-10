@@ -1,0 +1,136 @@
+.intro{
+    margin-top: -60px;
+    height: 400px;
+    background: url('../images/dmusubg.jpg');
+}
+.main-main-title-of-page{
+    margin-left: 20%;
+    padding-top: 200px;
+    color: #ffffff;
+}
+.title-of-page{
+    margin-top: 0;
+}
+.subtitle{
+    font-style: italic;
+}
+.page-wrapper{
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.project-title{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 75px;
+}
+/* слайдер start */
+.slider {
+    position: relative;
+    overflow: hidden;
+}
+.slider__wrapper {
+    display: flex;
+    transition: transform 0.6s ease;
+}
+.slider__item {
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.slider__control {
+    position: absolute;
+    top: 50%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    color: #fff;
+    text-align: center;
+    opacity: 0.5;
+    height: 50px;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, .5);
+}
+
+.slider__control_show {
+    display: flex;
+}
+
+.slider__control:hover,
+.slider__control:focus {
+    color: #fff;
+    text-decoration: none;
+    outline: 0;
+    opacity: .9;
+}
+
+.slider__control_left {
+    left: 0;
+}
+
+.slider__control_right {
+    right: 0;
+}
+
+.slider__control::before {
+    content: '';
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background: transparent no-repeat center center;
+    background-size: 100% 100%;
+}
+
+.slider__control_left::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.slider__control_right::before {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.slider__item>div {
+    line-height: 250px;
+    font-size: 100px;
+    text-align: center;
+}
+/* слайдер end */
+.project-description{
+    margin-bottom: 75px;
+}
+.selector-links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 53px;
+}
+.links-toshow-imges{
+    color: #000000 !important;
+}
+.all-photos, .roads, .buildings {
+    border-right: 0.3px solid;
+    border-right-color: rgba(0, 0, 0, .5) !important;
+}
+.moving-cards{
+    margin-bottom: 70px !important;
+}
+.project-description__control-between-projects{
+    margin-right: 5%;
+    margin-left: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.control-between-projects__wrapper{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.link-to-prev, .link-to-next{
+    text-decoration: none;
+    color: #000000;
+    transition: .5  s linear;
+}
+.link-to-prev:hover, .link-to-next:hover{
+    color: #ff0000;
+}
