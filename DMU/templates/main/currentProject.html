@@ -157,4 +157,11 @@
            </section>
         </section>
     </main>
+    <script>
+        if (document.querySelector('.slider__wrapper').children.length <= 1) {
+            document.querySelectorAll('.slider__control').forEach(item => {
+                item.style.display = 'none';
+            })
+        }
+    </script>
 {% endblock content %}
