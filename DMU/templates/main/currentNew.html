@@ -15,7 +15,12 @@
 {% endblock head %}
 {% block content %}
     <!-- TODO доверстать, когда будут изчестны какие будут страници -->
+    {% if new.image %}
+    {% static "images/no_photo.jpg" as no_photo %}
+    <section class="intro" style="background: url('{{ new.photo_url }}')">
+    {% else %}
     <section class="intro">
+    {% endif %}
         <div class="main-main-title-of-page">
             <h1 class="title-of-page">Проекты</h1>
             <p class="subtitle"></p>
@@ -60,7 +65,7 @@
 
             {% if new.image %}
             {% static "images/no_photo.jpg" as no_photo %}
-            <img src="{{ new.photo_url }}" alt="portret" width="270px" height="270px">
+            <img src="{{ new.photo_url }}" alt="portret" height="400" max-width="900">
             {% endif %}
             <h3 class="new.title">{{ new.title }}</h3>
             
