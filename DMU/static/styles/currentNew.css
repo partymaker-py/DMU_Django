@@ -14,53 +14,62 @@
 .subtitle{
     font-style: italic;
 }
-.main-info{
+.main-info {
     margin-top: 50px;
-    margin-left: 20%;
     margin-right: 20%;
+    margin-left: 20%;
     display: flex;
     flex-direction: row-reverse;
 }
-.search-form {
+/* Поиск со страницы */
+.search-form{
     display: flex;
     flex-direction: row;
     height: 44px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 40px;
 }
-.search-in-career {
+.get-search-from-page{
     padding: 0 10px;
     width: 90%;
     border: none;
 }
-.search-logo{
-    width: 15px;
-    height: 15px;
-}
-.search-in-career:focus {
-    outline: none;
-}
-.btn-search {
+.btn-search{
     cursor: pointer;
     width: 15%;
     background-color: inherit;
     border: none;
 }
-.btn-search:focus{
-    outline: none;
-}
-.newstitle>hr, .contact-block>hr, .main-info-title>hr {
+/*  */
+.newstitle > hr, .contact-block > hr{
     width: 40px;
-    border-color: #ff0000;
-    margin-top: 20px;
     margin-left: 0;
+    border-color: #ff0000;
 }
-.contact-link:nth-child(1), .contact-link:nth-child(5){
-    font-weight: bold;
+.project-description__control-between-projects{
+    margin-top: 40px;
+    margin-right: 5%;
+    margin-left: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
 }
-.news-link,
-.contact-link {
-    padding-bottom: 10px;
-    font-size: 14px;
-    text-transform: uppercase;
+.news-descritption{
+    font-weight: 400;
+    margin: 0 0 25px 0;
+    padding: 0;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+}
+.control-between-projects__wrapper{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.link-to-prev, .link-to-next{
+    text-decoration: none;
+    color: #000000;
+    transition: .5  s linear;
+}
+.link-to-prev:hover, .link-to-next:hover{
+    color: #ff0000;
 }

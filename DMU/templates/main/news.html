@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/news.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModul.css' %}">
-    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Новости{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -22,7 +22,6 @@
         </div>
     </section>
     <main>
-        <button class="scroll-button">Прокрутка наверх</button>
         
         <section class="article-and-aside">
             <section class="main-info">
@@ -30,7 +29,7 @@
 
 {% for a in latest_news_list %}
                 <article class="hews-block">
-                    <img src="" alt="news-img" width="870" height="599" class="news-block__img">
+                    <img src="" alt="news-img" width="870" height="599" class="news-block__img"> <!--TODO сделать динамическое отображение-->
                     <a href="{% url 'detail_new' a.id %}" class="aside-link"><p class="aside-link-block__title">{{ a.title }}</p></a>
                     {% if a.was_published_recently %}
                         <!-- <h5 class="news-block__subtitle">Свежая новость!</h5> -->

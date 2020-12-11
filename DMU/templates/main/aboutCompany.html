@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/aboutCompanyStyle.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModul.css' %}">
-    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <script src="{% static 'js/aboutCompany.js' %}" defer></script>
     <title>{% block title %}О компнаии{% endblock title %}</title>
 </head>
@@ -16,7 +16,6 @@
     
     <!-- маркер для вставки шапки сайта -->
 
-    <button class="scroll-button">Прокрутка наверх</button>
 {% block content %}
     <main>
         <div class="intro">

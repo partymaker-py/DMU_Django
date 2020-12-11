@@ -7,12 +7,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModul.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <link rel="stylesheet" href="{% static 'styles/currentProject.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/movingCards.css' %}">
-    <script src="{% static 'js/movingCardsModul.js' %}" defer></script>
-    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
-    <script src="{% static 'js/SubPagesJs/sliderUltra.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'styles/movingCardsModule.css' %}">
+    <script src="{% static 'js/movingCardsModule.js' %}" defer></script>
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'js/Modules/sliderUltraModule.js' %}" defer></script>
     <title>Конкретный проект</title>
 </head>
 {% endblock head %}
@@ -30,21 +30,21 @@
                     {% if project.image %}
                         {% static "images/no_photo.jpg" as no_photo %}
                             <div class="slider__item">
-                                <img src="{{ project.photo_url }}">
+                                <img src="{{ project.photo_url }}" alt="project-photo">
                             </div>
                     {% endif %}
 
                     {% if project.image2 %}
                         {% static "images/no_photo.jpg" as no_photo %}
                             <div class="slider__item">
-                                <img src="{{ project.photo_url2 }}">
+                                <img src="{{ project.photo_url2 }}" alt="project-photo">
                             </div>
                     {% endif %}
 
                     {% if project.image3 %}
                         {% static "images/no_photo.jpg" as no_photo %}
                             <div class="slider__item">
-                                <img src="{{ project.photo_url3 }}">
+                                <img src="{{ project.photo_url3 }}" alt="project-photo">
                             </div>
                     {% endif %}
 
@@ -61,21 +61,29 @@
             <section class="project-description__descrition">
 
                 {% if project.text %}
-                    {{ project.text }}
+                <div class="text-wrapper">
+                    <p class="project-text">{{ project.text }}</p>
+                </div>
                 {% endif %}
 
                 {% if project.text2 %}
-                    {{ project.text2 }}
+                <div class="text-wrapper">
+                    <p class="project-text">{{ project.text2 }}</p>
+                </div>
                 {% endif %}
 
                 {% if project.text3 %}
-                    {{ project.text3 }}
+                <div class="text-wrapper">
+                    <p class="project-text">{{ project.text3 }}</p>
+                </div>
                 {% endif %}
-
+                
                 {% if project.text4 %}
-                    {{ project.text4 }}
+                <div class="text-wrapper">
+                    <p class="project-text">{{ project.text4 }}</p>
+                </div>
                 {% endif %}
-
+                
                 {% if project.video %}
                     <video src="{{ project.video_url }}" class="video_content" autoplay height="500"></video>
                 {% endif %}
@@ -94,7 +102,6 @@
 
             </section>
             <section class="project-description__projects-slider">
-               <!-- TODO вставть слайдер с первой страници -->
                 
                 <div class="selector-links">
                     <div class="all-photos">

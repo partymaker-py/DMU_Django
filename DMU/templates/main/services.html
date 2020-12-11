@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/services.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModul.css' %}">
-    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
-    <script src="{% static 'js/services.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Услуги{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -17,7 +16,6 @@
     <!-- Header -->
 {% block content %}
     <main>
-        <button class="scroll-button">Прокуртку наверх</button>
         <section class="intro">
             <div class="main-main-title-of-page">
                 <h1 class="title-of-page">Услуги</h1>

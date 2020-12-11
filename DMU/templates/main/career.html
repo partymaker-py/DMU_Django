@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/career.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModul.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <script></script>
-    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <script src="{% static 'js/career.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Карьера{% endblock title %}</title>
 </head>
@@ -22,13 +22,12 @@
         </div>
     </section>
     <main>
-        <button class="scroll-button">прокрутка наверх</button>
         <section class="info-of-info">
             <aside class="aside">
                 <section class="news">
                     <form class="search-form">
                         <input type="text" placeholder="Поиск" class="search-in-career">
-                        <button type="submit" class="btn-search"><img src="../images/loupeblack.svg" alt="search-logo" class="search-logo"></button>
+                        <button type="submit" class="btn-search"><img src="{% static 'images/loupeblack.svg' %}" alt="search-logo" class="search-logo"></button>
                     </form>
                     <div class="news-block">
                         <h3 class="newstitle">Новости<hr></h3>

@@ -1,4 +1,3 @@
-const scrollBtn = document.querySelector('.scroll-button');
 const form = document.querySelector('.form');
 const searchForm = document.querySelector('.search-form');
 const nameInput = document.querySelector('.name-input');

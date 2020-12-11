@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/indexStyle.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModul.css' %}">
-    <link rel="stylesheet" href="../static/styles/movingCards.css">
-    <script src="{% static 'js/ModulOfFunc.js' %}" defer></script>
+    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/movingCardsModule.css' %}">
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <script src=".{% static 'js/main.js' %}" defer></script>
-    <script src="../static/js/movingCardsModul.js" defer></script>
+    <script src="{% static 'js/Modules/movingCardsModule.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -52,7 +52,7 @@
                         <a href="{% url 'contacts' %}">Контакты</a>
                     </div>
                     <div class="popup-menu-for-smallScreen">
-                        <img src="../static/images/menu.svg" width="23" height="23" alt="popupHumburger" class="small-screen-popup-icon">
+                        <img src="{% static 'images/menu.svg' %}" width="23" height="23" alt="popupHumburger" class="small-screen-popup-icon">
                         <div class="small-screen-popup">
                             <a href="{% url 'index' %}" class="small-screen-popup__item">Главная</a>
                             <a href="{% url 'about' %}" class="small-screen-popup__item">О компании</a>

@@ -1,7 +1,30 @@
 {
+  "name": "dmu",
+  "version": "1.0.0",
+  "description": "\"website for DMU company\"",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/partymaker-py/DMU.git"
+  },
+  "keywords": [
+    "js",
+    "python",
+    "javascript",
+    "django",
+    "framework"
+  ],
+  "author": "Boris Ponomarenko and Kirill Gervasov",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/partymaker-py/DMU/issues"
+  },
+  "homepage": "https://github.com/partymaker-py/DMU#readme",
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^7.0.1",
-    "gulp-postcss": "^9.0.0"
+    "webpack": "^5.10.0",
+    "webpack-cli": "^4.2.0"
   }
 }
