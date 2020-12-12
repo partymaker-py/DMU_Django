@@ -24,36 +24,37 @@
         </section>
         <section class="form-and-adress">
             <article class="form-wrapper-article">
-                <form class="form" name="contactForm">
-                    {% csrf_token %}
-                    <div class="form__name-and-phone-wrapper">
-                        <div class="form__name-wrapper">
-                            <input type="text" name="contact-form__name" class="from__input-name" placeholder="Имя" autocomplete="off">
+                <label>
+                    <form class="form" name="contactForm">
+                        {% csrf_token %}
+                        <div class="form__name-and-phone-wrapper">
+                            <div class="form__name-wrapper">
+                                <input type="text" name="contact-form__name" class="from__input-name" placeholder="Имя" autocomplete="off">
+                                <p class="form__warning">Поле обязательно для заполнеия.</p>
+                            </div>
+                            <div class="form__phone-wrapper">
+                                <input type="number" name="contact-form__phone" class="form__input-phone" placeholder="Телефон" autocomplete="off">
+                                <p class="form__warning">Поле обязательно для заполнеия.</p>
+                            </div>
+                        </div>
+                        <div class="form__email-wrapper">
+                            <input type="email" name="contact-form__email" class="form__input-email" placeholder="E-mail" autocomplete="off">
                             <p class="form__warning">Поле обязательно для заполнеия.</p>
                         </div>
-                        <div class="form__phone-wrapper">
-                            <input type="number" name="contact-form__phone" class="form__input-phone" placeholder="Телефон" autocomplete="off">
+                        <div class="form__message-wrapper">
+                            <textarea type="text" name="contact-form__message" class="from__input-message" placeholder="Сообщение" autocomplete="off"></textarea>
                             <p class="form__warning">Поле обязательно для заполнеия.</p>
                         </div>
-                    </div>
-                    <div class="form__email-wrapper">
-                        <input type="email" name="contact-form__email" class="form__input-email" placeholder="E-mail" autocomplete="off">
-                        <p class="form__warning">Поле обязательно для заполнеия.</p>
-                    </div>
-                    <div class="form__message-wrapper">
-                        <textarea type="text" name="contact-form__message" class="from__input-message" placeholder="Сообщение" autocomplete="off"></textarea>
-                        <p class="form__warning">Поле обязательно для заполнеия.</p>
-                    </div>
-                    <button class="form__btn-submit" name="contact-form__btn-submit" type="submit">Отправить сообщение</button>
-                </form>
+                        <button class="form__btn-submit" name="contact-form__btn-submit" type="submit">Отправить сообщение</button>
+                    </form>
+                </label>
                 <div class="main-warn-wrapper">
                     <p class="main-warning-text">Одно или несколько полей содержат ошибочные данные. Пожалуйста, проверьте их и попробуйте ещё раз.</p>
                 </div>
             </article>
             <aside class="vidjet-and-contacts">
                 <article class="vidjet">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.0609240230547!2d37.39160705176814!3d55.792179996325956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b549e4865124f7%3A0x819d2be7c27555fb!2z0JzQsNGA0YjQsNC70LAg0J_RgNC-0YjQu9GP0LrQvtCy0LAg0YPQuy4sIDEwINC60L7RgNC_0YPRgSAxINGB0YLRgNC-0LXQvdC40LUgNiwg0JzQvtGB0LrQstCwLCAxMjM0NTg!5e0!3m2!1sru!2sru!4v1607715326024!5m2!1sru!2sru"
+                    <iframe title="Москва, Маршала Прошлякова д.10 к.1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.0609240230547!2d37.39160705176814!3d55.792179996325956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b549e4865124f7%3A0x819d2be7c27555fb!2z0JzQsNGA0YjQsNC70LAg0J_RgNC-0YjQu9GP0LrQvtCy0LAg0YPQuy4sIDEwINC60L7RgNC_0YPRgSAxINGB0YLRgNC-0LXQvdC40LUgNiwg0JzQvtGB0LrQstCwLCAxMjM0NTg!5e0!3m2!1sru!2sru!4v1607715326024!5m2!1sru!2sru"
                         width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                 </article>

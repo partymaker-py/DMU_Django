@@ -20,26 +20,23 @@
     margin-right: 20%;
     display: flex;
 }
-.search-form {
+/* Поиск со страницы */
+.search-form{
     display: flex;
     flex-direction: row;
-    width: 270px;
     height: 44px;
     border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
 }
-.search-in-aboutCompany {
+.get-search-from-page{
     padding: 0 10px;
     width: 90%;
     border: none;
 }
-.search-logo{
-    width: 15px;
-    height: 15px;
-}
-.search-in-aboutCompany:focus {
+.get-search-from-page:focus{
     outline: none;
 }
-.btn-search {
+.btn-search{
     cursor: pointer;
     width: 15%;
     background-color: inherit;
@@ -48,6 +45,11 @@
 .btn-search:focus{
     outline: none;
 }
+.search-logo{
+    width: 19px;
+    height: 19px;
+}
+/*  */
 .subnews,
 .contact-info,
 .what-we-are-doing-subtitle,

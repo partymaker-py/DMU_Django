@@ -34,20 +34,43 @@
     width: 90%;
     border: none;
 }
+.get-search-from-page:focus{
+    outline: none;
+}
 .btn-search{
     cursor: pointer;
     width: 15%;
     background-color: inherit;
     border: none;
 }
+.btn-search:focus{
+    outline: none;
+}
+.search-logo{
+    width: 19px;
+    height: 19px;
+}
 /*  */
+.aside{
+    margin-left: 10px;
+    width: 270px;
+}
+.news-info{
+    max-width: 900px;
+}
+.new__paragraph{
+    margin-top: 40px;
+}
+.video_content{
+    margin-top: 40px;
+}
 .newstitle > hr, .contact-block > hr{
     width: 40px;
     margin-left: 0;
     border-color: #ff0000;
 }
 .project-description__control-between-projects{
-    margin-top: 40px;
+    margin-top: 80px;
     margin-right: 5%;
     margin-left: 5%;
     border: 1px solid rgba(0, 0, 0, 0.2);

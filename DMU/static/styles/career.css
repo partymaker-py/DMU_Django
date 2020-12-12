@@ -27,26 +27,23 @@ main{
     height: 857px;
     margin-right: 20px;
 }
-.search-form {
+/* Поиск со страницы */
+.search-form{
     display: flex;
     flex-direction: row;
     height: 44px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     margin-bottom: 40px;
 }
-.search-in-career {
+.get-search-from-page{
     padding: 0 10px;
     width: 90%;
     border: none;
 }
-.search-logo{
-    width: 15px;
-    height: 15px;
-}
-.search-in-career:focus {
+.get-search-from-page:focus{
     outline: none;
 }
-.btn-search {
+.btn-search{
     cursor: pointer;
     width: 15%;
     background-color: inherit;
@@ -55,6 +52,11 @@ main{
 .btn-search:focus{
     outline: none;
 }
+.search-logo{
+    width: 19px;
+    height: 19px;
+}
+/*  */
 .newstitle>hr, .contact-block>hr, .main-info-title>hr {
     width: 40px;
     border-color: #ff0000;

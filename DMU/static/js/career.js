@@ -1,5 +1,4 @@
 const form = document.querySelector('.form');
-const searchForm = document.querySelector('.search-form');
 const nameInput = document.querySelector('.name-input');
 const fatherInput = document.querySelector('.father-input');
 const sernameInput = document.querySelector('.sername-input');

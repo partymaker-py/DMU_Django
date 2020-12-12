@@ -18,23 +18,31 @@
 main {
     margin-top: 50px;
 }
+.new__wrapper{
+    padding-top: 50px;
+    padding-bottom: 50px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+.new__url{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #000000;
+    transition: 60ms linear;
+}
+.new__url:hover{
+    color: #ff0000;
+}
 .article-and-aside{
     margin-left: 20%;
     margin-right: 20%;
     display: flex;
-}
-.news-block__title {
-    text-transform: uppercase;
-}
-.news-block__subtitle {
-    color: #ff0000;
-    text-transform: uppercase;
 }
 .aside-block{
     margin-left: 40px;
 }
 .aside-block-title{
     margin-bottom: 30px;
+    text-transform: uppercase;
 }
 .aside-block-title > hr {
     margin-top: 30px;

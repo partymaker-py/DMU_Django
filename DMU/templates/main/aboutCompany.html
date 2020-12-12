@@ -7,8 +7,9 @@
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/aboutCompanyStyle.css' %}">
     <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
-    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <script src="{% static 'js/aboutCompany.js' %}" defer></script>
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'js/Modules/searchFromPageModule.js' %}" defer></script>
     <title>{% block title %}О компнаии{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -27,11 +28,13 @@
         
         <div class="main-information">
             <div class="sidebar">
-                <form class="search-form">
-                    <input type="text" name="searchForm" placeholder="Поиск" class="search-in-aboutCompany" autocomplete="off">
-                    <button type="submit" class="btn-search"><img src="../images/loupeblack.svg" alt="search-logo"
-                            class="search-logo"></button>
-                </form>
+                <label>
+                    <form class="search-form">
+                        <input type="text" name="searchForm" placeholder="Поиск" class="get-search-from-page" autocomplete="off">
+                        <button type="submit" class="btn-search"><img src="{% static 'images/loupeblack.svg' %}" alt="search-logo"
+                                class="search-logo"></button>
+                    </form>
+                </label>
                 <h3 class="subnews">Новости<hr></h3>
                 <ul>
 

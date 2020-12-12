@@ -7,9 +7,9 @@
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/career.css' %}">
     <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
-    <script></script>
-    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <script src="{% static 'js/career.js' %}" defer></script>
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'js/Modules/searchFromPageModule.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Карьера{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -25,10 +25,13 @@
         <section class="info-of-info">
             <aside class="aside">
                 <section class="news">
-                    <form class="search-form">
-                        <input type="text" placeholder="Поиск" class="search-in-career">
-                        <button type="submit" class="btn-search"><img src="{% static 'images/loupeblack.svg' %}" alt="search-logo" class="search-logo"></button>
-                    </form>
+                    <label>
+                        <form class="search-form">
+                            <input type="text" placeholder="Поиск" class="get-search-from-page">
+                            <button type="submit" class="btn-search"><img src="{% static 'images/loupeblack.svg' %}" alt="search-logo"
+                                    class="search-logo"></button>
+                        </form>
+                    </label>
                     <div class="news-block">
                         <h3 class="newstitle">Новости<hr></h3>
                         <ul class="news-list">
@@ -63,38 +66,42 @@
                     <img src="" alt="portret" width="270px" height="270px">
                     </section>
                     <div class="form__wrapper">
-                        <form name="formCareer" class="form">
-                            {% csrf_token %}
-                            <div class="fio"> 
-                                <div class="name">
-                                    <input type="text" name="input-name" placeholder="Имя" class="name-input" autocomplete="off">
-                                    <p class="wraning-name-text">Поле обязательно для заполенния</p>
+                        <label>
+                            <form name="formCareer" class="form">
+                                {% csrf_token %}
+                                <div class="fio">
+                                    <div class="name">
+                                        <input type="text" name="input-name" placeholder="Имя" class="name-input" autocomplete="off">
+                                        <p class="wraning-name-text">Поле обязательно для заполенния</p>
+                                    </div>
+                                    <div class="father">
+                                        <input type="text" name="input-father-name" placeholder="Отчество" class="father-input" autocomplete="off">
+                                        <p class="warning-father-text">Поле обязательно для заполенния</p>
+                                    </div>
+                                    <div class="sername">
+                                        <input type="text" name="sername-input" placeholder="Фамилия" class="sername-input" autocomplete="off">
+                                        <p class="warning-sername-text">Поле обязательно для заполенния</p>
+                                    </div>
                                 </div>
-                                <div class="father">
-                                    <input type="text" name="input-father-name" placeholder="Отчество" class="father-input" autocomplete="off">
-                                    <p class="warning-father-text">Поле обязательно для заполенния</p>
+                                <div class="phone-and-long">
+                                    <div class="phone">
+                                        <input type="text" name="phone-input" placeholder="Контактный номер телефона" class="phone-input"
+                                            autocomplete="off">
+                                        <p class="warning-phone-text">Поле обязательно для заполенния</p>
+                                    </div>
+                                    <div class="long">
+                                        <input type="text" name="message-input" placeholder="Желаемая должность" class="message-input"
+                                            autocomplete="off">
+                                        <p class="warning-long-text">Поле обязательно для заполенния</p>
+                                    </div>
                                 </div>
-                                <div class="sername">
-                                    <input type="text" name="sername-input" placeholder="Фамилия" class="sername-input" autocomplete="off">
-                                    <p class="warning-sername-text">Поле обязательно для заполенния</p>
-                                </div>
-                            </div>
-                            <div class="phone-and-long">
-                                <div class="phone">
-                                    <input type="text" name="phone-input" placeholder="Контактный номер телефона" class="phone-input" autocomplete="off">
-                                    <p class="warning-phone-text">Поле обязательно для заполенния</p>
-                                </div>
-                                <div class="long">
-                                    <input type="text" name="message-input" placeholder="Желаемая должность" class="message-input" autocomplete="off">
-                                    <p class="warning-long-text">Поле обязательно для заполенния</p>
-                                </div>
-                            </div>
-                            <!-- <div class="file">
-                                <input type="file" name="file-input" style="color: transparent;" class="file-input" required>
-                                <p class="warning-file-text">Поле обязательно для заполенния</p>
-                            </div> -->
-                            <button type="submit" class="btn-submit">Отправить</button>
-                        </form>
+                                <!-- <div class="file">
+                                                            <input type="file" name="file-input" style="color: transparent;" class="file-input" required>
+                                                            <p class="warning-file-text">Поле обязательно для заполенния</p>
+                                                        </div> -->
+                                <button type="submit" class="btn-submit">Отправить</button>
+                            </form>
+                        </label>
                         <div class="main-warning"><span>Одно или несколько полей содержит ошибочные данные. Пожалуйста, проверте их и попробуйте ещё раз.</span></div>
                     </div>
                 </section>
