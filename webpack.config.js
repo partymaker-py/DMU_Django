@@ -1,52 +1,38 @@
 const path = require('path');
-const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const autoprefixer = require('autoprefixer');
-const { ModuleFilenameHelpers } = require('webpack');
 
 module.exports = {
-    context: path.resolve(__dirname, 'static'),
-    mode: "development",
+    mode: 'development',
     entry: {
-        main: "./DMU/static/js/Modules/headerScrollAndPopupModule.js"
+        main: './DMU/static/js/main.js',
+        contacts: './DMU/static/js/contacts.js',
+        career: './DMU/static/js/career.js',
+        aboutCompany: './DMU/static/js/aboutCompany.js',
+        headerScrollAndPopupModule: './DMU/static/js/Modules/headerScrollAndPopupModule.js',
+        movingCardsModule: './DMU/static/js/Modules/movingCardsModule.js',
+        searchFromPageModule: './DMU/static/js/Modules/searchFromPageModule.js',
+        sliderUltraModule: './DMU/static/js/Modules/sliderUltraModule.js'
     },
     output: {
         filename: '[name].[contenthash].js',
-        path: path.resolve(__dirname, 'DMU/static/dist')
+        path: path.resolve(__dirname, 'DMU/static/FonrontBuild')
     },
     plugins: [
-        new HTMLWebpackPlugin({
-            template: 'DMU/templates/index.html'
-        }),
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(), 
     ],
     module: {
         rules: [
             {
-                test: /\.css$/,
-                use: [{
-                    loader: 'style-loader'
-                },
-                {
-                    loader: 'css-loader',
-                    options: {
-                        sourceMap: true
-                    }
-                },
-                {
-                    loader: 'postcss-loader',
-                    options: {
-                        plugins: [
-                            autoprefixer({
-                                browsers:['ie >= 8', 'last 4 version']
-                            })
-                        ],
-                        sourceMap: true
-                    }
-                }
-            ]
+                // конфиг для стилей
+                test:/\.css$/,
+                use: ["style-loader", "css-loader", "postcss-loader"]
+            },
+            {
+                // конфиг для шрифта (шрифты должны быть в отдельном файле)
+                test: /\.(ttf|wof)$/,
+                use: ['file-loader']
             }
         ]
     }
     
-};
+}
