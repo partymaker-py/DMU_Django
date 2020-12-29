@@ -8,7 +8,6 @@ for (let i = 1; i < 9; i++) {
     let j = document.querySelector(`.card${i}`);
     cardsArray.push(j);
 };
-// TODO доработать переключения активного поля 
 const moveCards = (clickedLink) => {
     if (!clickedLink.classList.contains('holden__underline')) {
         array.forEach(item => {

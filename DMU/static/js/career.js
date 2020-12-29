@@ -67,7 +67,6 @@ function showThanks(dataSended) {
                 </div>
             </div>
         `;
-        console.log(thanksLetter);
         document.body.insertAdjacentHTML('beforeend', thanksLetter);
         
         setTimeout(() => {

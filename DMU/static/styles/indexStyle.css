@@ -2,28 +2,22 @@ h1, h2 {
     letter-spacing: 0;
     font-size: 24px;
 }
-.video-container {
-    height: 500px;
-    width: 100%;
+.intro{
+    margin-top: -60px;
+    height: 594.69px;
+    background: url('../images/main_page.png');
 }
-.video_content {
-    z-index: -10;
-}
-.learn-more {
+.main-main-title-of-page{
     margin-left: 20%;
-    position: relative;
-    top: 450px;
-    margin-bottom: 20px;
-    text-decoration: none;
-    text-transform: uppercase;
-    padding: 20px;
-    background-color: #ff0000;
-    color: #fff;
-
+    padding-top: 200px;
+    color: #ffffff;
 }
-.learn-more:hover {
-    background-color: #000000;
-    /* Добавить палавную смену цвета */
+.title-of-page{
+    margin-top: 0;
+    text-transform: uppercase;
+}
+.subtitle{
+    font-style: italic;
 }
 .video-container {
     margin-top: -60px;
