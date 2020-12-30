@@ -5,6 +5,8 @@ const yearsCounter = document.querySelector('.years-counter');
 const customersCounter = document.querySelector('.customers-counter');
 const scrollBtn = document.querySelector('.scroll-button');
 const header = document.querySelector('.header');
+const titleOfPage = document.querySelector('.title-of-page');
+const knowMoreLink = document.querySelector('.know-more-link');
 
 //  ФУНКЦИЯ СЧЁТЧИКИ
 const getCounters = (begin1, end1, begin2, end2, begin3, end3) => {
@@ -49,3 +51,26 @@ window.window.addEventListener('scroll', () => {
         }
     }
 });
+// Функция движения заголовка главной страници
+const pageTitle = () => {
+    let titleHightControl = 0;
+    let learnMoreHightControl = 20;
+    let opacityForTitleControl = 0;
+    let opacityControlForLinkMore = 0;
+    setInterval(() => {
+        if (titleHightControl !== 10){
+            titleHightControl++;
+            opacityForTitleControl += 0.1;
+            titleOfPage.style.paddingTop = titleHightControl + 'px';
+            titleOfPage.style.opacity = opacityForTitleControl;
+        } else if (learnMoreHightControl !== 0) {
+            learnMoreHightControl--;
+            opacityControlForLinkMore += 0.1;
+            knowMoreLink.style.marginTop = learnMoreHightControl + 'px';
+            knowMoreLink.style.opacity = opacityControlForLinkMore;
+        } else {
+            clearInterval();
+        }
+    }, 60);
+}
+document.addEventListener('load', pageTitle());

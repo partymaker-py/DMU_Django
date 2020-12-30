@@ -8,16 +8,32 @@ h1, h2 {
     background: url('../images/main_page.png');
 }
 .main-main-title-of-page{
+    padding-top: 450px;
     margin-left: 20%;
-    padding-top: 200px;
     color: #ffffff;
+    display: grid;
+    grid-template-rows: 50px 150px;
+    grid-template-columns: 230px;
 }
 .title-of-page{
+    opacity: 0;
     margin-top: 0;
     text-transform: uppercase;
 }
-.subtitle{
-    font-style: italic;
+.know-more-link{
+    display: block;
+    margin-top: 20px;
+    width: 131px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 10px 20px;
+    background-color: #ff0000;
+    opacity: 0;
+    transition: .2s linear;
+}
+.know-more-link:hover{
+    background-color: #000000;
 }
 .video-container {
     margin-top: -60px;
