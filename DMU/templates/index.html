@@ -237,7 +237,8 @@
 <!-- Цикл для отображения новостей -->
 {% for a in latest_news_list %}
                 <div class="news-article">
-                    <img src="" alt="news-photo" class="news-photo">
+                	{% static "images/no_photo.jpg" as no_photo %}
+                    <img src="{{ a.photo_url }}" alt="news-photo" class="news-photo" width="370px" height="246px">
                     <h4 class="news-title">{{ a.title }}</h4>
                     <p class="article-text">{{ a.text }}</p>
                     <hr>
