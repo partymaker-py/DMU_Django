@@ -35,7 +35,9 @@ def index(request):
 		for new in latest_news_list:
 			new.text = new.text[:150] + '...'
 
-		return render(request, 'index.html', {'latest_news_list': latest_news_list})
+		projects = Projects.objects.order_by('-pub_date')
+
+		return render(request, 'index.html', {'latest_news_list': latest_news_list, 'projects': projects})
 
 def contacts(request):
 	if request.method == 'POST':
