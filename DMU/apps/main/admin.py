@@ -1,8 +1,8 @@
 from django.contrib import admin
-from .models import New, Context, PostCareer, PostContact, Projects
+from .models import New, Context, PostCareer, PostContact, Project
 
 admin.site.register(New)
 admin.site.register(Context)
 admin.site.register(PostCareer)
 admin.site.register(PostContact)
-admin.site.register(Projects)
+admin.site.register(Project)

@@ -212,30 +212,12 @@
                 </div>
                 <!-- Ползующие картинки -->
                 <div class="moving-cards">
-                    <div class="card_moving-cards" data-name="bridge" style="background-color: blanchedalmond;">
-                        <!--<img src="" alt="card-img">-->
+                	{% for a in projects %}
+                	{% static "images/no_photo.jpg" as no_photo %}
+                    <div class="card_moving-cards" data-name="{{ a.project_type }}" style="background-color: blanchedalmond;">
+                        <img src="{{ a.photo_url }}" alt="card-img">
                     </div>
-                    <div class="card_moving-cards" data-name="bridge" style="background-color: pink;">
-                        <!--<img src="" alt="card-img">-->
-                    </div>
-                    <div class="card_moving-cards" data-name="bridge" style="background-color: green;">
-                        <!--<img src="" alt="card-img">-->
-                    </div>
-                    <div class="card_moving-cards" data-name="bridge" style="background-color: yellow;">
-                        <!--<img src="" alt="card-img">-->
-                    </div>
-                    <div class="card_moving-cards" data-name="bridge" style="background-color: blue;">
-                        <!--<img src="" alt="card-img">-->
-                    </div>
-                    <div class="card_moving-cards" data-name="road" style="background-color: violet;">
-                        <!--<img src="" alt="card-img">-->
-                    </div>
-                    <div class="card_moving-cards" data-name="road" style="background-color: black;">
-                        <!--<img src="" alt="card-img">-->
-                    </div>
-                    <div class="card_moving-cards" data-name="bridge" style="background-color: red;">
-                        <!--<img src="" alt="card-img">-->
-                    </div>
+                  	{% endfor %}
                 </div>
                 <div class="portofoli-and-youTube">
                     <div class="portfol__wrapper">

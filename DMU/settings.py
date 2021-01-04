@@ -8,7 +8,17 @@ https://docs.djangoproject.com/en/3.1/topics/settings/
 
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
+
+
+pip install python-django
+pip install smtplib
+pip install requests
+pip install django-grappelli
+
+
 """
+
+
 
 from pathlib import Path
 import os, sys

@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import New, Context, PostContact, PostCareer, Projects
+from .models import New, Context, PostContact, PostCareer, Project
 from django.db.models import Q
 from django.http import Http404
 from urllib.parse import unquote
@@ -35,7 +35,7 @@ def index(request):
 		for new in latest_news_list:
 			new.text = new.text[:150] + '...'
 
-		projects = Projects.objects.order_by('-pub_date')
+		projects = Project.objects.order_by('-pub_date')
 
 		return render(request, 'index.html', {'latest_news_list': latest_news_list, 'projects': projects})
 
@@ -120,12 +120,12 @@ def career(request):
 
 
 def projects(request):
-	projects = Projects.objects.order_by('-pub_date')
+	projects = Project.objects.order_by('-pub_date')
 	return render(request, 'main/projects.html', {'projects': projects})
 
 def detail_project(request, project_id):
 	try:
-		a = Projects.objects.get(id = project_id)
+		a = Project.objects.get(id = project_id)
 	except:
 		raise Http404("Not found :(")
 	return render(request, 'main/currentProject.html', {'project': a})

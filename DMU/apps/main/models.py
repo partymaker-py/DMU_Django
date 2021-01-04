@@ -92,9 +92,10 @@ class Context(models.Model):
 
 
 
-class Projects(models.Model):
+class Project(models.Model):
 	title = models.CharField('Title of project', max_length = 150)
 	text = models.TextField('Text')
+	project_type = models.CharField('Type of project (bridge/road)', max_length=15, blank=True)
 
 	image = models.ImageField('MAIN PHOTO', blank=True, upload_to="images/")
 	video = models.FileField('VIDEO 3', upload_to='videos/', null=True, blank=True)
