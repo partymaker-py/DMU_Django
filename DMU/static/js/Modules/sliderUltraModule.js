@@ -1,82 +1,47 @@
-const multiItemSlider = (function () {
-    return function (selector, config) {
-        const mainElement = document.querySelector('.slider');
-        const sliderWrapper = mainElement.querySelector('.slider__wrapper');
-        const sliderItems = mainElement.querySelectorAll('.slider__item');
-        const sliderControls = mainElement.querySelectorAll('.slider__control');
-        const sliderControlLeft = mainElement.querySelector('.slider__control_left');
-        const sliderControlRight = mainElement.querySelector('.slider__control_right');
-        const wrapperWidth = parseFloat(getComputedStyle(sliderWrapper).width);
-        const itemWidth = parseFloat(getComputedStyle(sliderItems[0]).width);
-        let positionLeftItem = 0;
-        let transform = 0;
-        let step = itemWidth / wrapperWidth * 100;
-        let items = [];
+let position = 0;
+const slidesToShow = 1;
+const slidesToScroll = 1;
+const sliderWrapper = document.querySelector('.wrapper');
+const sliderContainer = document.querySelector('.slider-container');
+const sliderTrack = document.querySelector('.slider-track');
+const sliderItems = document.querySelectorAll('.slider-item');
+const btnPrev = document.querySelector('#left-button-control');
+const btnNext = document.querySelector('#right-button-control');
+const itemsCount = sliderItems.length;
+const itemWidth = sliderContainer.clientWidth / slidesToShow;
+const movePosition = slidesToScroll * itemWidth;
 
-        sliderItems.forEach((item, index) => {
-            items.push({ item: item, position: index, transform: 0 });
-        });
+const sliderShow = () => {
 
-        let position = {
-            min: 0,
-            max: items.length - 1
-        };
+    if (sliderItems.length === 0) {
+        sliderWrapper.style.display = 'none';
+    }
 
-        const transformItem = (direction) => {
-            if (direction === 'right') {
-                if ((positionLeftItem + wrapperWidth / itemWidth - 1) >= position.max) {
-                    return;
-                }
-                if (!sliderControlLeft.classList.contains('slider__control_show')) {
-                    sliderControlLeft.classList.add('slider__control_show');
-                }
-                if (sliderControlRight.classList.contains('slider__control_show') &&  (positionLeftItem + wrapperWidth / itemWidth) >= position.max) {
-                    sliderControlRight.classList.remove('slider__control_show');
-                }
-                positionLeftItem++;
-                transform -= step;
-            }
-            if(direction === 'left') {
-                if (positionLeftItem <= position.min) {
-                    return;
-                }
-                if (!sliderControlRight.classList.contains('slider__control_show')) {
-                    sliderControlRight.classList.add('slider__control_show');
-                }
-                if (sliderControlLeft.classList.contains('slider__control_show') && positionLeftItem - 1 <= position.min) {
-                    sliderControlLeft.classList.remove('slider__control_show');
-                }
-                positionLeftItem--;
-                transform += step;
-            }
-            sliderWrapper.style.transform = `translateX(${transform}%)`;
-        };
+    sliderItems.forEach(item => {
+        item.style.minWidth = `${itemWidth}px`;
+    });
 
-        const controlClick = (e) => {
-            if (e.target.classList.contains('slider__control')) {
-                e.preventDefault();
-                let direction = e.target.classList.contains('slider__control_right') ? 'right' : 'left';
-                transformItem(direction);
-            }
-        };
-
-        const setUpListeners = () => {
-            sliderControls.forEach(item => {
-                item.addEventListener('click', controlClick);
-            });
-        };
-
-        setUpListeners();
-
-        return {
-            right: function () {
-                transformItem('right');
-            },
-            left: function () {
-                transformItem('left');
-            }
-        };
+    const setPosition = () => {
+        sliderTrack.style.transform = `translateX(${position}px)`;
+        checkButtons();
     };
-}());
 
-const slider = multiItemSlider('.slider');
+    const checkButtons = () => {
+        position === 0 ? btnPrev.style.opacity = 0.5 : btnPrev.style.opacity = 1;
+        position <= -(itemsCount - slidesToShow) * itemWidth ? btnNext.style.opacity = 0.5 : btnNext.style.opacity = 1;
+    };
+    checkButtons();
+
+    btnPrev.addEventListener('click', () => {
+        const itemsLeft = Math.abs(position) / itemWidth;
+        position += itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+        setPosition();
+    });
+
+    btnNext.addEventListener('click', () => {
+        const itemsLeft = itemsCount - (Math.abs(position) + slidesToShow * itemWidth) / itemWidth;
+        position -= itemsLeft >= slidesToScroll ? movePosition : itemsLeft * itemWidth;
+        setPosition();
+    });
+};
+sliderShow();

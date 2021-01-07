@@ -25,33 +25,37 @@
     </section>
     <main class="page-wrapper">
         <section class="project-title">
-            <div class="slider">
-                <div class="slider__wrapper">
-                    {% if project.image %}
-                        {% static "images/no_photo.jpg" as no_photo %}
-                            <div class="slider__item">
+            <div class="wrapper">
+                <div class="slider-container">
+                    <div class="slider-track">
+                        {% if project.image %}
+                            {% static "image/no_photo.jpg" as no_photo %}
+                            <div class="slider-item">
                                 <img src="{{ project.photo_url }}" alt="project-photo">
                             </div>
-                    {% endif %}
+                        {% endif %}
 
-                    {% if project.image2 %}
-                        {% static "images/no_photo.jpg" as no_photo %}
-                            <div class="slider__item">
+                        {% if project.image2 %}
+                            {% static "image/no_photo.jpg" as no_photo %}
+                            <div class="slider-item">
                                 <img src="{{ project.photo_url2 }}" alt="project-photo">
                             </div>
-                    {% endif %}
+                        {% endif %}
 
-                    {% if project.image3 %}
-                        {% static "images/no_photo.jpg" as no_photo %}
-                            <div class="slider__item">
+                        {% if project.image3 %}
+                            {% static "image/no_photo.jpg" as no_photo %}
+                            <div class="slider-item">
                                 <img src="{{ project.photo_url3 }}" alt="project-photo">
                             </div>
-                    {% endif %}
-
+                        {% endif %}
+                    </div>
                 </div>
-                <a class="slider__control slider__control_left" href="#" role="button"></a>
-                <a class="slider__control slider__control_right slider__control_show" href="#" role="button"></a>
+                <div class="slider-buttons">
+                    <a id="left-button-control" class="slider__control" role="button"></a>
+                    <a id="right-button-control" class="slider__control" role="button"></a>
+                </div>
             </div>
+            
             <div class="project-name">
                 <p class="project-name__name">{{ project.title }}</p>
                 <p class="category">Категория: <br><span class="category__name">сама категория</span></p>
@@ -163,11 +167,4 @@
            </section>
         </section>
     </main>
-    <script>
-        if (document.querySelector('.slider__wrapper').children.length <= 1) {
-            document.querySelectorAll('.slider__control').forEach(item => {
-                item.style.display = 'none';
-            })
-        }
-    </script>
 {% endblock content %}
