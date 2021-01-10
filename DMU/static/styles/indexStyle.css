@@ -66,7 +66,9 @@ h1, h2 {
 }
 /* Подровнять линию */
 .about-us-line {
-    width: 55px;
+    width: 42px;
+    margin-left: 0;
+    border-color: #ff0000;
 }
 .statistic {
     padding-top: 50px;
@@ -84,14 +86,20 @@ h1, h2 {
     justify-content: space-between;
     align-items: center;
 }
-.statistic-rating-info {
-    text-align: center;
-}
 .projects,
 .years,
 .customers {
-    width: 77px;
-    height: 117px;
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 25px;
+}
+.projects > hr,
+.years > hr,
+.customers > hr {
+    width: 100%;
+    border: .5px solid #000;
 }
 .niches{
     display: flex;
@@ -124,7 +132,13 @@ h1, h2 {
 }
 .customers-and-partners>h2>hr {
     height: 2px;
+    width: 42px;
+    margin-left: 0;
     background-color: #ff0000;
+}
+.partners-images__wrapper {
+    margin: 0 auto;
+    width: 1000px;
 }
 .partners-images {
     display: grid;

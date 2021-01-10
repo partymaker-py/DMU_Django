@@ -130,6 +130,17 @@
     z-index: 999;
     display: none;
 }
+.letter-wrapper1,
+.letter-wrapper2,
+.letter-wrapper3,
+.letter-wrapper4,
+.letter-wrapper5,
+.letter-wrapper6,
+.letter-wrapper7,
+.letter-wrapper8 {
+    margin-right: 20px;
+}
+
 @media (max-width: 768px) { 
     .main-information{
         margin-left: 15%;

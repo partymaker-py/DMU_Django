@@ -28,8 +28,7 @@
                     <label>
                         <form class="search-form">
                             <input type="text" placeholder="Поиск" class="get-search-from-page">
-                            <button type="submit" class="btn-search"><img src="{% static 'images/loupeblack.svg' %}" alt="search-logo"
-                                    class="search-logo"></button>
+                            <button type="submit" class="btn-search"><img src="{% static 'images/loupeblack.svg' %}" alt="search-logo" class="search-logo"></button>
                         </form>
                     </label>
                     <div class="news-block">
@@ -56,14 +55,14 @@
             </aside>
                 <section class="main-and-form">
                     <section class="main-info">
-                    <div class="interview">
-                        <h2 class="main-info-title">Интервью с директором по персоналу ООО"ДМУ"<br> Новиковой Анастасией Сергеевной<hr></h2>
-                        <p class="paragraph">{{ DATA.CAREER_ABOUT1 }}</p>
-                        <p class="paragraph">{{ DATA.CAREER_ABOUT2 }}</p>
-                        <p class="paragraph">{{ DATA.CAREER_ABOUT3 }}</p>
-                        <p class="paragraph">{{ DATA.CAREER_ABOUT4 }}</p>
-                    </div>
-                    <img src="{% static 'images/black/dmu-carrier-vacancies.png' %}" alt="portret">
+                        <div class="interview">
+                            <h2 class="main-info-title">Интервью с директором по персоналу ООО"ДМУ"<br> Новиковой Анастасией Сергеевной<hr></h2>
+                            <img src="{% static 'images/black/dmu-carrier-vacancies.png' %}" alt="portret" class="main_photo">
+                            <p class="paragraph">{{ DATA.CAREER_ABOUT1 }}</p>
+                            <p class="paragraph">{{ DATA.CAREER_ABOUT2 }}</p>
+                            <p class="paragraph">{{ DATA.CAREER_ABOUT3 }}</p>
+                            <p class="paragraph">{{ DATA.CAREER_ABOUT4 }}</p>
+                        </div>
                     </section>
                     <div class="form__wrapper">
                         <label>
