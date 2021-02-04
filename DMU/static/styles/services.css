@@ -23,7 +23,6 @@
 .main {
     display: grid;
     grid-template-columns: repeat(2, 615px);
-    grid-template-rows: repeat(2, 550px);
     grid-gap: 50px;
 }
 .block-title {

@@ -13,8 +13,6 @@ urlpatterns = [
     path('news', views.news, name='news'),
     path('news/<int:new_id>/', views.detail_new, name='detail_new'),
     path('services', views.services, name='services'),
-    path('services/buildings', views.servicesBuildings, name='buildings'),
-    path('services/buildingSurvey', views.servicesBuildingsSurvey, name='buildingSurvey'),
     path('services/funcTD', views.servicesFuncTD, name='funcTD'),
     path('services/roads', views.servicesRoads, name='roads')
 ]

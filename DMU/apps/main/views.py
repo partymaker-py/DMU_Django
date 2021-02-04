@@ -158,14 +158,8 @@ def detail_new(request, new_id):
 def services(request):
 	return render(request, 'main/services.html')
 
-def servicesBuildings(request):
-	return render(request, 'main/ServisesSubPages/buildings.html')
-
 def servicesFuncTD(request):
 	return render(request, 'main/ServisesSubPages/funcTD.html')
-
-def servicesBuildingsSurvey(request):
-	return render(request, 'main/ServisesSubPages/buildingSurvey.html')
 
 def servicesRoads(request):
 	return render(request, 'main/ServisesSubPages/roads.html')

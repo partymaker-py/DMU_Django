@@ -153,8 +153,7 @@ h1, h2 {
 }
 .photo-and-services-list {
     display: grid;
-    grid-template-columns: repeat(2, 500px);
-    grid-template-rows: repeat(2, 200px);
+    grid-template-columns: 500px, 500px;
     grid-gap: 15px;
 }
 .services-list1 {
@@ -282,7 +281,6 @@ h1, h2 {
     .photo-and-services-list{
         display: grid;
         grid-template-columns: repeat(2, 300px);
-        grid-template-rows: repeat(2, 200px);
         grid-gap: 35px;
     }
 }
@@ -340,7 +338,6 @@ h1, h2 {
     .photo-and-services-list{
         display: grid;
         grid-template-columns: 300px;
-        grid-template-rows: repeat(2, 200px);
         grid-gap: 35px;
     }
     .occupied-niches{
