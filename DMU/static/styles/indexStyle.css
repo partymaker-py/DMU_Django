@@ -153,7 +153,7 @@ h1, h2 {
 }
 .photo-and-services-list {
     display: grid;
-    grid-template-columns: 500px, 500px;
+    grid-template-columns: repeat(2, 500px);
     grid-gap: 15px;
 }
 .services-list1 {

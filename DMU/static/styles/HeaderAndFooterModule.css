@@ -51,12 +51,13 @@ html {
     margin: auto;
     margin-top: 250px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     border-bottom: 2px solid #ffffff;
     max-width: 1170px; 
     z-index: 1000;  
 }
 .form-search-head {
+    display: flex;
     width: 100%;
     opacity: 1;
 }
@@ -309,7 +310,7 @@ footer{
 }
 /* Not footer */
 /* TODO подправить адаптацию футера и кнопки прокрутки */
-@media (max-width: 1540px) { 
+@media (max-width: 1540px) {
     footer{
         bottom: 0;
     }
@@ -330,9 +331,9 @@ footer{
         grid-template-columns: repeat(3, 300px);
         grid-gap: 15px;
     }
-    
+
 }
-@media (max-width: 992px) { 
+@media (max-width: 992px) {
     .scroll-button{
         right: 20%;
     }
@@ -378,7 +379,7 @@ footer{
         }
     }
 }
-@media (max-width: 768px) { 
+@media (max-width: 768px) {
     .scroll-button{
         right: 20%;
     }
@@ -393,7 +394,7 @@ footer{
         grid-gap: 15px;
     }
 }
-@media (max-width: 680px) { 
+@media (max-width: 680px) {
     .scroll-button{
         right: 20%;
     }
