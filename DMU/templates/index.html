@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="{% static 'styles/indexStyle.css' %}">
     <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <link rel="stylesheet" href="{% static 'styles/movingCardsModule.css' %}">
+    <link rel="icon" href="{% static 'images/icon.png' %}">
     <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <script src=".{% static 'js/main.js' %}" defer></script>
     <script src="{% static 'js/Modules/movingCardsModule.js' %}" defer></script>
@@ -16,13 +17,15 @@
 </head>
 {% endblock head %}
 <body>
-    <button class="scroll-button">Прокрутка наверх</button>
+    <button class="scroll-button">
+        <img src="{% static 'images/scrollup.png' %}" width="36" alt="scroll up"/>
+    </button>
     <!-- header start -->
 {% block header %}
     <header id="header" class="header">
         <div class="header-header">
             <div class="header-navigation">
-                <img src="{% static 'images/black/mainlogo.png' %}" alt="company logo" width="100px" height="60px" class="company-logo">
+                <img src="{% static 'images/hiddenlogo.png' %}" alt="company logo" height="60px" class="company-logo">
                 <div class="nav-bar">
                     <div class="navigation-link">
                         <a href="{% url 'index' %}">Главная</a>
@@ -30,9 +33,9 @@
                     <div class="navigation-link">
                         <a href="{% url 'about' %}">О компании</a>
                     </div>
-                    <div class="navigation-link">
-                        <a href="{% url 'projects' %}">Проекты</a>
-                    </div>
+<!--                    <div class="navigation-link">-->
+<!--                        <a href="{% url 'projects' %}">Проекты</a>-->
+<!--                    </div>-->
                     <div class="navigation-link">
                         <a href="{% url 'services' %}">Услуги</a>
                         <div class="dropodwn-child">
@@ -248,7 +251,7 @@
     <footer>
         <div class="contact-information">
             <div class="logo-and-description">
-                <img src="{% static 'images/black/mainlogo.png' %}" alt="big-logo" class="footer-logo" alt width="50%">
+                <img src="{% static 'images/hiddenlogo.png' %}" alt="big-logo" class="footer-logo" alt width="50%">
                 <p class="description">ООО "ДМУ"<br><br>Мы располагаем многогранным опытом разработки и согласования проектной документации для строительства и реконструкции объектов.</p>
             </div>
             <div class="requisites">

@@ -111,6 +111,10 @@ html {
 /* Кнопка прокрутки страници */
 .scroll-button {
     display: none;
+    cursor: pointer;
+    border: none;
+    background: none;
+    outline: none;
     position: fixed;
     top: 85%;
     right: 5%;
