@@ -15,7 +15,7 @@ const getCounters = (start, end, inner) => {
         if (startWith === end) clearInterval(timer);
         inner.textContent = startWith++;
         
-    }, 100);
+    }, 200);
 }
 
 // вызов счётчиков
@@ -25,7 +25,7 @@ document.addEventListener('scroll', () => {
         if (controller) return;
         controller = true;
         getCounters(1, 5, projectsCounter); // кол-во проектов
-        getCounters(1480, 1500, customersCounter); // кол-во сотрудников
+        getCounters(1480, 1510, customersCounter); // кол-во сотрудников
         getCounters(0, 3, yearsCounter); // кол-во лет
     }
 });
