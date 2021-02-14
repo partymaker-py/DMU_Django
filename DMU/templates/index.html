@@ -8,11 +8,9 @@
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/indexStyle.css' %}">
     <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/movingCardsModule.css' %}">
     <link rel="icon" href="{% static 'images/icon.png' %}">
     <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <script src=".{% static 'js/main.js' %}" defer></script>
-    <script src="{% static 'js/Modules/movingCardsModule.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -189,43 +187,7 @@
                 </div>
             </div>
         </div>
-        <div class="project-project">
-            <div class="projects-section">
-                <div class="title-and-selectors">
-                    <div class="title-and-line">
-                        <h2 class="title">Проекты</h2>
-                        <hr>
-                    </div>
-                    <div class="selector-links">
-                        <div class="all-photos">
-                            <a class="links-toshow-imges holden__underline" id="link_all">Все</a>
-                        </div>
-                        <div class="roads">
-                            <a class="links-toshow-imges" id="link_roads">Дороги</a>
-                        </div>
-                        <div class="buildings">
-                            <a class="links-toshow-imges" id="link_bridges">Мосты</a>
-                        </div>
-                    </div>
-                </div>
-                <!-- Ползующие картинки -->
-                <div class="moving-cards">
-                	{% for a in projects %}
-                	{% static "images/no_photo.jpg" as no_photo %}
-                    <div class="card_moving-cards" data-name="{{ a.project_type }}" style="background-color: blanchedalmond;">
-                        <img src="{% static 'images/black/movingCards.png' %}" alt="card-img">
-                    </div>
-                  	{% endfor %}
-                </div>
-                <div class="portofoli-and-youTube">
-                    <div class="portfol__wrapper">
-                        <h2 class="portfol"><a href="/" class="portfol-a">Портфолио</a></h2>
-                        <hr>
-                    </div>
-                    <a href="/"><img src="" alt="youTube-logo" class="youTube-logo"></a>
-                </div>
-            </div>
-        </div>
+        
         <div class="some-news">
             <h2 class="main-title">Новости<hr></h2>
             <div class="news-articles">

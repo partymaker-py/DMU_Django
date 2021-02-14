@@ -169,69 +169,7 @@ h1, h2 {
     flex-direction: row;
     flex-wrap: nowrap
 }
-/* projects-section */
-.project-project {
-    background-color: rgba(0,0,0,0.7);
-    color: #ffffff;
-    text-transform: uppercase;
-}
-.holden__underline {
-    border-bottom: 1px solid;
-    border-bottom-color: #ff0000;
-}
-.projects-section {
-    margin-left: 20%;
-    margin-right: 20%;
-    
-}
-.all-photos, .roads, .buildings {
-    padding-right: 20px;
-    padding-left: 20px;
-    border-right: 0.3px solid;
-    border-right-color: #ffffff;
-}
-.buildings{
-    border-right: none;
-}
-.child:hover {
-    border-bottom-color: #ff0000;
-}
 
-.title-and-selectors {
-    padding-top: 30px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 15px;
-}
-.title {
-    font-size: 17px;
-}
-.title-and-line > hr {
-    margin-left: 0;
-    width: 40px;
-    border-color: #ff0000;
-}
-
-.portofoli-and-youTube {
-    display: flex;
-    align-items: center;
-    padding-bottom: 20px;
-}
-.portfol__wrapper > hr {
-    margin-left: 0;
-    width: 40px;
-    border-color: #ff0000;
-}
-.portfol { 
-    font-size: 17px;
-    margin-right: 300px;
-    
-}
-.portfol-a{
-    color: #ffffff;
-    text-decoration: none;
-}
 
 /* Новости */
 .some-news {
@@ -290,15 +228,7 @@ h1, h2 {
         grid-template-columns: 300px 550px;
         grid-gap: 50px;
         margin-top: 100px;  
-    }  
-    .portofoli-and-youTube{
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .youTube-logo{
-        margin-top: 20px;
-    }
-
+    } 
 }
 @media (max-width: 768px) { 
     .partners-images{
