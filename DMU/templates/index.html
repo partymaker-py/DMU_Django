@@ -11,6 +11,7 @@
     <link rel="icon" href="{% static 'images/icon.png' %}">
     <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
     <script src=".{% static 'js/main.js' %}" defer></script>
+    <!-- <script src="{% static 'dist/mainPage.js' %}" async></script> -->
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -63,7 +64,7 @@
                         </div>
                     </div>
                     <div class="search">
-                        <a href="#" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
+                        <a href="/" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
                     </div>
                     
                 </div>

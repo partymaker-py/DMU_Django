@@ -1,12 +1,10 @@
-'use strict';
-
 const projectsCounter = document.querySelector('.projects-counter');
 const yearsCounter = document.querySelector('.years-counter');
 const customersCounter = document.querySelector('.customers-counter');
-const scrollBtn = document.querySelector('.scroll-button');
-const header = document.querySelector('.header');
 const titleOfPage = document.querySelector('.title-of-page');
 const knowMoreLink = document.querySelector('.know-more-link');
+
+import '../styles/indexStyle.css';
 
 //  ФУНКЦИЯ СЧЁТЧИКИ
 const getCounters = (start, end, inner) => {

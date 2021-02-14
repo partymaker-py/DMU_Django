@@ -141,6 +141,12 @@
     margin-right: 20px;
 }
 
+@media (max-width: 1746px) {
+    .what-we-are-doing-image-and-description{
+        flex-wrap: wrap;
+    }
+}
+
 @media (max-width: 768px) { 
     .main-information{
         margin-left: 15%;
@@ -149,6 +155,12 @@
 @media (max-width: 680px) { 
     .main-information{
         margin-left: 10%;
-        flex-direction: column;
+    }
+}
+@media (max-width: 568px) {
+    .main-information {
+        align-items: center;
+        margin-left: 0;
+        margin-right: 0;
     }
 }

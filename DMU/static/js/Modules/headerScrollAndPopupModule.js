@@ -51,6 +51,11 @@ function headerSearch() {
 function animationHeaderAndScrollBTN() {
     const scrollBtn = document.querySelector('.scroll-button');
     window.addEventListener('scroll', () => {
+        console.log(window.outerWidth);
+        if (window.innerWidth <= 992) { 
+            scrollBtn.style.display = 'none';
+            return
+        }
 
         if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
             header.classList.add('header-animation');
@@ -67,6 +72,7 @@ function animationHeaderAndScrollBTN() {
         } else {
             scrollBtn.style.display = 'none';
         }
+        
     }); 
 };
 // Попап меню для маленьких экранов
