@@ -2,7 +2,7 @@ const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+// const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
 const TerserWebpackPlugin = require('terser-webpack-plugin');
 
 // TODO ипортировать css в соответствющие js файлы
@@ -39,7 +39,7 @@ module.exports = {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, './DMU/static/dist')
   },
-  optimization: optimization(),
+  // optimization: optimization(),
   plugins: [
     new HTMLWebpackPlugin({
       // template: './DMU/templates/index.html',
