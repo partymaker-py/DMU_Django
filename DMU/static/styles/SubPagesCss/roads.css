@@ -68,8 +68,8 @@
 }
 .wrapper {
     position: relative;
-    width: 1024px;
-    height: 768px;
+    width: 960px;
+    height: 540px;
     margin: 0 auto;
 }
 .slider-container {
@@ -82,7 +82,7 @@
     transition: .2s;
 }
 .slider-item {
-    height: 768px;
+    height: 540px;
 }
 .slider-item:nth-child(3n+1) {
     background-color: red;
