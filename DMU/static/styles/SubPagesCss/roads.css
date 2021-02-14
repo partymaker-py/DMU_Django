@@ -68,7 +68,8 @@
 }
 .wrapper {
     position: relative;
-    width: 800px;
+    width: 1024px;
+    height: 768px;
     margin: 0 auto;
 }
 .slider-container {
@@ -76,13 +77,12 @@
     background-color: pink;
 }
 .slider-track {
-
     display: flex;
     background-color: yellow;
     transition: .2s;
 }
 .slider-item {
-    height: 250px;
+    height: 768px;
 }
 .slider-item:nth-child(3n+1) {
     background-color: red;
@@ -97,9 +97,10 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
+    width: 99%;
+    padding-left: 6px;
     position: absolute;
-    top: 40%;
+    top: 50%;
 }
 #left-button-control, #right-button-control {
     position: relative;
