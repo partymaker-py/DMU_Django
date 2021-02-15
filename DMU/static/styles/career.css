@@ -24,7 +24,6 @@ main{
 }
 .news {
     width: 300px;
-    height: 857px;
     margin-right: 20px;
 }
 /* Поиск со страницы */
@@ -176,6 +175,13 @@ input::-webkit-inner-spin-button {
 }
 /* TODO доделать */
 @media (max-width: 1318px) {
+    .search-form {
+        width: 50%;
+    }
+    .news {
+        display: flex;
+        width: 100%;
+    }
     .info-of-info{
         display: flex;
         flex-direction: column;
@@ -193,7 +199,18 @@ input::-webkit-inner-spin-button {
     .sername-input{
         width: 100%;
     }
+    main {
+        margin-left: 5%;
+    }
 
+}
+@media (max-width: 743px) {
+    .news {
+        flex-wrap: wrap;
+    }
+    .search-form {
+        width: 100%;
+    }
 }
 @media (max-width: 680px) {
     .news__text-blocks{

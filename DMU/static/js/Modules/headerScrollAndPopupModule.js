@@ -1,4 +1,5 @@
-// поиск в header
+// import '../styles/HeaderAndFooterModule.css';
+
 function headerSearch() {
     const btnOpenSearch = document.querySelector('.search-icon');
     const formSearcHeader = document.querySelector('.form-search-head');
@@ -51,7 +52,6 @@ function headerSearch() {
 function animationHeaderAndScrollBTN() {
     const scrollBtn = document.querySelector('.scroll-button');
     window.addEventListener('scroll', () => {
-        console.log(window.outerWidth);
         if (window.innerWidth <= 992) { 
             scrollBtn.style.display = 'none';
             return

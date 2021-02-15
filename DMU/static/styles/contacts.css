@@ -124,3 +124,47 @@ input::-webkit-inner-spin-button {
     color: #ff0000;
 }
 /* main end */
+@media (max-width: 1651px) {
+    .form__name-and-phone-wrapper {
+        flex-direction: column;
+    }
+    .form__name-wrapper, .form__phone-wrapper {
+        width: auto;
+    }
+}
+@media (max-width: 1217px) {
+    .form-and-adress {
+        flex-wrap: wrap-reverse;
+    }
+    .vidjet-and-contacts {
+        margin-bottom: 50px;
+    }
+}
+@media (max-width: 891px) {
+    .form-and-adress {
+        margin-left: 10%;
+    }
+}
+@media (max-width: 713px) {
+    .form-and-adress {
+        margin-left: 10px;
+    }
+}
+@media (max-width: 651px) {
+    .vidjet-iframe {
+        width: 400px;
+        height: auto;
+    }
+}
+@media (max-width: 452px) {
+    .vidjet-iframe {
+        width: 350px;
+        height: auto;
+    }
+}
+@media (max-width: 360px) {
+    .vidjet-iframe {
+        width: 300px;
+        height: auto;
+    }
+}

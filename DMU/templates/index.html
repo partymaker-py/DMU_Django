@@ -24,7 +24,9 @@
     <header id="header" class="header">
         <div class="header-header">
             <div class="header-navigation">
-                <img src="{% static 'images/hiddenlogo.png' %}" alt="company logo" height="60px" class="company-logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/hiddenlogo.png' %}" alt="company logo" height="60px" class="company-logo">
+                </a>
                 <div class="nav-bar">
                     <div class="navigation-link">
                         <a href="{% url 'index' %}">Главная</a>

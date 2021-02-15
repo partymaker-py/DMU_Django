@@ -1,10 +1,13 @@
 const form = document.querySelector('.form');
+const searchForm = document.querySelector('.search-form');
 const nameInput = document.querySelector('.name-input');
 const fatherInput = document.querySelector('.father-input');
 const sernameInput = document.querySelector('.sername-input');
 const phoneInput = document.querySelector('.phone-input');
 const messageInput = document.querySelector('.message-input');
 const regExpValid = /[<>{}]/;
+
+// import '../styles/career.css';
 
 const validation = () => {
     
