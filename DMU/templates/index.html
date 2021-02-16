@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
     <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
     <script src="{% static 'dist/mainPage.js' %}" defer></script>
+    <script src="{% static 'dist/searchFromPageModule.js' %}"></script>
     
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
 </head>
@@ -57,7 +57,6 @@
                         <div class="small-screen-popup">
                             <a href="{% url 'index' %}" class="small-screen-popup__item">Главная</a>
                             <a href="{% url 'about' %}" class="small-screen-popup__item">О компании</a>
-                            <a href="{% url 'projects' %}" class="small-screen-popup__item">Проекты</a>
                             <a href="{% url 'services' %}" class="small-screen-popup__item">Услуги</a>
                             <a href="{% url 'news' %}" class="small-screen-popup__item">Новости</a>
                             <a href="{% url 'career' %}" class="small-screen-popup__item">Карьера</a>
@@ -65,7 +64,7 @@
                         </div>
                     </div>
                     <div class="search">
-                        <a href="/" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
+                        <a href="#" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
                     </div>
                     
                 </div>
@@ -74,7 +73,7 @@
         <!-- активация поиска -->
         <div class="search-field-wrapper">
             <div class="form-wrapper">
-                <label>
+                <label class="search-form-label">
                     <form class="form-search-head">
                         <button type="submit" class="btn-submit-form"><img class="img-start-search"
                                 src="{% static 'images/loupewhite.svg' %}" alt="search-icon"></button>
