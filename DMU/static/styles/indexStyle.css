@@ -373,5 +373,8 @@ h1, h2 {
         width: 210px;
         height: auto;
     }
+    .projects {
+        margin-left: 0;
+    }
 
 }
