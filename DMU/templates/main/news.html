@@ -29,17 +29,20 @@
                 <!--Всего 10 блоков размещено на странице-->
                 <article class="news-block">
 
-                {% for a in latest_news_list %}
+                {% for new in latest_news_list %}
                 <div class="new__wrapper">
-                    <img src="" alt="news-img" width="870" height="599" class="news-block__img">
-                    <a href="{% url 'detail_new' a.id %}" class="new__url">
-                        <p class="new__title">{{ a.title }}</p>
+                	{% if new.image %}
+                	{% static "images/no_photo.jpg" as no_photo %}
+                    <img src="{{ new.photo_url }}" alt="news-img" width="870" height="489" class="news-block__img">
+                    {% endif %}
+                    <a href="{% url 'detail_new' new.id %}" class="new__url">
+                        <p class="new__title">{{ new.title }}</p>
                     </a>
-                    {% if a.was_published_recently %}
+                    {% if new.was_published_recently %}
                     <h5 class="new__subtitle-for-new">Свежая новость!</h5>
                     <!-- Свежая новость! -->
                     {% endif %}
-                    <p class="new__text">{{ a.text }}</p>
+                    <p class="new__text">{{ new.text }}</p>
                 </div>
                 {% endfor %}
 
@@ -48,29 +51,15 @@
             <aside class="aside-block">
                 <h3 class="aside-block-title">Новости<hr></h3>
                 
+                {% for new in latest_news_list %}
                 <article class="aside-link-block">
-                    <img src="" alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
-                    <a href="" class="aside-link"><p class="aside-link-block__title">Кемерово. Музейный и театрально-образовательный комплекс</p></a>
+                	{% if new.image %}
+                	{% static "images/no_photo.jpg" as no_photo %}
+                    	<img src="{{ new.photo_url }}" alt="aside-link-photo" width="78" height="43" class="aside-link-block__img">
+                	{% endif %}
+                    <a href="{% url 'detail_new' new.id %}" class="aside-link"><p class="aside-link-block__title">{{ new.title }}</p></a>
                 </article>
-                <article class="aside-link-block">
-                    <img src=""  alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
-                    <a href="" class="aside-link"><p class="aside-link-block__title">Вакансии ГК "ГОРКА"</p></a>
-                    
-                </article>
-                <article class="aside-link-block">
-                    <img src=""  alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
-                    <a href="" class="aside-link"><p class="aside-link-block__title">Победа: М12 Москва-Казань</p></a>
-                    
-                </article>
-                <article class="aside-link-block">
-                    <img src=""  alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
-                    <a href="" class="aside-link"><p class="aside-link-block__title">Собственная лаборатория</p></a>
-                    
-                </article>
-                <article class="aside-link-block">
-                    <img src=""  alt="aside-link-photo" width="78" height="52" class="aside-link-block__img">
-                    <a href="" class="aside-link"><p class="aside-link-block__title">Профессианальное призвание!</p></a>
-                    
+                {% endfor %}
                 </article>
             </aside>
         </section>
