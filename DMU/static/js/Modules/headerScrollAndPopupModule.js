@@ -1,4 +1,5 @@
-// поиск в header
+import '../../styles/HeaderAndFooterModule.css';
+
 function headerSearch() {
     const btnOpenSearch = document.querySelector('.search-icon');
     const formSearcHeader = document.querySelector('.form-search-head');
@@ -51,6 +52,10 @@ function headerSearch() {
 function animationHeaderAndScrollBTN() {
     const scrollBtn = document.querySelector('.scroll-button');
     window.addEventListener('scroll', () => {
+        if (window.innerWidth <= 992) { 
+            scrollBtn.style.display = 'none';
+            return
+        }
 
         if (document.body.scrollTop > 250 || document.documentElement.scrollTop > 250) {
             header.classList.add('header-animation');
@@ -67,6 +72,7 @@ function animationHeaderAndScrollBTN() {
         } else {
             scrollBtn.style.display = 'none';
         }
+        
     }); 
 };
 // Попап меню для маленьких экранов

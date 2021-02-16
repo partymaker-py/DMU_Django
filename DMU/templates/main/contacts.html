@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
-    <link rel="stylesheet" href="{% static 'styles/contacts.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
-    <script src="{% static 'js/contacts.js' %}" defer></script>
+    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'dist/contactsPage.js' %}" defer></script>
+    <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Контакты{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -55,7 +54,7 @@
             </article>
             <aside class="vidjet-and-contacts">
                 <article class="vidjet">
-                    <iframe title="Москва, Маршала Прошлякова д.10 к.1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.0609240230547!2d37.39160705176814!3d55.792179996325956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b549e4865124f7%3A0x819d2be7c27555fb!2z0JzQsNGA0YjQsNC70LAg0J_RgNC-0YjQu9GP0LrQvtCy0LAg0YPQuy4sIDEwINC60L7RgNC_0YPRgSAxINGB0YLRgNC-0LXQvdC40LUgNiwg0JzQvtGB0LrQstCwLCAxMjM0NTg!5e0!3m2!1sru!2sru!4v1607715326024!5m2!1sru!2sru"
+                    <iframe class="vidjet-iframe" title="Москва, Маршала Прошлякова д.10 к.1" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2243.0609240230547!2d37.39160705176814!3d55.792179996325956!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46b549e4865124f7%3A0x819d2be7c27555fb!2z0JzQsNGA0YjQsNC70LAg0J_RgNC-0YjQu9GP0LrQvtCy0LAg0YPQuy4sIDEwINC60L7RgNC_0YPRgSAxINGB0YLRgNC-0LXQvdC40LUgNiwg0JzQvtGB0LrQstCwLCAxMjM0NTg!5e0!3m2!1sru!2sru!4v1607715326024!5m2!1sru!2sru"
                         width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
                         tabindex="0"></iframe>
                 </article>

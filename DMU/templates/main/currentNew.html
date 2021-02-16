@@ -7,11 +7,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <link rel="stylesheet" href="{% static 'styles/currentNew.css' %}">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
-    <script src="{% static 'js/Modules/searchFromPageModule.js' %}" defer></script>
+    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
     <title>ООО ДМУ | {% block title %} {{ new.title }} {% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -122,17 +121,13 @@
                     <div class="control-previous">
                         <a href="#" class="link-to-prev">
                             <p class="contool-link__title">Назад</p>
-                            <p class="control-link__description">
-                                БЛА БЛА БЛА НАЗАД
-                            </p>
+                            <p class="control-link__description">&lt;
                         </a>
                     </div>
                     <div class="control-next">
                         <a href="#" class="link-to-next">
                             <p class="contool-link__title">Впереёд</p>
-                            <p class="control-link__description">
-                                БЛА БЛА БЛА ВПЕРЁД
-                            </p>
+                            <p class="control-link__description">&gt;</p>
                         </a>
                     </div>
                 </section>

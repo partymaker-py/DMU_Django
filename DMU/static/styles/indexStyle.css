@@ -84,7 +84,7 @@ h1, h2 {
 .statistic-rating-counters {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 .projects,
 .years,
@@ -92,6 +92,7 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-left: 10px;
 }
 .counter {
     width: 40px;
@@ -119,6 +120,11 @@ h1, h2 {
     grid-template-columns: repeat(3, 370px);
     grid-gap: 30px;
 }
+.infrastructure-design, 
+.development-of-construction-documentation,
+.implementation-of-investment-projects {
+    text-align: center;
+}
 .niches-subheader {
     text-transform: uppercase;
     text-align: center;
@@ -143,15 +149,6 @@ h1, h2 {
     width: 42px;
     margin-left: 0;
     background-color: #ff0000;
-}
-.partners-images__wrapper {
-    margin: 0 auto;
-    width: 1000px;
-}
-.partners-images {
-    display: grid;
-    grid-template-columns: repeat(3, 270px);
-    grid-gap: 100px;
 }
 .services{
     display: flex;
@@ -195,12 +192,29 @@ h1, h2 {
 .news-articles {
     display: flex;
     justify-content: space-between;
-    margin-bottom: 30px;
 }
 .news-article{
-    width: 30%;
+    margin-right: 30px;
+}
+@media (max-width: 1793px) {
+    .news-articles {
+        flex-wrap: wrap;
+    }
+    .news-article {
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
 }
 @media (max-width: 1540px) { 
+    .customers-and-partners {
+        margin-left: 15%;
+        margin-right: inherit;
+    }
+    .partnersImg {
+        width: 1000px;
+        height: auto;
+    }
     .container-info-contacts{
         margin-left: 15%;
         margin-right: 15%;
@@ -230,6 +244,18 @@ h1, h2 {
         grid-gap: 35px;
     }
 }
+@media (max-width: 1076px) {
+    .partnersImg {
+        width: 700px;
+        padding-left: 10%;
+    }
+}
+@media (max-width: 950px) {
+    .partnersImg {
+        width: 500px;
+        padding-left: 15%;
+    }
+}
 @media (max-width: 992px) { 
     .container-info-contacts{
         display: grid;
@@ -239,11 +265,6 @@ h1, h2 {
     } 
 }
 @media (max-width: 768px) { 
-    .partners-images{
-        display: grid;
-        grid-template-columns: repeat(2, 270px);
-        grid-gap: 100px;
-    }
     .container-info-contacts{
         display: grid;
         grid-template-columns: none;
@@ -256,7 +277,9 @@ h1, h2 {
     }  
 }
 @media (max-width: 680px) { 
-    
+    .partnersImg {
+        padding-left: 0;
+    }
     .video-container{
         display: none;
     }
@@ -267,11 +290,6 @@ h1, h2 {
         grid-gap: 50px;
         margin-left: 40px;
         margin-top: 100px;
-    }
-    .partners-images{
-        display: grid;
-        grid-template-columns: 270px;
-        grid-gap: 100px;
     }
     .photo-and-services-list{
         display: grid;
@@ -299,4 +317,61 @@ h1, h2 {
     .some-news{
         margin-left: 15px;
     }
+}
+@media (max-width: 538px) {
+    .partnersImg {
+        width: 300px;
+        padding-left: 10%;
+    }
+}
+@media (max-width: 385px) {
+    .partnersImg {
+        padding-left: 0;
+    }
+    .container-info-contacts {
+        margin-left: 10px;
+    }
+    .contacts-info {
+        margin-left: 10px;
+        width: 210px;
+        height: auto;
+    }
+    .statistic-rating {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-left: 15%;
+        width: 210px;
+        text-align: center;
+    }
+    .infrastructure-design, 
+    .development-of-construction-documentation,
+    .implementation-of-investment-projects {
+        width: 210px;
+        height: auto;
+    }
+    .implementation-photo, 
+    .development-photo, 
+    .infrastructure-photo {
+        width: 210px;
+        height: auto;
+    }
+    .niches {
+        flex-direction: column;
+    }
+    .services {
+        margin-left: 0;
+    }
+    .photo-and-services-list {
+        grid-template-columns: 210px;
+    }
+    .news-article {
+        width: 250px;
+
+    }
+    .news-photo {
+        width: 210px;
+        height: auto;
+    }
+
 }

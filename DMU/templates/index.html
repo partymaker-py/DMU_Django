@@ -6,11 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
-    <link rel="stylesheet" href="{% static 'styles/indexStyle.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
-    <script src=".{% static 'js/main.js' %}" defer></script>
+    <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
+    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'dist/mainPage.js' %}" defer></script>
+    
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -23,7 +23,9 @@
     <header id="header" class="header">
         <div class="header-header">
             <div class="header-navigation">
-                <img src="{% static 'images/hiddenlogo.png' %}" alt="company logo" height="60px" class="company-logo">
+                <a href="{% url 'index' %}">
+                    <img src="{% static 'images/hiddenlogo.png' %}" alt="company logo" height="60px" class="company-logo">
+                </a>
                 <div class="nav-bar">
                     <div class="navigation-link">
                         <a href="{% url 'index' %}">Главная</a>
@@ -63,7 +65,7 @@
                         </div>
                     </div>
                     <div class="search">
-                        <a href="#" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
+                        <a href="/" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
                     </div>
                     
                 </div>
@@ -172,15 +174,8 @@
                 <div class="partners-images__wrapper">
                     <div class="partners-images">
                         <img src="{% static 'images/static_images/zakazy/logos-1170x652.jpg' %}" width="1170" height="652"
+                            class="partnersImg"
                             alt="Департамент строительства города Москвы">
-                        <!-- <img src="{% static 'images/black/services.png' %}" width="250" height="150"
-                            alt="Министерство сторительного комплекса московской области">
-                        <img src="{% static 'images/black/services.png' %}" width="250" height="150"
-                            alt="Управление дорожно-мостового строительства">
-                        <img src="{% static 'images/black/services.png' %}" width="250" height="150" alt="Дирекция дорожного строительства">
-                        <img src="{% static 'images/black/services.png' %}" width="250" height="150"
-                            alt="Департамент развития новых территорий города Москвы">
-                        <img src="{% static 'images/black/services.png' %}" width="250" height="150" alt="АВТОДОР"> -->
                     </div>
                 </div>
             </div>

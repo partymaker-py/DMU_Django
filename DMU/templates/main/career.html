@@ -8,9 +8,12 @@
     <link rel="stylesheet" href="{% static 'styles/career.css' %}">
     <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'js/career.js' %}" defer></script>
-    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
-    <script src="{% static 'js/Modules/searchFromPageModule.js' %}" defer></script>
+    <!-- <script src="{% static 'js/career.js' %}" defer></script> -->
+    <!-- <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'js/Modules/searchFromPageModule.js' %}" defer></script> -->
+    <script src="{% static 'dist/careerPage.js' %}" defer></script>
+    <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
+    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Карьера{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -26,13 +29,15 @@
         <section class="info-of-info">
             <aside class="aside">
                 <section class="news">
-                    <label>
-                        <form class="search-form">
-                            <input type="text" placeholder="Поиск" class="get-search-from-page">
-                            <button type="submit" class="btn-search"><img src="{% static 'images/loupeblack.svg' %}" alt="search-logo" class="search-logo"></button>
-                        </form>
-                    </label>
+                    
                     <div class="news-block">
+                        <label>
+                            <form class="search-form">
+                                <input type="text" placeholder="Поиск" class="get-search-from-page">
+                                <button type="submit" class="btn-search"><img src="{% static 'images/loupeblack.svg' %}" alt="search-logo"
+                                        class="search-logo"></button>
+                            </form>
+                        </label>
                         <h3 class="newstitle">Новости<hr></h3>
                         <ul class="news-list">
 

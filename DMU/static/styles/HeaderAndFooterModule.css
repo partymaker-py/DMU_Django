@@ -296,9 +296,12 @@ footer{
 .contact-information {
     margin-left: 20%;
     margin-right: 20%;
-    display: grid;
-    grid-template-columns: repeat(3, 400px);
-    grid-gap: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+.logo-and-description, .requisites,
+.short-information {
+    width: 300px;
 }
 .requisites-title-line,
 .short-information-title-line {
@@ -332,10 +335,17 @@ footer{
     }
     .contact-information{
         margin-left: 20%;
-        grid-template-columns: repeat(3, 300px);
-        grid-gap: 15px;
     }
 
+}
+@media (max-width: 1185px) {
+    .contact-information {
+        margin-left: 10%;
+    }
+    .main-information {
+        flex-direction: column;
+        align-items: center;
+    }
 }
 @media (max-width: 992px) {
     .scroll-button{
@@ -361,7 +371,7 @@ footer{
         display: block;
     }
     .small-screen-popup{
-        right: 180px;
+        right: 0;
     }
     /* end Попап меню */
     @-webkit-keyframes header-animation {
@@ -391,10 +401,9 @@ footer{
         display: block;
     }
     .small-screen-popup{
-        right: 120px;
+        right: 0;
     }
     .contact-information{
-        grid-template-columns: repeat(3, 150px);
         grid-gap: 15px;
     }
 }
@@ -406,9 +415,7 @@ footer{
         margin-left: 5%;
     }
     .contact-information{
-        grid-template-columns: 150px;
-        grid-template-rows: repeat(3, 300px);
-        grid-gap: 30px;
+        flex-wrap: wrap;
     }
 }
 @media (max-width: 460px){
