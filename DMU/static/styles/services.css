@@ -77,6 +77,12 @@
         grid-template-columns: 400px;
     }
 }
+@media (max-width: 532px) {
+    .photo-l {
+        width: 310px;
+        height: auto;
+    }
+}
 @media (max-width: 430px) {
     .main{
         grid-template-columns: 300px;

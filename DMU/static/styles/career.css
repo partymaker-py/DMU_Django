@@ -204,6 +204,12 @@ input::-webkit-inner-spin-button {
     }
 
 }
+@media (max-width: 955px) {
+    .main_photo {
+        width: 600px;
+        height: auto;
+    }
+}
 @media (max-width: 743px) {
     .news {
         flex-wrap: wrap;
@@ -237,5 +243,15 @@ input::-webkit-inner-spin-button {
 @media (max-width: 460px) {
     main{
         margin-left: 5%;
+    }
+    .main_photo {
+        width: 350px;
+        height: auto;
+    }
+}
+@media (max-width: 360px) {
+    .main_photo {
+        width: 250px;
+        height: auto;
     }
 }

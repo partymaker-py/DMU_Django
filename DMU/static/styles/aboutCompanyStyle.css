@@ -131,3 +131,10 @@
         margin-right: 0;
     }
 }
+@media (max-width: 507px) {
+    .working-proces-img {
+        margin-left: 15px;
+        width: 300px;
+        height: auto;
+    }
+}
