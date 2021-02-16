@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/news.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
     <title>ООО "ДМУ" | {% block title %}Новости{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -31,12 +31,18 @@
 
                 {% for new in latest_news_list %}
                 <div class="new__wrapper">
+<<<<<<< HEAD
                 	{% if new.image %}
                 	{% static "images/no_photo.jpg" as no_photo %}
                     <img src="{{ new.photo_url }}" alt="news-img" width="870" height="489" class="news-block__img">
                     {% endif %}
                     <a href="{% url 'detail_new' new.id %}" class="new__url">
                         <p class="new__title">{{ new.title }}</p>
+=======
+                    <img src="../../static/images/black/categoryNewMainPhoto.png" alt="news-img" width="870" height="599" class="news-block__img">
+                    <a href="{% url 'detail_new' a.id %}" class="new__url">
+                        <p class="new__title">{{ a.title }}</p>
+>>>>>>> 572ac6040fa649cde67c5b73b2401dc37a5bc8bb
                     </a>
                     {% if new.was_published_recently %}
                     <h5 class="new__subtitle-for-new">Свежая новость!</h5>

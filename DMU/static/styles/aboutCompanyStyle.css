@@ -130,6 +130,27 @@
         margin-left: 0;
         margin-right: 0;
     }
+    .motto-title {
+        text-align: center;
+    }
+    .motto-text {
+        text-align: center;
+    }
+    .what-we-are-doing-subtitle {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
+    .what-we-are-doing-subtitle > hr, .strotegy > hr {
+        margin-left: auto;
+    }
+    .strotegy {
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+    }
 }
 @media (max-width: 507px) {
     .working-proces-img {
@@ -137,4 +158,5 @@
         width: 300px;
         height: auto;
     }
+    
 }
