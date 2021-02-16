@@ -7,7 +7,6 @@ module.exports = {
     mainPage: 'C:/Users/boris/DMU/DMU/static/js/main.js',
     careerPage: 'C:/Users/boris/DMU/DMU/static/js/career.js',
     contactsPage: 'C:/Users/boris/DMU/DMU/static/js/contacts.js',
-    aboutCompanyPage: 'C:/Users/boris/DMU/DMU/static/js/aboutCompany.js',
     headerScrollAndPopupModule: 'C:/Users/boris/DMU/DMU/static/js/Modules/headerScrollAndPopupModule.js',
     searchFromPageModule: 'C:/Users/boris/DMU/DMU/static/js/Modules/searchFromPageModule.js',
     sliderUltraModule: 'C:/Users/boris/DMU/DMU/static/js/Modules/sliderUltraModule.js'
@@ -42,6 +41,18 @@ module.exports = {
       {
         test: /\.(png|jpe?g)$/i,
         use: 'file-loader'
+      },
+      {
+        test: /.ttf$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: '[name].[ext]',
+              outputPath: 'fonts/'
+            }
+          }
+        ]
       }
     ]
   },

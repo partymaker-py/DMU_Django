@@ -4,7 +4,7 @@ const customersCounter = document.querySelector('.customers-counter');
 const titleOfPage = document.querySelector('.title-of-page');
 const knowMoreLink = document.querySelector('.know-more-link');
 
-// import '../styles/indexStyle.css';
+import '../styles/indexStyle.css';
 
 //  ФУНКЦИЯ СЧЁТЧИКИ
 const getCounters = (start, end, inner) => {

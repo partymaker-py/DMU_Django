@@ -6,12 +6,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
-    <link rel="stylesheet" href="{% static 'styles/indexStyle.css' %}">
-    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
-    <script src=".{% static 'js/main.js' %}" defer></script>
-    <!-- <script src="{% static 'dist/mainPage.js' %}" async></script> -->
+    <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
+    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'dist/mainPage.js' %}" defer></script>
+    
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
 </head>
 {% endblock head %}

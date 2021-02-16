@@ -7,7 +7,7 @@ const phoneInput = document.querySelector('.phone-input');
 const messageInput = document.querySelector('.message-input');
 const regExpValid = /[<>{}]/;
 
-// import '../styles/career.css';
+import '../styles/career.css';
 
 const validation = () => {
     

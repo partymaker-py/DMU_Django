@@ -5,7 +5,7 @@ const inputEmail = document.querySelector('.form__input-email');
 const inputMessage = document.querySelector('.from__input-message');
 const regExpValid = /[<>{}]/;
 
-// import '../styles/contacts.css';
+import '../styles/contacts.css';
 
 const validation = () => {
 

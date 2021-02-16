@@ -11,8 +11,8 @@ const itemsCount = sliderItems.length;
 const itemWidth = sliderContainer.clientWidth / slidesToShow;
 const movePosition = slidesToScroll * itemWidth;
 
-// import '../../styles/SubPagesCss/funcTD.css';
-// import '../../styles/SubPagesCss/roads.css';
+import '../../styles/SubPagesCss/funcTD.css';
+import '../../styles/SubPagesCss/roads.css';
 
 const sliderShow = () => {
 

@@ -1,4 +1,4 @@
-// import '../styles/HeaderAndFooterModule.css';
+import '../../styles/HeaderAndFooterModule.css';
 
 function headerSearch() {
     const btnOpenSearch = document.querySelector('.search-icon');
