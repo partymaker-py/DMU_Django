@@ -6,7 +6,6 @@ const sernameInput = document.querySelector('.sername-input');
 const phoneInput = document.querySelector('.phone-input');
 const messageInput = document.querySelector('.message-input');
 const regExpValid = /[<>{}]/;
-console.log();
 
 import '../styles/career.css';
 
