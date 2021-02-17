@@ -22,7 +22,7 @@
     <section class="intro">
     {% endif %}
         <div class="main-main-title-of-page">
-            <h1 class="title-of-page">Проекты</h1>
+            <h1 class="title-of-page">{{ new.title }}</h1>
             <p class="subtitle"></p>
         </div>
     </section>
@@ -67,7 +67,7 @@
 
             {% if new.image %}
             {% static "images/no_photo.jpg" as no_photo %}
-            <img src="{{ new.photo_url }}" alt="portret" class="new__img" width="850px" height="478px">
+            <img src="{{ new.photo_url }}" alt="portret" class="new__img" width="850px" height="auto">
             {% endif %}
             <h3 class="new-title">{{ new.title }}</h3>
             
@@ -84,12 +84,12 @@
             
             {% if new.image2 %}
             {% static "images/no_photo.jpg" as no_photo %}
-            <img src="{{ new.photo_url2 }}" alt="portret" width="270px" height="270px">
+            <img src="{{ new.photo_url2 }}" alt="portret" width="1200px" height="auto">
             {% endif %}
             
             
             {% if new.video %}
-            <video src="{{ new.video_url }}" alt="video_content" class="video_content" autoplay height="500"></video>
+            <video src="{{ new.video_url }}" alt="video_content" class="video_content" autoplay width="1200px" height="auto"></video>
             {% endif %}
             
             {% if new.text2 %}
@@ -98,11 +98,11 @@
             
             {% if new.image3 %}
             {% static "images/no_photo.jpg" as no_photo %}
-            <img src="{{ new.photo_url3 }}" alt="portret" width="270px" height="270px">
+            <img src="{{ new.photo_url3 }}" alt="portret" height="675px" width="1200px">
             {% endif %}
             
             {% if new.video2 %}
-            <video src="{{ new.video_url2 }}" alt="video_content" class="video_content" autoplay height="500"></video>
+            <video src="{{ new.video_url2 }}" alt="video_content" class="video_content" autoplay height="675px" width="auto"></video>
             {% endif %}
             
             {% if new.text3 %}
@@ -110,7 +110,7 @@
             {% endif %}
             
             {% if new.video3 %}
-            <video src="{{ new.video_url3 }}" alt="video_content" class="video_content" autoplay height="500"></video>
+            <video src="{{ new.video_url3 }}" alt="video_content" class="video_content" autoplay height="675px" width="auto"></video>
             {% endif %}
             
             {% if new.text4 %}
