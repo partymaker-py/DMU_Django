@@ -115,7 +115,6 @@
 @media (max-width: 1444px) {
     .main-section {
         margin-left: 4%;
-        margin-right: 4%;
         flex-direction: column;
         align-items: center;
     }
@@ -148,17 +147,22 @@
         height: auto;
     }
 }
-@media (max-width: 360px) {
+@media (max-width: 375px) {
     .wrapper {
-        width: 300px;
+        width: 290px;
         height: auto;
     }
     .slider-item {
-        width: 300px;
+        width: 290px;
         height: auto;
     }
     .sliderImg {
-        width: 300px;
+        width: 290px;
         height: auto;
     }
-} 
+    .slider-buttons {
+        width: 100%;
+        padding-left: 0px;
+        top: 40%;
+    } 
+}

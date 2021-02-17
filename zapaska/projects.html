@@ -1,0 +1,42 @@
+  
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
+    <link rel="stylesheet" href="{% static 'styles/projects.css' %}">
+    <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}">
+    <link rel="icon" href="{% static 'images/icon.png' %}">
+    <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
+    <title>ООО "ДМУ" | {% block title %}Проекты{% endblock title %}</title>
+</head>
+{% endblock head %}
+<body>
+    
+    <!-- Header -->
+{% block content %}
+    <section class="intro">
+        <div class="main-main-title-of-page">
+            <h1 class="title-of-page">Проекты</h1>
+            <p class="subtitle"></p>
+        </div>
+    </section>
+    <main class="list-of-projects">
+        <div class="some-projects">
+            {% if projects %}
+            {% for a in projects %}
+            <div class="project">
+                <a href="{% url 'detail_project' a.id %}" class="link-to-project">
+                    {% static "images/no_photo.jpg" as no_photo %}
+                    <img src="{{ a.photo_url }}" alt="" class="project-image" width="370px" height="246px">
+                    <h3 class="project-title">{{ a.title }}</h3>
+                </a>
+            </div>
+            {% endfor %}
+            {% endif %}
+        </div>
+    </main>
+{% endblock content %}
+    <!-- Footer -->

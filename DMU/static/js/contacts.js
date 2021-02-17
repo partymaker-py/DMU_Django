@@ -6,9 +6,7 @@ const inputMessage = document.querySelector('.from__input-message');
 const regExpValid = /[<>{}]/;
 
 import '../styles/contacts.css';
-
 const validation = () => {
-
     
     let errorsArray = [];
     if (!inputName.value || inputName.value.length < 2 || !isNaN(inputName.value) || inputName.value.match(regExpValid)) {

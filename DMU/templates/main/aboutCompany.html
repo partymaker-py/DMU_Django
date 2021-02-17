@@ -6,13 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="stylesheet" href="{% static 'styles/aboutCompanyStyle.css' %}">
-    <!-- <link rel="stylesheet" href="{% static 'styles/HeaderAndFooterModule.css' %}"> -->
-
     <link rel="icon" href="{% static 'images/icon.png' %}">
     <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
     <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
-    <!-- <script src="{% static 'js/Modules/headerScrollAndPopupModule.js' %}" defer></script>
-    <script src="{% static 'js/Modules/searchFromPageModule.js' %}" defer></script> -->
     <title>{% block title %}О компнаии{% endblock title %}</title>
 </head>
 {% endblock head %}
@@ -59,7 +55,7 @@
             </div>
             <div class="what-we-are-doing">
                 <div class="what-we-are-doing-image-and-description">
-                    <img src="{% static 'images/hiddenlogo_black.png' %}" alt="company" height="400px" class="working-proces-img">
+                    <img src="{% static 'images/hiddenlogo_black.png' %}" alt="company" height="400" class="working-proces-img">
                     <div class="what-we-are-doing-description">
                         <h3 class="what-we-are-doing-subtitle">Чем мы занимаемся<hr></h3>
                         <p class="motto-text">ООО «ДМУ» успешно выполняет заказы по строительству, реконструкции и ремонту автомобильных дорог и искусственных сооружений, инженерных сетей.</p>
@@ -91,4 +87,5 @@
             </div>
         </div>
     </main>
+    
 {% endblock content %}

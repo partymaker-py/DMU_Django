@@ -43,7 +43,7 @@ function headerSearch() {
         if (!inputSearchForHeader.value || inputSearchForHeader.value.match(regExpValid)) {
             inputSearchForHeader.value = '';
         } else {
-            fetch(location.replace(`http://127.0.0.1:8000/?search=${inputSearchForHeader.value}`)).then(res => console.log(res)).catch(err => console.log(err));
+            fetch(location.replace(`http://192.168.1.66:80/?search=${inputSearchForHeader.value}`)).then(res => console.log(res)).catch(err => console.log(err));
             word = '';
         }
     });

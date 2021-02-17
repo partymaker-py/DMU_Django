@@ -1,5 +1,5 @@
 const form = document.querySelector('.form');
-const searchForm = document.querySelector('.search-form');
+// const searchForm = document.querySelector('.search-form');
 const nameInput = document.querySelector('.name-input');
 const fatherInput = document.querySelector('.father-input');
 const sernameInput = document.querySelector('.sername-input');
@@ -42,22 +42,6 @@ const validation = () => {
     }
     
 };
-
-searchForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const serachInput = document.querySelector('.search-in-career');
-    if (!serachInput.value || serachInput.value.match(regExpValid)){
-        searchForm.style.border = '1px solid rgba(255, 0, 0, 1)';
-        setTimeout(() => {
-            searchForm.style.border = '';
-            serachInput.value = '';
-        }, 1000);
-        return;
-    } 
-    fetch(location.replace(`http://127.0.0.1:8000/?search=${serachInput.value}`)).then(res => console.log(res)).catch(err => console.log(err));
-    serachInput.value = '';
-});
-
 function showThanks(dataSended) {
     if (dataSended) {
         
