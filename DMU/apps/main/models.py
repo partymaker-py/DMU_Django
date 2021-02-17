@@ -68,7 +68,7 @@ class New(models.Model):
 		return '/news/' + str(self.id)
 
 	def getPreviousID(self):
-		if self.id == 1:
+		if self.id < 1:
 			return 1
 		else:
 			return self.id - 1
