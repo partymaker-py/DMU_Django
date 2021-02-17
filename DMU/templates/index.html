@@ -7,9 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'dist/searchFromPageModule.js' %}" defer></script>
-    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
     <script src="{% static 'dist/mainPage.js' %}" defer></script>
+    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
     
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
 </head>
@@ -65,7 +64,7 @@
                         </div>
                     </div>
                     <div class="search">
-                        <a href="/" class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
+                        <a class="search-field"><img src="{% static 'images/loupewhite.svg' %}" alt="search-icon" class="search-icon" width="23" height="23"></a>
                     </div>
                     
                 </div>
@@ -74,7 +73,7 @@
         <!-- активация поиска -->
         <div class="search-field-wrapper">
             <div class="form-wrapper">
-                <label>
+                <label class="label-s">
                     <form class="form-search-head">
                         <button type="submit" class="btn-submit-form"><img class="img-start-search"
                                 src="{% static 'images/loupewhite.svg' %}" alt="search-icon"></button>

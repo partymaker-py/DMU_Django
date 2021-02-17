@@ -59,6 +59,9 @@ html {
 .search-form-label {
     width: 100%;
 }
+.search-field {
+    cursor: pointer;
+}
 .form-search-head {
     display: flex;
     width: 100%;
@@ -236,6 +239,9 @@ html {
 .small-screen-popup__item:hover{
     background-color: #ff0000;
 } 
+.label-s {
+    width: 100%;
+}
 /* end Попап меню */
 @-webkit-keyframes header-animation {
     0% {

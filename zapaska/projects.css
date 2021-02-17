@@ -1,0 +1,101 @@
+/* Not header */
+/* TODO уменьштить размер блоков с новостями */
+.intro{
+    margin-top: -60px;
+    height: 400px;
+    background: url('../images/dmusubg.jpg');
+}
+.main-main-title-of-page{
+    margin-left: 20%;
+    padding-top: 200px;
+    color: #ffffff;
+}
+.title-of-page{
+    margin-top: 0;
+}
+.subtitle{
+    font-style: italic;
+}
+.list-of-projects {
+    margin-top: 50px;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+.some-projects {
+    display: grid;
+    grid-template-rows: repeat(4, 313px);
+    grid-template-columns: repeat(3, 400px);
+    grid-gap: 30px;
+}
+.link-to-project {
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.project-image {
+    transition: scale(1);
+}
+.project-title {
+    text-transform: uppercase;
+    color: #000000;
+    transition: .2s linear;
+}
+.project-title:hover {
+    color: #ff0000;
+}
+.project-image:hover {
+    background-color: #ff0000;
+    opacity: 0.75;
+    z-index: 1;
+}
+@media (max-width: 1540px){
+    .list-of-projects {
+        margin-top: 50px;
+        margin-left: 18%;
+    }
+    .some-projects {
+        display: grid;
+        grid-template-rows: repeat(13, 313px);
+        grid-template-columns: 350px 350px;
+        grid-gap: 30px;
+    }
+}
+@media (max-width: 1000px) {
+    .list-of-projects {
+        margin-top: 50px;
+        margin-left: 15%;
+    }
+    .some-projects {
+        display: grid;
+        grid-template-rows: repeat(13, 313px);
+        grid-template-columns: 350px 350px;
+        grid-gap: 30px;
+    }
+    
+}
+@media (max-width: 769px) {
+    .list-of-projects {
+        margin-top: 50px;
+        margin-left: 18%;
+    }
+    .some-projects {
+        grid-template-columns: 350px;
+    }
+}
+@media (max-width: 680px) {
+    .some-projects {
+        display: grid;
+        grid-template-rows: repeat(13, 313px);
+        grid-template-columns: 400px;
+        grid-gap: 30px;
+    }
+}
+@media (max-width: 460px) { 
+    .list-of-projects {
+        margin-top: 50px;
+        margin-right: 0;
+        margin-left: 0;
+    }
+
+}
