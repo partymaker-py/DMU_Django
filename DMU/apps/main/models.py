@@ -67,6 +67,15 @@ class New(models.Model):
 	def get_absolute_url(self):
 		return '/news/' + str(self.id)
 
+	def getPreviousID(self):
+		if self.id == 1:
+			return 1
+		else:
+			return self.id - 1
+
+	def getNextID(self):
+		return self.id + 1
+
 # Модель для наполнения сайта
 class Context(models.Model):
 	title = models.CharField('Title of page', max_length=50)
