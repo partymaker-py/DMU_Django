@@ -1,0 +1,39 @@
+.intro{
+    margin-top: -60px;
+    height: 400px;
+    background: url('../images/dmusubg.jpg');
+}
+.main-main-title-of-page{
+    margin-left: 20%;
+    padding-top: 200px;
+    color: #ffffff;
+}
+.title-of-page{
+    margin-top: 0;
+}
+.subtitle{
+    font-style: italic;
+}
+.results{
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 30px;
+}
+.result-block{
+    border-top: 1px solid rgba(0, 0, 0, .2);
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    padding: 30px 15px;
+}
+
+.result__aside-block{
+    text-decoration: none;
+}
+.aside-link-block__title{
+    color: #000000;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: .2s linear;
+}
+.aside-link-block__title:hover{
+    color: #ff0000;
+}

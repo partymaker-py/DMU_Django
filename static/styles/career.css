@@ -1,0 +1,257 @@
+.intro{
+    margin-top: -60px;
+    height: 400px;
+    background: url('../images/dmusubg.jpg');
+}
+.main-main-title-of-page{
+    margin-left: 20%;
+    padding-top: 200px;
+    color: #ffffff;
+}
+.title-of-page{
+    margin-top: 0;
+}
+.subtitle{
+    font-style: italic;
+}
+main{
+    margin-top: 100px;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.aside {
+    margin-right: 20px;
+}
+.news {
+    width: 300px;
+    margin-right: 20px;
+}
+/* Поиск со страницы */
+.search-form{
+    display: flex;
+    flex-direction: row;
+    height: 44px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+.get-search-from-page{
+    padding: 0 10px;
+    width: 90%;
+    border: none;
+}
+.get-search-from-page:focus{
+    outline: none;
+}
+.btn-search{
+    cursor: pointer;
+    width: 15%;
+    background-color: inherit;
+    border: none;
+}
+.btn-search:focus{
+    outline: none;
+}
+.search-logo{
+    width: 19px;
+    height: 19px;
+}
+/*  */
+.newstitle>hr, .contact-block>hr, .main-info-title>hr {
+    width: 40px;
+    border-color: #ff0000;
+    margin-top: 20px;
+    margin-left: 0;
+}
+.contact-link:nth-child(1), .contact-link:nth-child(5){
+    font-weight: bold;
+}
+.news-link,
+.contact-link {
+    padding-bottom: 10px;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+.main-and-form {
+    display: flex;
+    flex-direction: column;
+}
+.info-of-info{
+    display: flex;
+    justify-content: center;    
+}
+.main-info{
+    display: flex;
+}
+.form{
+    max-width: 950px;
+}
+.fio {
+    display: flex;
+    justify-content: space-between;
+    max-width: 950px;
+}
+.name,
+.father,
+.sername {
+    margin-bottom: 40px;
+    margin: 0;
+}
+.name-input,
+.father-input {
+    margin-right: 30px;
+}
+.name-input,
+.father-input,
+.sername-input {
+    height: 36px;
+    width: 270px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.phone-and-long{
+    width: 100%;
+}
+.name-input,
+.father-input,
+.sername-input,
+.phone-input,
+.message-input {
+    border: 1px solid rgba(0, 0, 0, 0.2)
+}
+.name-input:focus,
+.father-input:focus,
+.sername-input:focus,
+.phone-input:focus,
+.message-input:focus {
+    outline: none;
+}
+.phone, .long {
+    margin-bottom: 40px;
+}
+.phone-input,
+.message-input{
+    height: 46px;
+    width: 100%;
+}
+.btn-submit{
+    outline: #ff0000;
+    margin-top: 40px;
+    color: #ffffff;
+    background-color: #ff0000;
+    border: none;
+    padding: 20px 40px;
+    transition: .2s linear;
+    cursor: pointer;
+}
+.btn-submit:hover{
+    background-color: #000000;
+}
+.wraning-name-text, 
+.warning-father-text,
+.warning-sername-text, 
+.warning-phone-text,
+.warning-long-text,
+.warning-file-text {
+    visibility: hidden;
+    color: #ff0000;
+}
+.main-warning {
+    visibility: hidden;
+    margin-top: 50px;
+    padding: 25px;
+    background-color: #ff0000;
+}
+.main-warning>span {
+    color: #ffffff;
+    font-weight: bold;
+}
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+/* TODO доделать */
+@media (max-width: 1318px) {
+    .search-form {
+        width: 50%;
+    }
+    .news {
+        display: flex;
+        width: 100%;
+    }
+    .info-of-info{
+        display: flex;
+        flex-direction: column;
+    }
+    .name-input, .father-input {
+        margin-right: 20px;
+    }
+}
+@media (max-width: 998px) {
+    .fio{
+        flex-direction: column;
+    }
+    .name-input,
+    .father-input,
+    .sername-input{
+        width: 100%;
+    }
+    main {
+        margin-left: 5%;
+    }
+
+}
+@media (max-width: 955px) {
+    .main_photo {
+        width: 600px;
+        height: auto;
+    }
+}
+@media (max-width: 743px) {
+    .news {
+        flex-wrap: wrap;
+    }
+    .search-form {
+        width: 100%;
+    }
+}
+@media (max-width: 680px) {
+    .news__text-blocks{
+        display: flex;
+        flex-direction: row;
+    }
+    .news-block,.contacts{
+        width: 300px;
+    }
+    main{
+        margin-left: 15%;
+    }
+    .info-of-info{
+        flex-direction: column;
+    }
+    .main-info{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .fio{
+        flex-direction: column;
+    }
+}
+@media (max-width: 460px) {
+    main{
+        margin-left: 5%;
+    }
+    .main_photo {
+        width: 350px;
+        height: auto;
+    }
+}
+@media (max-width: 360px) {
+    .main_photo {
+        width: 250px;
+        height: auto;
+    }
+}

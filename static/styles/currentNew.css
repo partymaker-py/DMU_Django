@@ -1,0 +1,114 @@
+.intro{
+    margin-top: -60px;
+    height: 400px;
+    background: url('../images/dmusubg.jpg');
+}
+.main-main-title-of-page{
+    margin-left: 20%;
+    padding-top: 200px;
+    color: #ffffff;
+}
+.title-of-page{
+    margin-top: 0;
+}
+.subtitle{
+    font-style: italic;
+}
+.main-info {
+    margin-top: 50px;
+    margin-right: 20%;
+    margin-left: 20%;
+    display: flex;
+    flex-direction: row-reverse;
+}
+/* Поиск со страницы */
+.search-form{
+    display: flex;
+    flex-direction: row;
+    min-width: 100%;
+    height: 44px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 40px;
+}
+.get-search-from-page{
+    padding: 0 10px;
+    width: 90%;
+    border: none;
+}
+.get-search-from-page:focus{
+    outline: none;
+}
+.btn-search{
+    cursor: pointer;
+    background-color: inherit;
+    border: none;
+}
+.btn-search:focus{
+    outline: none;
+}
+.search-logo{
+    width: 19px;
+    height: 19px;
+}
+/*  */
+.aside{
+    margin-left: 10px;
+    min-width: 270px;
+}
+.news-info{
+    max-width: 900px;
+}
+.new__paragraph{
+    margin-top: 40px;
+}
+.video_content{
+    margin-top: 40px;
+}
+.newstitle > hr, .contact-block > hr{
+    width: 40px;
+    margin-left: 0;
+    border-color: #ff0000;
+}
+.project-description__control-between-projects{
+    margin-top: 80px;
+    margin-right: 5%;
+    margin-left: 5%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+.news-descritption{
+    font-weight: 400;
+    margin: 0 0 25px 0;
+    padding: 0;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+}
+.control-between-projects__wrapper{
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.link-to-prev, .link-to-next{
+    text-decoration: none;
+    color: #000000;
+    transition: .5  s linear;
+}
+.link-to-prev:hover, .link-to-next:hover{
+    color: #ff0000;
+}
+@media (max-width: 1501px) {
+    .main-info {
+        margin-left: 15%;
+    }
+}
+@media (max-width: 1350px) {
+    .main-info {
+        margin-left: 7%;
+        margin-right: 7%;
+    }
+}
+@media (max-width: 1086px) {
+    .main-info {
+        flex-direction: column;
+    }
+}
