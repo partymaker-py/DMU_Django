@@ -42,23 +42,26 @@ h1, h2 {
     justify-content: center;
 } 
 .container-info-contacts {
-    display: grid;
-    grid-template-columns: 300px 750px;
-    grid-gap: 50px;
     margin-top: 100px;
-    margin-left: 20%;
-    margin-right: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.about-us-text {
+    margin-left: 40px;
+    width: 600px
 }
 .contacts-info {
     align-self: center;
     padding-left: 20px;
     height: 476px;
-    width: 300px;
+    width: 324px;
     border: 2px solid;
     border-color: #ff0000;
 }
 .contacts-list__element {
     margin-top: 20px;
+    width: 284px;
 }
 .about-us {
     display: block;
@@ -92,7 +95,6 @@ h1, h2 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 10px;
 }
 .counter {
     width: 40px;
@@ -179,8 +181,6 @@ h1, h2 {
 /* Новости */
 .some-news {
     margin-top: 100px;
-    margin-right: 20%;
-    margin-left: 20%;
 }
 .main-title {
     margin-bottom: 50px;
@@ -192,14 +192,16 @@ h1, h2 {
 .news-articles {
     display: flex;
     justify-content: space-between;
+    text-align: center;
+    flex-wrap: wrap;
 }
-.news-article{
-    margin-right: 30px;
+.news-article {
+    width: 100%;
 }
 @media (max-width: 1793px) {
-    .news-articles {
-        flex-wrap: wrap;
-    }
+    /* .news-articles {
+        flex-wrap: wrap; */
+    /* } */
     .news-article {
         width: 100%;
         text-align: center;
@@ -207,33 +209,19 @@ h1, h2 {
     }
 }
 @media (max-width: 1540px) { 
-    .customers-and-partners {
-        margin-left: 15%;
-        margin-right: inherit;
-    }
     .partnersImg {
         width: 1000px;
         height: auto;
     }
-    .container-info-contacts{
-        margin-left: 15%;
-        margin-right: 15%;
-    }
     
 }
 @media (max-width: 1300px){
-    .container-info-contacts{
-        display: grid;
-        grid-template-columns: 300px 550px;
-        grid-gap: 50px;
-        margin-top: 100px;
-        margin-left: 5%;
-    } 
     .occupied-niches{
         margin-left: 30px; 
         margin-right: 30px;
         display: flex;
         justify-content: space-around;
+        flex-wrap: wrap;
     }
     .customers-and-partners {
         margin-left: 5%;
@@ -244,11 +232,30 @@ h1, h2 {
         grid-gap: 35px;
     }
 }
+@media (max-width: 1111px) {
+    .statistic-rating-counters {
+        flex-direction: column;
+        justify-self: center;
+        align-items: center;
+    }
+    .projects,
+    .years,
+    .customers {
+        width: 150px;
+        text-align: center;
+    }
+    .statistic-rating-info > p {
+        text-align: center;
+    }
+}
 @media (max-width: 1076px) {
     .partnersImg {
         width: 700px;
         padding-left: 10%;
     }
+}
+@media (max-width: 1019px) {
+
 }
 @media (max-width: 950px) {
     .partnersImg {
@@ -256,25 +263,23 @@ h1, h2 {
         padding-left: 15%;
     }
 }
-@media (max-width: 992px) { 
-    .container-info-contacts{
-        display: grid;
-        grid-template-columns: 300px 550px;
-        grid-gap: 50px;
-        margin-top: 100px;  
-    } 
-}
-@media (max-width: 768px) { 
-    .container-info-contacts{
-        display: grid;
-        grid-template-columns: none;
-        grid-template-rows: 300px 500px;
-        grid-gap: 100px;
-        margin-top: 100px;  
-        margin-left: 100px;
-        margin-right: 100px;
-        justify-items: center;
-    }  
+@media (max-width: 992px) {
+    .container-info-contacts {
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+    .about-us {
+        margin: 0 auto;
+    }
+    .about-us-line {
+        width: 100%;
+    }
+    .about-us-text {
+        margin-bottom: 50px;
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
 }
 @media (max-width: 680px) { 
     .partnersImg {
@@ -282,14 +287,6 @@ h1, h2 {
     }
     .video-container{
         display: none;
-    }
-    .container-info-contacts{
-        display: grid;
-        grid-template-columns: 300px ;
-        grid-template-rows: 400px;
-        grid-gap: 50px;
-        margin-left: 40px;
-        margin-top: 100px;
     }
     .photo-and-services-list{
         display: grid;
@@ -301,9 +298,6 @@ h1, h2 {
     }
     .news-articles{
         flex-direction: column;
-    }
-    .news-article{
-        width: 300px;
     }
     .title-and-selectors{
         flex-direction: column;
@@ -322,6 +316,10 @@ h1, h2 {
     .partnersImg {
         width: 300px;
         padding-left: 10%;
+    }
+    .news-photo {
+        width: 300px;
+        height: auto;
     }
 }
 @media (max-width: 385px) {
@@ -364,10 +362,6 @@ h1, h2 {
     }
     .photo-and-services-list {
         grid-template-columns: 210px;
-    }
-    .news-article {
-        width: 250px;
-
     }
     .news-photo {
         width: 210px;

@@ -139,6 +139,10 @@ input::-webkit-inner-spin-button {
     .vidjet-and-contacts {
         margin-bottom: 50px;
     }
+    .form-wrapper-article {
+        margin-left: 20px;
+        margin-right: 0;
+    }
 }
 @media (max-width: 891px) {
     .form-and-adress {
