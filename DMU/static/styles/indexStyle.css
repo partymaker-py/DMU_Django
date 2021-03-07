@@ -181,6 +181,10 @@ h1, h2 {
 /* Новости */
 .some-news {
     margin-top: 100px;
+    margin-left: 20%;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: column;
 }
 .main-title {
     margin-bottom: 50px;
@@ -191,22 +195,12 @@ h1, h2 {
 }
 .news-articles {
     display: flex;
-    justify-content: space-between;
-    text-align: center;
+    justify-content: space-around;
     flex-wrap: wrap;
 }
-.news-article {
-    width: 100%;
-}
+
 @media (max-width: 1793px) {
-    /* .news-articles {
-        flex-wrap: wrap; */
-    /* } */
-    .news-article {
-        width: 100%;
-        text-align: center;
-        margin-bottom: 30px;
-    }
+    
 }
 @media (max-width: 1540px) { 
     .partnersImg {
@@ -232,6 +226,7 @@ h1, h2 {
         grid-gap: 35px;
     }
 }
+
 @media (max-width: 1111px) {
     .statistic-rating-counters {
         flex-direction: column;
@@ -294,9 +289,6 @@ h1, h2 {
         grid-gap: 35px;
     }
     .occupied-niches{
-        flex-direction: column;
-    }
-    .news-articles{
         flex-direction: column;
     }
     .title-and-selectors{

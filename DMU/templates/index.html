@@ -7,8 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <script src="{% static 'dist/mainPage.js' %}" async></script>
-    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" defer></script>
+    <script src="{% static 'dist/mainPage.js' %}" defer></script>
+    <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" async></script>
     
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
 </head>
@@ -197,12 +197,11 @@
 
 <!-- Цикл для отображения новостей -->
 {% for a in latest_news_list %}
-                <div class="news-article">
+                <div class="newarticle" style="display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid #ccc; margin-top: 20px; min-width: 300px; max-width: 500px;">
                 	{% static "images/no_photo.jpg" as no_photo %}
                     <img src="{{ a.photo_url }}" alt="news-photo" class="news-photo" width="370px" height="246px">
                     <h4 class="news-title">{{ a.title }}</h4>
                     <p class="article-text">{{ a.text }}</p>
-                    <hr>
                 </div>
 {% endfor %}
 

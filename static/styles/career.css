@@ -236,6 +236,10 @@ input::-webkit-inner-spin-button {
         display: flex;
         flex-direction: column-reverse;
     }
+    .main_photo {
+        width: 300px;
+        height: auto;
+    }
     .fio{
         flex-direction: column;
     }
