@@ -61,7 +61,7 @@ h1, h2 {
 }
 .contacts-list__element {
     margin-top: 20px;
-    width: 284px;
+    width: 100%;
 }
 .about-us {
     display: block;

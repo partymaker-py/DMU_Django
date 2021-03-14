@@ -1,5 +1,4 @@
 const searchForm = document.querySelector('.search-form');
-console.log('searchForm: ', searchForm);
 searchForm.addEventListener('submit', e => { 
     e.preventDefault();
     const searchWord = document.querySelector('.get-search-from-page');
@@ -13,6 +12,6 @@ searchForm.addEventListener('submit', e => {
         }, 1000);
         return;
     } 
-    fetch(location.assign(`/?search=${searchWord.value.toLowerCase()}`)).then(res => console.log(res)).catch(rej => console.log(rej));
+    fetch(location.assign(`/?search=${searchWord.value.toLowerCase()}`)).then(res => console.log(res)).catch(rej => console.error(rej));
     searchWord.value = '';
 });

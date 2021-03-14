@@ -43,7 +43,7 @@ function headerSearch() {
         if (!inputSearchForHeader.value || inputSearchForHeader.value.match(regExpValid)) {
             inputSearchForHeader.value = '';
         } else {
-            fetch(location.replace(`/?search=${inputSearchForHeader.value.toLowerCase()}`)).then(res => console.log(res)).catch(err => console.log(err));
+            fetch(location.replace(`/?search=${inputSearchForHeader.value.toLowerCase()}`)).then(res => console.log(res)).catch(err => console.error(err));
             word = '';
         }
     });
