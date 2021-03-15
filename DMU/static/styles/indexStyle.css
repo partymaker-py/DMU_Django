@@ -5,7 +5,7 @@ h1, h2 {
 .intro{
     margin-top: -60px;
     height: 594.69px;
-    background: url('../images/main_page.jpg');
+    background: url('../images/static_images/main_page.jpg');
 }
 .main-main-title-of-page{
     padding-top: 450px;
@@ -121,6 +121,7 @@ h1, h2 {
     display: grid;
     grid-template-columns: repeat(3, 370px);
     grid-gap: 30px;
+    margin: 0 auto;
 }
 .infrastructure-design, 
 .development-of-construction-documentation,
@@ -218,7 +219,7 @@ h1, h2 {
         flex-wrap: wrap;
     }
     .customers-and-partners {
-        margin-left: 5%;
+        margin-left: 10%;
     }
     .photo-and-services-list{
         display: grid;
@@ -289,6 +290,7 @@ h1, h2 {
         grid-gap: 35px;
     }
     .occupied-niches{
+        margin: 0 auto;
         flex-direction: column;
     }
     .title-and-selectors{
@@ -299,9 +301,6 @@ h1, h2 {
     }
     .title-and-line {
         margin-bottom: 20px;
-    }
-    .some-news{
-        margin-left: 15px;
     }
 }
 @media (max-width: 538px) {
@@ -330,7 +329,7 @@ h1, h2 {
         display: flex;
         flex-direction: column;
         align-items: center;
-        margin-left: 15%;
+        margin: 0 auto;
         width: 210px;
         text-align: center;
     }
@@ -361,6 +360,10 @@ h1, h2 {
     }
     .projects {
         margin-left: 0;
+    }
+    .service {
+        text-align: center;
+
     }
 
 }
