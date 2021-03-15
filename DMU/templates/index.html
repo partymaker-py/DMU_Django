@@ -7,8 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Last-Modified" content="Sat, 5 Dec 2020 22:37:54 GMT">
     <link rel="icon" href="{% static 'images/icon.png' %}">
-    <!-- <script src="{% static 'dist/mainPage.js' %}" defer></script> -->
-    <link rel="stylesheet" href="{% static 'styles/indexStyle.css' %}">
+    <script src="{% static 'dist/mainPage.js' %}" defer></script>
     <script src="{% static 'dist/headerScrollAndPopupModule.js' %}" async></script>
     
     <title>ООО "ДМУ" | {% block title %}Главная{% endblock title %}</title>
@@ -182,11 +181,11 @@
         <div class="services">
             <div class="photo-and-services-list">
                 <div class="service">
-                    <h3 class="service-header"><a styles="text-decoration: none; color: '#000000';" href="/services/roads">СТРОИТЕЛЬСТВО ДОРОГ И ИСКУССТВЕННЫХ СООРУЖЕНИЙ</a></h3>
+                    <h3 class="service-header"><a class="service-header-link" href="/services/roads">СТРОИТЕЛЬСТВО ДОРОГ И ИСКУССТВЕННЫХ СООРУЖЕНИЙ</a></h3>
                     <p class="service-description">Процесс строительства начинается с глубокого анализа проектной документации. При проведении работ учитываются множество факторов, влияющих на качеств и сроки производства работ.</p>
                 </div>
                 <div class="service">
-                    <h3 class="service-header"><a styles="text-decoration: none; color: '#000000';" href="/services/funcTD">ФУНКЦИИ ТЕХЗАКАЗЧИКА</a></h3>
+                    <h3 class="service-header"><a class="service-header-link" href="/services/funcTD">ФУНКЦИИ ТЕХЗАКАЗЧИКА</a></h3>
                     <p class="service-description">Выполняя функции Технического заказчика, ООО «ДМУ» предоставляет Инвестору полный комплекс услуг в строительстве от разработки рабочей документации до сдачи построенного объекта в эксплуатацию.</p>
                 </div>
             </div>
