@@ -20,6 +20,9 @@
     margin-right: 20%;
     display: flex;
 }
+.what-we-are-doing-description{
+    margin-left: 15px; 
+}
 /* Поиск со страницы */
 .search-form{
     display: flex;

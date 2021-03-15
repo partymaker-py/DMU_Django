@@ -152,7 +152,7 @@
                 <div class="infrastructure-design">
                     <h3 class="niches-subheader">Инфраструктурное проектирование</h3>
                     <img src="{% static 'images/PTO/4.jpg' %}" alt="infrastructure-design" class="infrastructure-photo" width="370px" height="277px">
-                    <p>ГК «ГОРКА» успешно выполняет заказы по инфраструктурному проектированию городских объектов, автомобильных дорог и искусственных сооружений, инженерных сетей, строительству и ремонту дорог, лечебно-профилактических и административных учреждений.</p>
+                    <p>ООО "ДМУ" успешно выполняет заказы по инфраструктурному проектированию городских объектов, автомобильных дорог и искусственных сооружений, инженерных сетей, строительству и ремонту дорог, лечебно-профилактических и административных учреждений.</p>
                 </div>
                 <div class="development-of-construction-documentation">
                     <h3 class="niches-subheader">Разработка строительной документации</h3>
@@ -171,7 +171,7 @@
                 <h2>Наши заказчики<hr></h2>
                 <div class="partners-images__wrapper">
                     <div class="partners-images">
-                        <img src="{% static 'images/static_images/zakazy/logos-1170x652.jpg' %}" width="1170" height="652"
+                        <img src="{% static 'images/static_images/zakazy/logos-1170x652.jpg' %}" width="1170" height="359"
                             class="partnersImg"
                             alt="Департамент строительства города Москвы">
                     </div>
@@ -181,11 +181,11 @@
         <div class="services">
             <div class="photo-and-services-list">
                 <div class="service">
-                    <h3 class="service-header">СТРОИТЕЛЬСТВО ДОРОГ И ИСКУССТВЕННЫХ СООРУЖЕНИЙ</h3>
+                    <h3 class="service-header"><a styles="text-decoration: none; color: '#000000';" href="/services/roads">СТРОИТЕЛЬСТВО ДОРОГ И ИСКУССТВЕННЫХ СООРУЖЕНИЙ</a></h3>
                     <p class="service-description">Процесс строительства начинается с глубокого анализа проектной документации. При проведении работ учитываются множество факторов, влияющих на качеств и сроки производства работ.</p>
                 </div>
                 <div class="service">
-                    <h3 class="service-header">ФУНКЦИИ ТЕХЗАКАЗЧИКА</h3>
+                    <h3 class="service-header"><a styles="text-decoration: none; color: '#000000';" href="/services/funcTD">ФУНКЦИИ ТЕХЗАКАЗЧИКА</a></h3>
                     <p class="service-description">Выполняя функции Технического заказчика, ООО «ДМУ» предоставляет Инвестору полный комплекс услуг в строительстве от разработки рабочей документации до сдачи построенного объекта в эксплуатацию.</p>
                 </div>
             </div>
@@ -199,7 +199,7 @@
 {% for a in latest_news_list %}
                 <div class="newarticle" style="display: flex; flex-direction: column; align-items: center; border-bottom: 1px solid #ccc; margin-top: 20px; min-width: 300px; max-width: 500px;">
                 	{% static "images/no_photo.jpg" as no_photo %}
-                    <img src="{{ a.photo_url }}" alt="news-photo" class="news-photo" width="370px" height="246px">
+                    <img src="{{ a.photo_url }}" alt="news-photo" class="news-photo" width="370px" height="208px">
                     <h4 class="news-title">{{ a.title }}</h4>
                     <p class="article-text">{{ a.text }}</p>
                 </div>
