@@ -32,11 +32,11 @@
                 <div class="new__wrapper">
                 	{% if new.image %}
                 	{% static "images/no_photo.jpg" as no_photo %}
-                    <img src="{{ new.photo_url }}" alt="news-img" width="870" height="489" class="news-block__img">
+                    <!-- <img src="{{ new.photo_url }}" alt="news-img" width="870" height="489" class="news-block__img"> -->
                     {% endif %}
                     <a href="{% url 'detail_new' new.id %}" class="new__url">
                         <p class="new__title">{{ new.title }}</p>
-                    <img src="../../static/images/black/categoryNewMainPhoto.png" alt="news-img" width="870" height="599" class="news-block__img">
+                    <img src="{{ new.photo_url }}" alt="news-img" width="870" height="489" class="news-block__img">
                     <a href="{% url 'detail_new' new.id %}" class="new__url">
                         <p class="new__title">{{ a.title }}</p>
                     </a>
