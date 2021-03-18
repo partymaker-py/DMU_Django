@@ -123,6 +123,12 @@ h1, h2 {
     grid-gap: 30px;
     margin: 0 auto;
 }
+.partners-images__wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
 .infrastructure-design, 
 .development-of-construction-documentation,
 .implementation-of-investment-projects {
