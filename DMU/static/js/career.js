@@ -1,27 +1,34 @@
 const form = document.querySelector('.form');
 const nameInput = document.querySelector('.name-input');
 const fatherInput = document.querySelector('.father-input');
-const sernameInput = document.querySelector('.sername-input');
+const surnameInput = document.querySelector('.sername-input');
 const phoneInput = document.querySelector('.phone-input');
 const messageInput = document.querySelector('.message-input');
+const mainWarn = document.querySelector('.main-warning');
 const regExpValid = /[<>{}]/;
 
 import '../styles/career.css';
 
+let errorsArray = [];
 const validation = () => {
-    
-    let errorsArray = [];
-    
+    errorsArray.length = 0;
+    let phoneWithPlus = ''
+
     if (!nameInput.value || nameInput.value.length < 3 || !isNaN(nameInput.value) || nameInput.value.match(regExpValid)) {
         errorsArray.push(nameInput);
     }
     if (!fatherInput.value || fatherInput.value.length < 3 || !isNaN(fatherInput.value) || fatherInput.value.match(regExpValid)) {
         errorsArray.push(fatherInput);
     }
-    if (!sernameInput.value || sernameInput.value.length < 3 || !isNaN(sernameInput.value) || sernameInput.value.match(regExpValid)) {
-        errorsArray.push(sernameInput); 
+    if (!surnameInput.value || surnameInput.value.length < 3 || !isNaN(surnameInput.value) || surnameInput.value.match(regExpValid)) {
+        errorsArray.push(surnameInput); 
     }
-    if (!phoneInput.value || phoneInput.value < 9 || isNaN(phoneInput.value) || phoneInput.value.match(regExpValid)) {
+    if (phoneInput.value.charAt(0) === '+') {
+        phoneWithPlus = phoneInput.value.slice(1);
+        if (!phoneWithPlus || phoneWithPlus < 9 || isNaN(phoneWithPlus) || phoneWithPlus.match(regExpValid)) {
+            errorsArray.push(phoneInput);
+        }    
+    } else if (!phoneInput.value || phoneInput.value < 9 || isNaN(phoneInput.value) || phoneInput.value.match(regExpValid)) {
         errorsArray.push(phoneInput);
     }
     if (!messageInput.value || messageInput.value.length < 10 || !isNaN(messageInput.value) || messageInput.value.match(regExpValid)) {
@@ -34,10 +41,11 @@ const validation = () => {
             item.nextElementSibling.style.visibility = 'visible';
             item.value = '';
         });
-        document.querySelector('.main-warning').style.visibility = 'visible';
+        mainWarn.style.visibility = 'visible';
         return;
     } else {
-        return { nameInput, fatherInput, sernameInput, phoneInput, messageInput };
+        errorsArray.length = 0;
+        return { name: nameInput.value, father: fatherInput.value, surname: surnameInput.value, phone: !phoneWithPlus ? phoneInput.value : phoneWithPlus, message: messageInput.value};
     }
     
 };
@@ -66,7 +74,7 @@ form.addEventListener('submit', (e) => {
     
     let validResult = validation();
     if (validResult !== undefined) {
-
+        const { name, father, surname, phone, message } = validResult;
         let csrftoken = document.formCareer.csrfmiddlewaretoken.value;
         
         fetch('/career', {
@@ -77,21 +85,21 @@ form.addEventListener('submit', (e) => {
                 'X-CSRFToken': csrftoken
             },
             body: JSON.stringify({
-                name: validResult.nameInput.value,
-                patronymic: validResult.fatherInput.value,
-                surname: validResult.sernameInput.value,
-                phone: validResult.phoneInput.value,                
-                careerObjective: validResult.messageInput.value,
+                name,
+                patronymic: father,
+                surname,
+                phone,                
+                careerObjective: message,
             })
         }).then(res => {
             if (res.ok) {
                 for (let i = 0; i < formCareer.elements.length; i++) {
                     formCareer.elements[i].value = '';
+                    formCareer.elements[i].style.backgroundColor = 'initial';
+                    
                 }
+                mainWarn.style.visibility = 'hidden';
                 showThanks(true);
-                for (let value in validResult) {
-                    value.value = '';
-                }
             }
         });
             

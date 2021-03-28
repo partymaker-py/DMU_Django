@@ -39,4 +39,4 @@ def telegram(dic):
 			DATA += key + ": " + dic[key] + '\n'
 
 	url = 'https://api.telegram.org/bot{}/sendMessage?chat_id={}&parse_mode=html&text={}'.format(API_TOKEN, CHAT_ID, DATA)
-	#r = requests.get(url)
+	r = requests.get(url)

@@ -3,19 +3,27 @@ const inputName = document.querySelector('.from__input-name');
 const inputPhone = document.querySelector('.form__input-phone');
 const inputEmail = document.querySelector('.form__input-email');
 const inputMessage = document.querySelector('.from__input-message');
+const mainWarn = document.querySelector('.main-warning-text');
 const regExpValid = /[<>{}]/;
 
 import '../styles/contacts.css';
 const validation = () => {
     
     let errorsArray = [];
+    let phoneWithPlus = '';
+
     if (!inputName.value || inputName.value.length < 2 || !isNaN(inputName.value) || inputName.value.match(regExpValid)) {
         errorsArray.push(inputName);
     } else {
         inputName.style.backgroundColor = '#ffffff';
         inputName.nextElementSibling.style.visibility = 'hidden';
-    }   
-    if (!inputPhone.value || inputPhone.value.length < 10 || isNaN(inputPhone.value) || inputPhone.value.match(regExpValid)) {
+    }
+    if (inputPhone.value.charAt(0) === '+') {
+        phoneWithPlus = inputPhone.value.slice(1);
+        if (!phoneWithPlus || phoneWithPlus.length < 10 || isNaN(phoneWithPlus) || phoneWithPlus.match(regExpValid)) {
+            errorsArray.push(inputPhone);
+        }
+    } else if (!inputPhone.value || inputPhone.value.length < 10 || isNaN(inputPhone.value) || inputPhone.value.match(regExpValid)) {
         errorsArray.push(inputPhone);
     } else {
         inputPhone.style.backgroundColor = '#ffffff';
@@ -40,10 +48,10 @@ const validation = () => {
             item.nextElementSibling.style.visibility = 'visible';
             item.value = '';
         });
-        document.querySelector('.main-warning-text').style.visibility = 'visible';
+        mainWarn.style.visibility = 'visible';
         return;
     } else {
-        return { inputName, inputPhone, inputEmail, inputMessage };
+        return { name: inputName.value, phone: !phoneWithPlus ? inputPhone.value : phoneWithPlus, email: inputEmail.value, message: inputMessage.value };
     }
 };
 function showThacks(dataSended) {
@@ -71,7 +79,7 @@ letterForm.addEventListener('submit', e => {
     e.preventDefault()
     const validResult = validation();
     if (validResult !== undefined){
-
+        const { name, phone, email, message } = validResult;
         let csrftoken = document.contactForm.csrfmiddlewaretoken.value;
 
         fetch('/contacts', {
@@ -80,21 +88,14 @@ letterForm.addEventListener('submit', e => {
                 'Content-Type': 'application/json',
                 'X-CSRFToken': csrftoken
             },
-            body: JSON.stringify({
-                name: validResult.inputName.value,
-                phone: validResult.inputPhone.value,
-                email: validResult.inputEmail.value,
-                message: validResult.inputMessage.value
-            })
+            body: JSON.stringify({ name, phone, email, message })
         }).then(res => {
             if (res.ok) {
                 for (let i = 0; i < contactForm.elements.length; i++) {
                     contactForm.elements[i].value = '';
                 }
+                mainWarn.style.visibility = 'hidden';
                 showThacks(true);
-                for (let value in validResult) {
-                    value.value = '';
-                }
             }
         });
     }            
