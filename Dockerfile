@@ -1,8 +1,11 @@
 FROM python:3
 
-RUN apt-get update && apt-get upgrade -y && apt-get autoremove && apt-get autoclean
+RUN apt-get update && \
+    apt-get upgrade -y && \
+    apt-get autoremove && \
+    apt-get autoclean && \
+    mkdir /site
 
-RUN mkdir /site
 COPY . /site/
 WORKDIR /site
 
